@@ -17,7 +17,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'EML4930: Autonomous Vehicles'
-copyright = '2020, Patrick Neal, Aditya Penumarti'
+copyright = '2022, Patrick Neal, Aditya Penumarti'
 author = 'Patrick Neal, Aditya Penumarti' 
 
 # The full version, including alpha/beta/rc tags
