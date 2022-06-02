@@ -9,3 +9,5 @@ Links
 .. toctree::
    :maxdepth: 2
 
+   Building the AV1tenth Car <build>
+
