@@ -7,9 +7,18 @@ Links
 -----
 
 .. toctree::
+   ::caption:: Class Resources
    :maxdepth: 2
 
 
+   Assignments <assignments/assignments>
+   Sensor information <sensor>
    Requirements <requirements>
-   Building the AV1tenth Car <build>
+   Tutorial Resources <tutresources>
+   Contact <contact>
 
+   ::caption:: Extra Information
+   Building the AV1tenth Car <build>
+   
+
+ 
