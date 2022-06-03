@@ -20,7 +20,9 @@ Links
    :caption: Extra Information
    :maxdepth: 1
 
+   Parts List <parts>
    Building the AV1tenth Car <build>
+   
    
 
  
