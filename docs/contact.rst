@@ -7,9 +7,9 @@ You can contact the instructors or the TA's Through `Canvas <https://ufl.instruc
 | Names     | Carl Crane                     | Patrick Neal              |  Aditya Penumarti          |
 +===========+================================+===========================+============================+
 |  Pictures |.. image:: images/crane-carl.jpg| .. image:: images/neap.png| .. image:: images/apenu.jpg|
-|           |    :width: 160px               |     :width: 160px         |     :width: 200px          |
+|           |    :width: 160px               |     :width: 160px         |     :width: 300px          |
 |           |    :align: center              |     :align: center        |     :align: center         |
-|           |    :height: 200px              |     :height: 200px        |     :height: 200px         |
+|           |    :height: 200px              |     :height: 200px        |     :height: 300px         |
 |           |                                |                           |                            |
 +-----------+--------------------------------+---------------------------+----------------------------+
 |   Role    | Instructor                     | Teaching Assistant        |  Teaching Assistant        |
