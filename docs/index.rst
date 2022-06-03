@@ -7,9 +7,8 @@ Links
 -----
 
 .. toctree::
-   ::caption:: Class Resources
+   :caption: Class Resources
    :maxdepth: 2
-
 
    Assignments <assignments/assignments>
    Sensor information <sensor>
@@ -17,7 +16,8 @@ Links
    Tutorial Resources <tutresources>
    Contact <contact>
 
-   ::caption:: Extra Information
+   :caption: Extra Information
+
    Building the AV1tenth Car <build>
    
 
