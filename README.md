@@ -4,6 +4,25 @@
 ## Documentation
 The [documentation website](https://av1tenth-docs.readthedocs.io/en/latest/) can be accessed from the link.
 
+## Dependencies
+Below are the follow packages you will need to install on your system to build the documentation contained in this repository.
+
+```Bash
+sudo apt install python3-sphinx
+```
+Install pip3
+```Bash
+sudo apt install python3-pip
+```
+Use pip3 to install the Read the Docs template
+```Bash
+pip3 install sphinx-rtd-theme
+```
+Use pip3 to install recommommark to be able to use markdown files
+```Bash
+pip3 install recommonmark
+```
+
 ## File Types
 The documentation can be written using either markdown (.md) or restructured text (.rst) formats.
 
