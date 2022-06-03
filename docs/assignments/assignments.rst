@@ -7,7 +7,7 @@ All assignments for the EML4930 AV Class is available here. All assignments will
    :maxdepth: 1
    :caption: List of Assignments
 
-   Assignment 1
-   Assignment 2
-   Assignment 3
-   Assignment 4
+   Assignment 1 <assignment1>
+   Assignment 2 <assignment2>
+   Assignment 3 <assignment3>
+   Assignment 4 <assignment4>
