@@ -51,4 +51,4 @@ This class is a programming heavy class. Almost all work being done requires pro
 * NumPy
 * Bash Commands (You do not need to know all of them, just the basics)
 
-There are tutorial links and resources available in the `Tutorial Resources <tutresources>`_ page.
+There are tutorial links and resources available in the `Tutorial Resources <tutresources.html>`_ page.
