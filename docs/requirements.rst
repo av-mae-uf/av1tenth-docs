@@ -6,7 +6,7 @@ There are several requirements, both hardware and software that are required to 
 Minimum Hardware Required for Software 
 --------------------------------------
 
-.. note::  Our software does not need to be run on single board computers, the simulation package can be run on any computer with the minimum requirements supported
+.. note::  Our software does not need to be run on single board computers, the simulation package can be run on any computer with the minimum requirements supported.
 
 You will need some sort of computer that can run Ubuntu 20.04 (preferred), or a Debian equivalent of the Focal release (If installing through Debian packages, Debian Buster 10 will also work if built from source). A minimum requirement sheet is given below.
 

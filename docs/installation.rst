@@ -3,39 +3,12 @@ Installation
 
 Before you can go ahead and start developing or use any of our packages, you will need to install certain things. Obviously you will need to install some sort of linux platform that ideally can install from debain packages. This will be the focal distribution of Debian.
 
-Git Installation and Configuration
------------------------------------
-
-To install git you will need to open the terminal and enter the following commands.
-
-.. code-block:: bash
-
-    sudo apt install git
-
-This command will install git from the APT tool usually installed in most linux distros by default. Once installed you will need to configure a few things. To do this run the following commands:
-
-.. code-block:: bash
-
-    git config --global user.name "FirstName LastName"
-    git config --global user.email "email@email.com"
-
-his should mostly setup whatever you need till the first time you push a repository to whichever Git distributor you are using. 
-Then it will ask for a user name and password, generally we use GitHub which requires a Personal Access Token which you can generate
-under Settings -> Developer Settings -> and Personal Access Tokens. To ensure you don't need to keep entering this on your computer you can run
-the following command
-
-.. code-block:: bash 
-
-    git config --global credential.helper store
-
-This will store your access token with the local git so you don't have to keep re-entering it.
-
 ROS2 Installation and Configuration from Debian Packages
 --------------------------------------------------------
 
-These installation are a direct copy from `ROS2 Foxy's installation page <https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html>`_
+These installation instructions are a direct copy from `ROS2 Foxy's installation page <https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html>`_
 
-To install ROS2 through debian packages is quite simple, if you wish to install through binary packages you can find those instructions on the ROS2 Foxy documentation website.
+To install ROS2 through debian packages is quite simple, if you wish to install through binary packages or build from source you can find those instructions on the ROS2 Foxy documentation website.
 
 .. warning:: If you install ROS2 Foxy through building from source, we will provide no support or help for any issues you run into as they can be so varied and is difficult to be informed on all of them.
 
@@ -115,6 +88,34 @@ Though if you want it to be sourced everytime you open a terminal, run the follo
 .. code-block:: bash
     
     echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+
+Git Installation and Configuration
+-----------------------------------
+
+To install git you will need to open the terminal and enter the following commands.
+
+.. code-block:: bash
+
+    sudo apt install git
+
+This command will install git from the APT tool usually installed in most linux distros by default. Once installed you will need to configure a few things. To do this run the following commands:
+
+.. code-block:: bash
+
+    git config --global user.name "FirstName LastName"
+    git config --global user.email "email@email.com"
+
+This should mostly setup whatever you need till the first time you push a repository to whichever Git distributor you are using. 
+Then it will ask for a user name and password, generally we use GitHub which requires a Personal Access Token which you can generate
+under Settings -> Developer Settings -> and Personal Access Tokens. To ensure you don't need to keep entering this on your computer you can run
+the following command
+
+.. code-block:: bash 
+
+    git config --global credential.helper store
+
+This will store your access token with the local git so you don't have to keep re-entering it.
+
 
 Additional Packages Required
 ----------------------------

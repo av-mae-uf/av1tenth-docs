@@ -4,89 +4,13 @@ Cheat Sheet
 This page will serve as an area to easily access commands, snippets of codes for Git, ROS2 and Bash command line. These will be commands that we find useful or use often. If there is something
 that you think will be useful to you or your classmates, let us know and we will add it in.
 
-Git
----
-
-First you must ensure you have Git installed on your computer. If you havent, installed it yet installation instructions are available at the `Installation <installation.html>`_ page.
-
-Clone a Repo
-^^^^^^^^^^^^
-The following command will clone a repo into the working directory you are in.
-
-.. code-block:: bash
-
-    git clone <repo-url>
-
-The clone command will clone the repo into a directory with the repo name. To clone a branch within a repo, the following can be used.
-
-.. code-block:: bash
-
-    git clone --branch <branch-name> <repo-url>
-
-.. note:: ``<stuff>`` means you remove the entire thing and replace it with a single url or name or something else based on what you want to do.
-
-Changing to a Different Branch
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To change to a different branch in your local repo you can do the following.
-
-.. code-block:: bash
-
-    git checkout <branch-name>
-
-This will change your active branch. To check which branch you are on you can run the following.
-
-.. code-block:: bash
-
-    git branch
-
-Adding to your Remote Repo After Cloning 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To add or stage changes that you have made inside your local repo, run the following command.
-
-.. code-block:: bash
-
-    git add .
-
-This will stage all changes. If you want to stage specific changes, run the following command.
-
-.. code-block:: bash
-
-    git add <path-to-file>
-
-That will stage changes in a certain directory or a certain file that was changed. After that you need to commit your changes that can be done with the following command.
-
-.. code-block:: bash
-
-    git commit -m "Message regarding your changes"
-
-This will commit your changes and now they are ready for synchronisation to your remote repo. That can be done with the following command.
-
-.. code-block:: bash
-
-    git push
-
-This will push your changes. To pull any new changes done, do the following.
-
-.. code-block:: bash
-
-    git pull
-
-To merge a branch with the main branch, you can run the following commands.
-
-.. code-block:: bash
-
-    git checkout <name-of-main-branch>
-    git merge orgin/<name-of-branch>
-    git push
-
-This is will help with collaboration there are a lot of resources for git online, I would check them out.
-
 Command Line
 -------------
 
 There is a lot you can do with the terminal in linux, we will just cover the basics to keep it brief.
+
+Listing and Changing Directories 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The simplest thing you can do is list all files and directories in your current directory.
 
@@ -124,6 +48,9 @@ To change to a directory in another directory, you can write the following:
 
     cd <upper-dir>/<lower-dir>
 
+Creating and Removing Directories and Files
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 To make a directory, command the following:
 
 .. code-block:: bash
@@ -135,6 +62,12 @@ You can also make multiple directories using the following.
 .. code-block:: bash
 
     mkdir <dir1> <dir2> <dir3>
+
+You can remove files by executing the following command
+
+.. code:: bash
+
+    rm <filename>
 
 Removing a directory is as simple, run the following:
 
@@ -221,8 +154,6 @@ To upgrade packages that were updated, run the following:
 
 Sometimes you will need to add ``GPG`` keys to your apt sources to install certain packages, usually whatever package you are trying to install will tell you how to do it.
     
-
-
 ROS2
 ----
 
@@ -260,6 +191,100 @@ A launch file is something that will launch multiple nodes in ROS, to use a laun
     ros2 launch <package-name> <launch-file>.py
 
 Launch files will be covered in class.
+
+Building a Workspace
+^^^^^^^^^^^^^^^^^^^^
+
+To run a custom package that is written you will have to first build the workspace. To do this execute the following:
+
+.. code-block:: bash
+
+    colcon build
+
+this will essentially just copy your files over to the ``build`` , ``install`` , and ``log`` directories. Then you can source your local workspace by executing the following:
+
+.. code-block:: bash
+
+    . install/setup.bash
+
+Git
+---
+
+First you must ensure you have Git installed on your computer. If you haven't, installation instructions are available at the `Installation <installation.html>`_ page.
+
+Clone a Repo
+^^^^^^^^^^^^
+The following command will clone a repo into the working directory you are in.
+
+.. code-block:: bash
+
+    git clone <repo-url>
+
+The clone command will clone the repo into a directory with the repo name. To clone a branch within a repo, the following can be used.
+
+.. code-block:: bash
+
+    git clone --branch <branch-name> <repo-url>
+
+.. note:: ``<stuff>`` means you remove the entire thing and replace it with a single url, name or something else based on what you want to do.
+
+Changing to a Different Branch
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To change to a different branch in your local repo you can do the following:
+
+.. code-block:: bash
+
+    git checkout <branch-name>
+
+this will change your active branch. To check which branch you are on you can run the following:
+
+.. code-block:: bash
+
+    git branch
+
+Adding to your Remote Repo After Cloning 
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To add or stage changes that you have made inside your local repo, run the following command.
+
+.. code-block:: bash
+
+    git add .
+
+This will stage all changes. If you want to stage specific changes, run the following command.
+
+.. code-block:: bash
+
+    git add <path-to-file>
+
+That will stage changes in a certain directory or a certain file that was changed. After that you need to commit your changes that can be done with the following command.
+
+.. code-block:: bash
+
+    git commit -m "Message regarding your changes"
+
+This will commit your changes and now they are ready for synchronisation to your remote repo. That can be done with the following command.
+
+.. code-block:: bash
+
+    git push
+
+This will push your changes. To pull any new changes done, do the following.
+
+.. code-block:: bash
+
+    git pull
+
+To merge a branch with the main branch, you can run the following commands.
+
+.. code-block:: bash
+
+    git checkout <name-of-main-branch>
+    git merge orgin/<name-of-branch>
+    git push
+
+This is will help with collaboration there are a lot of resources for git online, I would check them out.
 
 TMUX
 ----
