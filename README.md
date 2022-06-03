@@ -5,7 +5,7 @@
 The [documentation website](https://av1tenth-docs.readthedocs.io/en/latest/) can be accessed from the link.
 
 ## Dependencies
-Below are the follow packages you will need to install on your system to build the documentation contained in this repository.
+Below are the installation commands used to install the packages required to build the documentation on your local machine.
 
 ```Bash
 sudo apt install python3-sphinx
