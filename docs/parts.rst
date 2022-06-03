@@ -12,7 +12,7 @@ Vehicle Hardware
 * Micellaneous Fastners 
   
   * `M2.5 X 10 <https://www.mcmaster.com/91292A014/>`_ 
-  * `M3 X 10 <https://www.mcmaster.com/browse-fasteners/socket-head-screws/socket-head-screws-6/18-8-stainless-steel-socket-head-screws-11/length~10-mm/thread-size~m3/>`_
+  * `M3 X 10 <https://www.mcmaster.com/91292A113/>`_
   * `4-40 X 3/4 <https://www.mcmaster.com/92196A113/>`_
   * `6-32 X 5/16 <https://www.mcmaster.com/91772A145/>`_ 
   * `2-56 X 3/16 <https://www.mcmaster.com/91772A076/>`_
@@ -49,3 +49,15 @@ Compute
 * `2 x USB-B to Micro-B (6 in) <https://www.sparkfun.com/products/13244>`_ 
 * `1 x USB-B to Mini-B (6 in) <https://www.sparkfun.com/products/13243>`_
 * `1 x Ethernet (6 in) <https://www.amazon.com/Monoprice-550MHz-Ethernet-Copper-Network/dp/B004C4ZRFI/ref=sr_1_5?crid=1EU6V2IJ2CA9F&keywords=ethernet%2Bcable%2B6%2Bin&qid=1652282033&sprefix=ethernet%2Bcable%2B6%2Bin%2Caps%2C191&sr=8-5&th=1>`_
+
+Cost
+^^^^^
+
+The total cost of this system is $786.01 to start building one car, though many parts will not need to be bought again if building more as they are sold in bulk. Those parts are as follows:
+
+* WiFi USB Module (Only need one to two to connect to theinternet, most operation will be offline)
+* Fastners (Sold in packs of 100)
+* Connectors (Bulk or Kits)
+* LiPO Chargers (Will need at least half of intended batteries to be used)
+
+10 Cars Are planned to be build, total cost (without bulk pricing and shipping) will be approximateley $6800. There are other extra costs associated with building a course, wiring etc. that have not been covered here.

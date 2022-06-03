@@ -11,10 +11,12 @@ Links
    :maxdepth: 1
 
    Assignments <assignments/assignments>
-   Sensor Information <sensor>
    Requirements <requirements>
+   Installation <installation>
+   Sensor Information <sensor>
    Tutorial Resources <tutresources>
-   Contact <contact>
+   Cheat Sheet <cheatsheet>
+   Instructor & TA Contacts <contact>
 
 .. toctree::
    :caption: Extra Information
