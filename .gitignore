@@ -41,3 +41,5 @@ docs/_static
 
 # Python compiled files
 *.pyc
+
+*.DS_store
