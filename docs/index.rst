@@ -27,7 +27,7 @@ hardware and software.
 
    Parts List <parts>
    Building the AV1tenth Car <build>
-   Code Explanations <code>
+   Code Explanations <code/code>
    
    
 
