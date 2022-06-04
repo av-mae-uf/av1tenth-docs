@@ -31,7 +31,14 @@ Odroid Installation
 You will need to download the Linux distro called `Armbian <https://www.armbian.com/>`_. 
 We are using the focal version of armbian for the Odroid N2+ which can be found `here <https://www.armbian.com/odroid-n2/>`__.
 
-You will need to switch your board into SPI mode and boot the Odroid. You will then need some esort of ISO writer, like `balenaEtcher <https://www.balena.io/etcher/>`_.
+You will need to switch your board into SPI mode and boot the Odroid. The image below shows how to do that.
+
+.. image:: images/pc_to_odroid_n2_emmc_real.jpg
+    :width: 700px
+    :align: center
+    :height: 500px
+
+You will then need some sort of ISO writer, like `balenaEtcher <https://www.balena.io/etcher/>`_.
 Once you have booted into SPI mode, you will have to enter a couple of commands to make your drive into a writeable media. First, when it boots into Petitboot
 you must select ``Exit To Shell`` . Then enter the following:
 
