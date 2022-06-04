@@ -31,6 +31,7 @@ release = '0.1'
 extensions = ['sphinx.ext.viewcode', 'sphinx.ext.graphviz',
               'recommonmark', 'sphinx_copybutton']
 
+
 source_suffix = {
     '.rst': 'restructuredtext',
     '.txt': 'restructuredtext',
@@ -43,7 +44,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', 'requirements.txt']
 
 # The master toctree document.
 master_doc = 'index'

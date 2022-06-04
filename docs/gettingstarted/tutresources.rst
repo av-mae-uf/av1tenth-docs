@@ -21,7 +21,7 @@ You need to know a couple of bash commands to run ROS2 or even python for that m
 Though, it is good to remember that Bash can do a lot more that what we will cover in the class
 
 * `Ubuntu Linux Command Line Tutorial <https://ubuntu.com/tutorials/command-line-for-beginners#1-overview>`_
-* `Linux Tutorial <https://ryanstutorials.net/linuxtutorial/commandline.php>`
+* `Linux Tutorial <https://ryanstutorials.net/linuxtutorial/commandline.php>`_
 * `Linux Command Line Cheat Sheet <https://cheatography.com/davechild/cheat-sheets/linux-command-line/>`_ (This is just a cheat sheet, but is useful tool for learning as well)
 
 ROS2
@@ -32,6 +32,6 @@ leave this here for convinience, and curiousity.
 
 * `ROS2 Tutorial <https://docs.ros.org/en/foxy/Tutorials.html>`_
 
-.. note:: We will have a comprehensive cheat sheet for all the commands you will require in ROS2 and Bash, though a lot of the python will be left to you to figure out.
+.. tip:: We have a comprehensive `cheat sheet <../assistance/cheatsheet.html>`_ for all the commands you will require in ROS2 and Bash, though a lot of the python will be left to you to figure out.
 
 
