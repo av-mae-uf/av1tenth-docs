@@ -14,27 +14,37 @@ If you want to build the car yourself for personal or other educational use, loo
    :caption: Getting Started
    :maxdepth: 1
 
-   Tutorial Resources <tutresources>
-   Requirements <requirements>
-   Installation <installation>
-   
-.. toctree::
-   :caption: Class Resources
-   :maxdepth: 1   
+   Tutorial Resources <gettingstarted/tutresources>
+   Requirements <gettingstarted/reqs>
+   Installation <gettingstarted/installation>
 
-   Assignments <assignments/assignments>
-   Sensor Information <sensor>
-   Cheat Sheet <cheatsheet>
-   Instructor & TA Contacts <contact>
-   Canvas <https://ufl.instructure.com>
-
-.. toctree::
-   :caption: Extra Information
+.. toctree:: 
+   :caption: Assignments
    :maxdepth: 1
 
-   Parts List <parts>
-   Building the AV1tenth Car <build>
-   Code Explanations <code/code>
+   Milestones <assignments/milestones/milestone>
+   Projects <assignments/projects/project>
+
+.. toctree::
+   :caption: Information
+   :maxdepth: 1   
+
+   Sensor Information <information/sensor>
+   Parts List <information/parts>
+   Building the AV1tenth Car <information/build>
+   Code Explanations <information/code/code>
+
+.. toctree::
+   :caption: Assistance
+   :maxdepth: 1
+
+   Cheat Sheet <assistance/cheatsheet>
+   Troubleshooting <assistance/troubleshoot>
+   Instructor and TA Contacts <assistance/contact>
+   Canvas <https://ufl.instructure.com>
+
+
+   
    
    
 
