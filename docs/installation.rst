@@ -1,7 +1,9 @@
 Installation
 ============
 
-Before you can go ahead and start developing or use any of our packages, you will need to install certain things. Obviously you will need to install some sort of linux platform that ideally can install from debain packages. This will be the focal distribution of Debian.
+Before you can go ahead and start developing or use any of our packages, you will need to install certain things. 
+Obviously you will need to install some sort of linux platform that ideally can install from debain packages. 
+This will be the buster distribution of Debian.
 
 ROS2 Installation and Configuration from Debian Packages
 --------------------------------------------------------
