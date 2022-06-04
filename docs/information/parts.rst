@@ -1,5 +1,5 @@
 Parts for AV1Tenth Car
-------------------------
+=======================
 
 The hardware requirements which are the chassis, electrical, sensors and computer are given below. These hardware requirements are what we use/suggest using, but other hardware can be used.
 

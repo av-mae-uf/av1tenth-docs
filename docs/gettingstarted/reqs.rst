@@ -40,7 +40,7 @@ There are several optional software packages that we like to use during developm
 * `GitHub <https://github.com/>`_ (A useful tool for collaboration and to get code onto the vehicle)
 * `GitLab <https://gitlab.com/>`_ (An alternative to GitHub)
 
-.. note::  If you need help installing anything talk to the TA's for this class. There is also a bootable drive with Ubuntu 20.04 available in the CIMAR Lab
+.. tip::  If you need help installing anything talk to the TA's for this class. There is also a bootable drive with Ubuntu 20.04 available in the CIMAR Lab
 
 Programming Requirements
 ------------------------
