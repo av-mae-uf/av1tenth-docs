@@ -4,8 +4,13 @@ Sensor Information
 RPLiDAR
 -------
 
+.. image:: images/rplidarimg.jpg
+    :width: 300px
+    :align: center
+    :height: 300px
+
 The RPLiDAR is a single beam 360 degree Light Detection and Ranging (LiDAR) sensor from `Slamtec <https://www.google.com/search?client=safari&rls=en&q=slamtec&ie=UTF-8&oe=UTF-8>`_. We are using the A1 model from Slamtec that
-has the following specefications
+has the following specifications:
 
 * 12m Range
 * 360 Degree
@@ -14,6 +19,16 @@ has the following specefications
 * Angular Resolution is 0.5 degree
 
 A picture of how the array of ranges are given is given below:
+
+.. image:: images/RPlidar.png
+    :width: 600px
+    :align: center
+    :height: 450px
+
+As seen above, the RPLiDAR ranges data starts from the -x and rotates counter-clockwise and has a 0.5 degree step size. Therefore your ``ranges[]`` array would 
+be 720 long in size. 
+
+.. note:: At this point you should know how to transform this range data to cartesian coordinates.
 
 GPS
 ---

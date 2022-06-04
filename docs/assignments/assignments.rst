@@ -2,7 +2,8 @@ Assignments
 ===========
 
 All assignments for the EML4930 AV Class are available here. The assignments will be open from day 1 and each assignment will build from the last. 
-Failure to complete one assignment will make it difficult to complete the next.
+
+.. warning:: Failure to complete one assignment will make it difficult to complete the next.
 
 .. toctree:: 
    :maxdepth: 1
