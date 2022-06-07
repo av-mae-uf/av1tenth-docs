@@ -286,6 +286,23 @@ To merge a branch with the main branch, you can run the following commands.
 
 This is will help with collaboration there are a lot of resources for git online, I would check them out.
 
+Collaboration
+^^^^^^^^^^^^^
+
+To collaborate on a project, create branches once you have edited a local repo. Try not to push to the main. Edit, test, review and then merge to main. To change and create a new branch simultaneously run the following command:
+
+.. code-block:: bash
+
+    git checkout -b <branch-name>
+
+Now you are in a new branch. Now add and commit your changes. Then to push, run the following command:
+
+.. code-block:: bash
+
+    git push --set-upstream origin <branch-name>
+
+Then up on GitHub or GitLab, create a pull request to merge to your main branch, when your team is satisfied with your code.
+
 TMUX
 ----
 
