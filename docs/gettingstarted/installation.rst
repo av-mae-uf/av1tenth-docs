@@ -146,7 +146,7 @@ Once you have these two installed, we can further install a couple of other pack
 
 .. code-block:: bash
 
-    python3 -m pip install pyerial
+    python3 -m pip install pyserial
 
 UTM Converter
 ^^^^^^^^^^^^^
