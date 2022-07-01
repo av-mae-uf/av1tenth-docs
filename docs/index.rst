@@ -32,6 +32,7 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
    Parts List <information/parts>
    Building the AV1tenth Car <information/build>
    Code Explanations <information/code/code>
+   uf_nav code Documentation <information/uf_nav_doc/doc1>
 
 .. toctree::
    :caption: Assistance
