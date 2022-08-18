@@ -10,5 +10,5 @@ what the sensors are outputting, or what the controller requires to input.
 
    Motor Driver <motordriver>
    GPS Publisher <gpspub>
-   IMU Publisher <imupub>
-   Speed Publisher <speedpub>
+   Odometry Publisher <odompub>
+   

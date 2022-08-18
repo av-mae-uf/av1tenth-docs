@@ -27,7 +27,8 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
 .. toctree::
    :caption: Information
    :maxdepth: 1   
-
+   
+   Theoretical Information <information/theoryinfo/theoryinfo>
    Sensor Information <information/sensor>
    Parts List <information/parts>
    Building the AV1tenth Car <information/build>
