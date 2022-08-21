@@ -100,7 +100,7 @@ the velocity of the car in m/s. Then you can use the equation
 
 .. math::
 
-    \dot{\phi} = \dfrac{V}{R}
+    \dot{\psi} = \dfrac{V}{R}
 
 This will go in the the angular part of your ``Twist`` message that you will be using, while :math:`V` will go into the linear part of your message.
 It'll be important to understand the limits of the radius of curvature as you can base you controllers off of them.
