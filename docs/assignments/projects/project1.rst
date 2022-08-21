@@ -88,7 +88,7 @@ To do this look at the following picture
     :alt: Bicycle Model Diagram
     :width: 75%
 
-This will be the basis of what will be input into the `Twist <twist.html>`_ message that will be the main mode of conveying motion to the ``motor_controller`` `node <../code/motordriver.html>`_.
+This will be the basis of what will be input into the `Twist <../../information/theoryinfo/twist.html>`_ message that will be the main mode of conveying motion to the ``motor_controller`` `node <../../information/code/motordriver.html>`_.
 To do this you will first need to input both your wheelbase and steering angle into the equation
 
 .. math::
