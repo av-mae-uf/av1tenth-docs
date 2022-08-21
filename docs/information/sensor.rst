@@ -28,7 +28,6 @@ A picture of how the array of ranges are given is given below:
 As seen above, the RPLiDAR ranges data starts from the -x and rotates counter-clockwise and has a 0.5 degree step size. Therefore your ``ranges[]`` array would 
 be 720 long in size. 
 
-.. note:: At this point you should know how to transform this range data to cartesian coordinates.
 
 GPS
 ---
