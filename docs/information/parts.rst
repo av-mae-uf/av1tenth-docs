@@ -23,7 +23,7 @@ Sensors and Controllers
 * `NEO-6M GPS Unit <https://www.amazon.com/HiLetgo-GY-NEO6MV2-Controller-Ceramic-Antenna/dp/B01D1D0F5M/ref=sr_1_4?keywords=neo+6m+gps&qid=1654207881&sprefix=NEO6m+%2Caps%2C139&sr=8-4>`_ 
 * `Optical Encoder <https://www.amazon.com/DAOKI-Measuring-Optocoupler-Interrupter-Detection/dp/B081W4KMHC/?_encoding=UTF8&pd_rd_w=gJQbb&content-id=amzn1.sym.bbb6bbd8-d236-47cb-b42f-734cb0cacc1f&pf_rd_p=bbb6bbd8-d236-47cb-b42f-734cb0cacc1f&pf_rd_r=ZP02N35GX704JD00GBGH&pd_rd_wg=KaeJ1&pd_rd_r=5f7cd57c-e783-417a-b8a7-61e530c5cf28&ref_=pd_gw_ci_mcx_mi>`_
 * `IMU <https://www.amazon.com/dp/B01N03WKDV?ref_=cm_sw_r_cp_ud_dp_D7DSSYP6HGDE6WMQPZHM>`_
-*  `Pololu Micro Maestro <https://www.pololu.com/product/1350>`_
+* `Pololu Micro Maestro <https://www.pololu.com/product/1350>`_
 
 Electrical
 ^^^^^^^^^^

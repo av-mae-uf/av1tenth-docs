@@ -7,11 +7,10 @@ Here you can find all the theoretical information pertaining to the class and th
    :maxdepth: 1
    :caption: Pages
 
-   Vehicle Kinematics <veh_kin>
    Twist Message <twist>
-   Ackermann Steering <acker>
+   Bicycle Kinematic Model <cyckinem>
    Route Representation and Navigation <routes/routesrep>
    PID Controllers <pid>
-   Quaternion <quaternion>
+   Pose Message <pose>
 
 
