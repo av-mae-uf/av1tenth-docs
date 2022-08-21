@@ -9,4 +9,4 @@ Here you can find the projects that are required to be completed. The projects w
    :maxdepth: 1
    :caption: List of Projects
 
-   Project 1: Wall Following <project1>
+   Project 1: Open-Loop Control (Xbox Controller Mapping) <project1>
