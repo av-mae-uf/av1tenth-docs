@@ -7,7 +7,7 @@ how a twist works, which at this point should be covered in class. You can also 
 
 This assignment or milestone will be to map your controller to motion on your car. This will be an individual project, though you have been put into groups. This milestone has the following pertinent information.
 
-* **Due Date:** September 23rd, 2022
+* **Due Date:** September 30th, 2022
 * **Points:** 100
 * ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command`` (pub)
 * ROS 2 Messages: ``Joy`` (in ``sensor_msgs``), ``Twist`` (in ``geometry_msgs``) and Int16 (in ``std_msgs``)
@@ -15,57 +15,24 @@ This assignment or milestone will be to map your controller to motion on your ca
   
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node that maps controller keys etc. to a Twist and publishes to ``vehicle_command`` topic. The names of topics are important, writing the wrong name will result in a 
-**25% point** deduction. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
-if it publishes data correctly and you car functions you will get full points. You can get creative, we will leave the mappings of your car up to you.
+ROS 2 node that maps controller keys etc. to a Twist and publishes to ``vehicle_command`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
+if it publishes data correctly and you car functions you will get full points. You can get creative, we will leave the mappings of your car up to you. A full list of deliverables are given below
+
+* ROS 2 Publisher Node publishing topics ``vehicle_command`` and ``led_color``
+* ``setup.py`` file filled out
+* ``package.xml`` file filled out properly
+* A launch file that launches the ``joy_node`` , ``motor_controller`` node and the controller node that you have created.
+* Parameters in your launch file or ``.yaml`` file
+* This is a qualitative assessment so no submissions are needed. You will need to show us your completed node running on your car by the due date.
+  
+.. warning:: The names of topics are important, writing the wrong name will result in a **25% point** deduction.
 
 Joystick Mapping
 ^^^^^^^^^^^^^^^^
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-|Axes/Button |Controller Button, Trigger or Joystick|Range/Values | Other Info                                      |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[0]    | Left Thumbstick-Horizontal           |[-1,1]       | 0 Centered, 1 Left                              |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[1]    | Left Thumbstick-Vertical             |[-1,1]       | 0 Centered, 1 Up                                |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[2]    | Left Trigger                         |[-1,1]       | 1 when unpressed                                |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[3]    | Right Thumbstick-Horizontal          |[-1,1]       | 0 Centered, 1 Left                              |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[4]    | Right Thumbstick-Vertical            |[-1,1]       | 0 Centered, 1 Up                                |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[5]    | Right Trigger                        |[-1,1]       | 1 when unpressed                                |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[6]    | Horizontal D-Pad                     |[1],[0],[-1] | 1 pressed left, -1 pressed                      |
-+            |                                      |             |                                                 |
-|            |                                      |             | right, 0 not pressed                            |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| axes[7]    | Vertical D-Pad                       |[1],[0],[-1] | 1 pressed up, -1 pressed                        |
-+            |                                      |             |                                                 |
-|            |                                      |             | down, 0 not pressed                             |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[0] | "A"                                  |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[1] | "B"                                  |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[2] | "X"                                  |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[3] | "Y"                                  |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[4] | Left Bumper                          |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[5] | Right Bumper                         |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[6] | "Back" Button                        |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[7] | "Start" Button                       |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[8] | Xbox Button                          |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[9] | Left Thumbstick Press                |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
-| buttons[10]| Right Thumbstick Press               |[0], [1]     | 1 when pressed                                  |
-+------------+--------------------------------------+-------------+-------------------------------------------------+
+To figure out what the mappings of the controller are to the message you can ``echo`` a topic to figure out how to do this. You should be able to do this by now.
+The structure of the message would be 7 sets of ``axes[#]`` and 10 sets of buttons ``buttons[#]``. It should tell you what button or axes are mapped when you press a certain button and also the number and range is.
+
+You would ``echo`` the topic ``joy``.
 
 .. note:: Button presses exhibit a bouncing behavior, multiple message will be sent for a single button press. Additional buttons are also available past Button[5]
 
@@ -73,7 +40,7 @@ To map the buttons etc. you would have to map them as such
 
 .. code-block:: python
 
-    Joy().buttons[1] = #something.
+    Joy().buttons[#] = #something.
 
 This will allow you take the data coming in from the ``joy`` topic and publish a Twist.
 
@@ -106,6 +73,12 @@ This will go in the the angular part of your ``Twist`` message that you will be 
 It'll be important to understand the limits of the radius of curvature as you can base you controllers off of them.
 
 For more information you can check out the page on `Bicycle Kinematics <../../information/theoryinfo/cyckinem.html>`_.
+
+Parameters
+^^^^^^^^^^
+You will also need to parameterize one button that functions as a stop button. Basically you need to be able to change the value of the button through your launch file or ``.yaml`` configuration file.
+When we ask you need to be able to easily change the button say from a ``X`` to a ``Xbox`` button. We will ask you to show this is working. If you want to do something else instead of a simple stop button your can 
+parameterize a button for your lights.
 
 Lights Operation
 ^^^^^^^^^^^^^^^^

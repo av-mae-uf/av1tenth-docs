@@ -1,12 +1,12 @@
 Milestone 2: Creating a ROS 2 Node for Converting Data
 ======================================================
 
-By now you should have gone through the basics of creating a node in ROS 2 in class and milestone. As the most prominent form of ROS 2 node used in this class will be a publisher and subscriber, 
-an assignment covering that would be useful.
+By now you should have gone through the basics of creating a node in ROS 2 in class and milestone 1. As the most prominent form of ROS 2 node used in this class will be a publisher and subscriber, 
+an assignment covering that with a full complex message structure would be useful.
 
 This assignment or milestone will be to complete a full ROS 2 node on your own that converts LiDAR radial distance measurements into the cartesian form. This milestone has the following pertinent information
 
-* **Due Date:** TBD (after Python learning has been completed)
+* **Due Date:** September 23rd, 2022 (after Python learning has been completed)
 * **Points:** 20
 * ROS 2 Topics: scan (sub) and cart_coord (pub)
 * ROS 2 Messages: ``LaserScan`` (in ``sensor_msgs``), ``PointCloud`` and ``Point32`` (both in ``geometry_msgs``)
@@ -18,9 +18,16 @@ This assignment or milestone will be to complete a full ROS 2 node on your own t
 
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node that converts the LaserScan message to PointCloud and publish a ``cart_coord`` topic. The names of topics are important, writing the wrong name will result in a 
-**25% point** deduction. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
-if it publishes data correctly you will get full points.
+ROS 2 node that converts the LaserScan message to PointCloud and publish a ``cart_coord`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
+if it publishes data correctly you will get full points. A full list of deliverables are given below
+
+* ROS 2 Publisher Node publishing topic ``cart_coord``
+* A launch file that will play the ROS 2 bag file and run your node
+* ``setup.py`` file filled out
+* ``package.xml`` file filled out properly
+* .zip file containing entire package (We should be able to download the file and put it into ROS 2 and run it without changing anything)
+  
+.. warning:: The names of topics are important, writing the wrong name will result in a **25% point** deduction.
 
 LiDAR Data
 ^^^^^^^^^^

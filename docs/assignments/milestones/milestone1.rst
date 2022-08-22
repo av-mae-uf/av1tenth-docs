@@ -6,7 +6,7 @@ ROS 2 node that outputs the quotient for a divisor of 5 but only when the remain
 
 This assignment or milestone will be to complete a simple full ROS 2 node on your own. This milestone has the following pertinent information.
 
-* **Due Date:** TBD (after Python learning and beginning ROS 2)
+* **Due Date:** September 16th, 2022 (after Python learning and beginning ROS 2)
 * **Points:** 20
 * ROS 2 Topics: ``rand_num`` (sub) and ``quotient`` (pub)
 * ROS 2 Messages: ``Int16`` (Part of std_msgs)
@@ -14,8 +14,14 @@ This assignment or milestone will be to complete a simple full ROS 2 node on you
 
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node that publishes the quotient in the ``quotient`` topic. The names of topics are important, writing the wrong name will result in a 
-**25% point** deduction. Grading will be based on performance of the node, if it publishes data correctly you will get full points.
+ROS 2 node that publishes the quotient in the ``quotient`` topic. Grading will be based on performance of the node, if it publishes data correctly you will get full points. A full list of deliverables are given below
+
+* ROS 2 Publisher Node publishing topic ``quotient``
+* ``setup.py`` file filled out
+* ``package.xml`` file filled out properly
+* .zip file containing entire package (We should be able to download the file and put it into ROS 2 and run it without changing anything)
+  
+.. warning:: The names of topics are important, writing the wrong name will result in a **25% point** deduction.
 
 Quotient, Divisor, Dividend and Remainder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
