@@ -23,6 +23,26 @@ ROS 2 node that publishes the quotient in the ``quotient`` topic. Grading will b
   
 .. warning:: The names of topics are important, writing the wrong name will result in a **25% point** deduction.
 
+Grading Rubric
+^^^^^^^^^^^^^^
+Grading for this assignment will be based on the following rubric
+
++--------------------------------------------------------+---------+
+| Criteria                                               | Points  |
++========================================================+=========+
+| Colcon Build succeeds in compiling the package         | 4 Pts   |
++--------------------------------------------------------+---------+
+| The subscribe is accomplished successfully             | 4 Pts   |
++--------------------------------------------------------+---------+
+| The logic of your code makes sense and can be followed | 4 Pts   |
++--------------------------------------------------------+---------+
+|The publish is accomplished successfully                | 4 Pts   |
++--------------------------------------------------------+---------+
+|All code and config files are working and well commented| 4 Pts   |
++--------------------------------------------------------+---------+
+| **Total**                                              | 20 Pts  |
++--------------------------------------------------------+---------+
+
 Quotient, Divisor, Dividend and Remainder
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Hopefully this information is redundant, but it is here any way. The equation to be used is as follows
