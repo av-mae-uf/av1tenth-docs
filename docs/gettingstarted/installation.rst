@@ -139,6 +139,14 @@ To install ``pip``:
 
     sudo apt install python3-pip
 
+NumPy
+^^^^^
+You will also need NumPy for various things. They have arrays, array operations, etc. and are useful for efficient computing. To install this you can run the command
+
+.. code-block:: bash
+
+    python3 -m pip install numpy
+
 PySerial
 ^^^^^^^^
 
