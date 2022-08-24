@@ -184,6 +184,35 @@ If this does not work, go to the `Visual Studio Code website <https://code.visua
 
 This should be all you need to run everything that we have provided.
 
+UDEV Rules
+----------
+
+To allow us to communicate with our USB devices easily, we have set up some UDEV rules to make sure the ports are interchanged on startup. To do this on your car you need to run the following commands
+
+.. code-block:: bash
+
+    sudo nano /etc/udev/rules.d/99-sensor.rules
+
+Then you need to paste in the following rules
+
+.. code-block:: 
+
+    KERNELS=="1-1.3", SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0666", GROUP="dialout", SYMLINK+="sensor/imu"
+
+    KERNELS=="1-1.4", SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0666", GROUP="dialout", SYMLINK+="sensor/lidar"
+
+    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}==“239a”, ATTRS{idProduct}==“80cb”, MODE="0666", GROUP="dialout", SYMLINK+="sensor/encoder”
+
+
+Then run the following to set them up.
+
+.. code-block:: bash
+
+    sudo udevadm control —reload-rules && sudo service dev restart && sudo udevadm trigger
+
+
+You will need to replug all your usb ports or just reboot your Odroid for these to work.
+
 
 
 
