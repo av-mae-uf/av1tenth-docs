@@ -10,7 +10,7 @@ This assignment or milestone will be to complete a simple full ROS 2 node on you
 * **Points:** 20
 * ROS 2 Topics: ``rand_num`` (sub) and ``quotient`` (pub)
 * ROS 2 Messages: ``Int16`` (Part of std_msgs)
-* Publisher can be accessed `here <https://github.com/>`_
+* Publisher can be accessed :download:`here <../files/rand_num.zip>`
 
 Deliverables
 ^^^^^^^^^^^^
