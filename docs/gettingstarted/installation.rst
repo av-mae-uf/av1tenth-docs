@@ -208,7 +208,7 @@ Then run the following to set them up.
 
 .. code-block:: bash
 
-    sudo udevadm control -\-reload-rules && sudo service udev restart && sudo udevadm trigger
+    sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm trigger
 
 
 You will need to replug all your usb ports or just reboot your Odroid for these to work.
