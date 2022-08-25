@@ -34,6 +34,7 @@ Software Used
 * `Python3 <https://www.python.org/downloads/>`_
 * `Gazebo <https://gazebosim.org/home>`_
 
+To dual boot your computer you can use this `tutorial <https://linuxconfig.org/how-to-install-ubuntu-20-04-alongside-windows-10-dual-boot>`_.
 There are several optional software packages that we like to use during development in our lab.
 
 * `Visual Studio Code <https://code.visualstudio.com/>`_
