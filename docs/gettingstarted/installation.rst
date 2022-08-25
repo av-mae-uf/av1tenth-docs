@@ -5,6 +5,99 @@ Before you can go ahead and start developing or use any of our packages, you wil
 Obviously you will need to install some sort of linux platform that ideally can install from debain packages. 
 This will be the buster distribution of Debian.
 
+Python Installation and Additional Packages Required
+-----------------------------------------------------
+
+For some of our packages you may require certain extra packages. This section will take you through all the required packages.
+
+First ensure pip is installed and python3 is installed. This can be done through the following commands. For ``python3``:
+
+Python & pip
+^^^^^^^^^^^^
+
+.. code-block:: bash
+
+    sudo apt install python3
+
+To install ``pip``:
+
+.. code-block:: bash
+
+    sudo apt install python3-pip
+
+NumPy
+^^^^^
+You will also need NumPy for various things. They have arrays, array operations, etc. and are useful for efficient computing. To install this you can run the command
+
+.. code-block:: bash
+
+    python3 -m pip install numpy
+
+PySerial
+^^^^^^^^
+
+Once you have these two installed, we can further install a couple of other packages that we require. First we will install PySerial, this is the package that allows us to communicate serially with connected devices.
+
+.. code-block:: bash
+
+    python3 -m pip install pyserial
+
+UTM Converter
+^^^^^^^^^^^^^
+
+We use a python installed UTM converter to convert from the Latitude and Longitude data we get from the GPS to UTM Easting and Northing. It can be installed by the following command.
+
+.. code-block:: bash
+
+    python3 -m pip install utm
+
+Git Installation and Configuration
+-----------------------------------
+
+To install git you will need to open the terminal and enter the following commands.
+
+.. code-block:: bash
+
+    sudo apt install git
+
+This command will install git from the APT tool usually installed in most linux distros by default. Once installed you will need to configure a few things. To do this run the following commands:
+
+.. code-block:: bash
+
+    git config --global user.name "FirstName LastName"
+    git config --global user.email "email@email.com"
+
+This should mostly setup whatever you need till the first time you push a repository to whichever Git distributor you are using. 
+Then it will ask for a user name and password, generally we use GitHub which requires a Personal Access Token which you can generate
+under Settings -> Developer Settings -> and Personal Access Tokens. To ensure you don't need to keep entering this on your computer you can run
+the following command
+
+.. code-block:: bash 
+
+    git config --global credential.helper store
+
+This will store your access token with the local git so you don't have to keep re-entering it.
+
+
+Visual Studio Code Installation
+-------------------------------
+
+To install vscode you can run the following command, though sometimes you have to download it from their website and run another command which is given after.
+
+.. code-block:: bash
+
+    snap install code
+
+If this does not work, go to the `Visual Studio Code website <https://code.visualstudio.com/Download>`_ and download the linux package. Then you can run the follwing command to install it.
+
+.. code-block:: bash
+
+    cd Downloads && sudo dpkg -i <package_name.deb>
+
+.. note:: Please change the ``package_name.deb`` to what ever your package is named.
+
+This should be all you need to run everything that we have provided.
+
 ROS2 Installation and Configuration from Debian Packages
 --------------------------------------------------------
 
@@ -90,99 +183,6 @@ Though if you want it to be sourced everytime you open a terminal, run the follo
 .. code-block:: bash
     
     echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
-
-Git Installation and Configuration
------------------------------------
-
-To install git you will need to open the terminal and enter the following commands.
-
-.. code-block:: bash
-
-    sudo apt install git
-
-This command will install git from the APT tool usually installed in most linux distros by default. Once installed you will need to configure a few things. To do this run the following commands:
-
-.. code-block:: bash
-
-    git config --global user.name "FirstName LastName"
-    git config --global user.email "email@email.com"
-
-This should mostly setup whatever you need till the first time you push a repository to whichever Git distributor you are using. 
-Then it will ask for a user name and password, generally we use GitHub which requires a Personal Access Token which you can generate
-under Settings -> Developer Settings -> and Personal Access Tokens. To ensure you don't need to keep entering this on your computer you can run
-the following command
-
-.. code-block:: bash 
-
-    git config --global credential.helper store
-
-This will store your access token with the local git so you don't have to keep re-entering it.
-
-
-Additional Packages Required
-----------------------------
-
-For some of our packages you may require certain extra packages. This section will take you through all the required packages.
-
-First ensure pip is installed and python3 is installed. This can be done through the following commands. For ``python3``:
-
-Python & pip
-^^^^^^^^^^^^
-
-.. code-block:: bash
-
-    sudo apt install python3
-
-To install ``pip``:
-
-.. code-block:: bash
-
-    sudo apt install python3-pip
-
-NumPy
-^^^^^
-You will also need NumPy for various things. They have arrays, array operations, etc. and are useful for efficient computing. To install this you can run the command
-
-.. code-block:: bash
-
-    python3 -m pip install numpy
-
-PySerial
-^^^^^^^^
-
-Once you have these two installed, we can further install a couple of other packages that we require. First we will install PySerial, this is the package that allows us to communicate serially with connected devices.
-
-.. code-block:: bash
-
-    python3 -m pip install pyserial
-
-UTM Converter
-^^^^^^^^^^^^^
-
-We use a python installed UTM converter to convert from the Latitude and Longitude data we get from the GPS to UTM Easting and Northing. It can be installed by the following command.
-
-.. code-block:: bash
-
-    python3 -m pip install utm
-
-Visual Studio Code
-^^^^^^^^^^^^^^^^^^
-
-To install vscode you can run the following command, though sometimes you have to download it from their website and run another command which is given after.
-
-.. code-block:: bash
-
-    snap install code
-
-If this does not work, go to the `Visual Studio Code website <https://code.visualstudio.com/Download>`_ and download the linux package. Then you can run the follwing command to install it.
-
-.. code-block:: bash
-
-    cd Downloads && sudo dpkg -i <package_name.deb>
-
-.. note:: Please change the ``package_name.deb`` to what ever your package is named.
-
-This should be all you need to run everything that we have provided.
 
 UDEV Rules
 ----------

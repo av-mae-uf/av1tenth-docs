@@ -7,7 +7,7 @@ If you are a student in the class, start at the top with `tutorial resources <ge
 Don't be discouraged if you are confused, we will assist you through completing this class. ROS2 is confusing. It takes sometime to fully 
 understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.html>`_ does a decent job of explaining what is going on.
 
-.. tip:: If you want to build the car yourself for personal or other educational use, look at the information section. The `parts <information/parts.html>`_ section outlines every piece of hardware required and build instructions are available `here <information/build.html>`_.
+.. tip:: If you want to build the car yourself for personal or other educational use, look at the information section. The `parts <information/parts.html>`_ section outlines every piece of hardware required.
 
 .. toctree::
    :caption: Getting Started
@@ -30,18 +30,22 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
    
    Theoretical Information <information/theoryinfo/theoryinfo>
    Sensor Information <information/sensor>
-   Parts List <information/parts>
-   Building the AV1tenth Car <information/build>
+   Parts List <information/parts>   
    Code Explanations <information/code/code>
 
 .. toctree::
    :caption: Assistance
    :maxdepth: 1
-
+   
    Cheat Sheet <assistance/cheatsheet>
    Troubleshooting <assistance/troubleshoot>
    Instructor and TA Contacts <assistance/contact>
    Canvas <https://ufl.instructure.com>
+
+
+..
+   Building the AV1tenth Car <information/build>
+
 
 
    
