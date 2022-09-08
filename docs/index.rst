@@ -39,7 +39,7 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
    
    Cheat Sheet <assistance/cheatsheet>
    Troubleshooting <assistance/troubleshoot>
-   Instructor and TA Contacts <assistance/contact>
+   Instructor and TA Contacts and Office Hours <assistance/contact>
    Canvas <https://ufl.instructure.com>
 
 

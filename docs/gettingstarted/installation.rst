@@ -5,10 +5,19 @@ Before you can go ahead and start developing or use any of our packages, you wil
 Obviously you will need to install some sort of linux platform that ideally can install from debain packages. 
 This will be the buster distribution of Debian.
 
+Ubuntu Dual Boot
+
+
 Python Installation and Additional Packages Required
 -----------------------------------------------------
 
 For some of our packages you may require certain extra packages. This section will take you through all the required packages.
+
+Please run the following commands first before doing anything else.
+
+.. code-block:: bash
+
+    sudo apt update && sudo apt upgrade
 
 First ensure pip is installed and python3 is installed. This can be done through the following commands. For ``python3``:
 
