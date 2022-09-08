@@ -7,7 +7,7 @@ You can contact the instructors or the TA's Through `Canvas <https://ufl.instruc
 | Names      | Carl Crane                           | Patrick Neal              |  Aditya Penumarti           |
 +============+======================================+===========================+=============================+
 |  Pictures  |.. image:: images/crane-carl.jpg      | .. image:: images/neap.png| .. image:: images/apenu.jpg |
-|            |    :width: 180px                     |     :width: 160px         |     :width: 160px           |
+|            |    :width: 180px                     |     :width: 200px         |     :width: 160px           |
 |            |    :align: center                    |     :align: center        |     :align: center          |
 |            |    :height: 200px                    |     :height: 200px        |     :height: 160px          |
 |            |                                      |                           |                             |
@@ -18,9 +18,10 @@ You can contact the instructors or the TA's Through `Canvas <https://ufl.instruc
 +------------+--------------------------------------+---------------------------+-----------------------------+
 |   E-Mail   | carl.crane@gmail.com                 |    neap@ufl.edu           | apenumarti@ufl.edu          |
 +------------+--------------------------------------+---------------------------+-----------------------------+
-|Office Hours|Wed. 9:30AM - 10:30AM Zoom & MAE-B 326|    N/A                    |MWF 9AM - 1:30PM in MAE-B 131|
+|Office Hours|Wed. 9:30AM - 10:30AM                 |    N/A                    |MWF 9AM - 1:30PM             |
++            |                                      |                           |                             |
+|            |Zoom & MAE-B 326                      |                           |in MAE-B 131                 |
 +------------+--------------------------------------+---------------------------+-----------------------------+
-
 
 
 
