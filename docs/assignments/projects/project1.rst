@@ -13,6 +13,12 @@ This assignment or milestone will be to map your controller to motion on your ca
 * ROS 2 Messages: ``Joy`` (in ``sensor_msgs``), ``Twist`` (in ``geometry_msgs``) and Int16 (in ``std_msgs``)
 * A launch file to launch the ``motor_controller`` node and the ``joy_node`` node has been given but you can run the node with a normal ``ros2 run`` command.
   
+To run this on your care you will need to git clone the appropriate driver package that we have created for the car. You will need to clone
+this into the appropriate workspace source folder, something like ``class_ws/src``. That can be done by using the following command
+
+.. code-block:: bash
+    git clone https://github.com/av-mae-uf/av1tenth.git
+  
 Deliverables
 ^^^^^^^^^^^^
 ROS 2 node that maps controller keys etc. to a Twist and publishes to ``vehicle_command`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
