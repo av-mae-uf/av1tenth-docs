@@ -3,9 +3,18 @@ Installation
 
 Before you can go ahead and start developing or use any of our packages, you will need to install certain things. 
 Obviously you will need to install some sort of linux platform that ideally can install from debain packages. 
-This will be the buster distribution of Debian.
 
-`Ubuntu Dual Boot <https://medium.com/linuxforeveryone/how-to-install-ubuntu-20-04-and-dual-boot-alongside-windows-10-323a85271a73>`_
+Ubuntu Installation
+-------------------
+You can follow the instructions at `Ubuntu Dual Boot <https://medium.com/linuxforeveryone/how-to-install-ubuntu-20-04-and-dual-boot-alongside-windows-10-323a85271a73>`_ to dual boot your computer. If you are having trouble doing this come talk to the TA's, we can help you install Ubuntu.
+
+Common Issues
+^^^^^^^^^^^^^
+
+* Disable RST - Many manufacturers now put your storage into RAID mode instead of the standard AHCI mode. You can switch this in your BIOS, but there is a risk of bricking your windoes installation. We can install Ubuntu on a usb drive for you, you will need to have a minimum of a 128 GB drive.
+* Disable Secure Boot - You can disable secure boot from your computers bios, should be under security or boot settings.
+* Can't Boot into Bootable Drive - You've likely not created your bootable disk properly, if this problem persists, see the TA's, they have bootable drives available for use.
+
 
 
 Python Installation and Additional Packages Required
