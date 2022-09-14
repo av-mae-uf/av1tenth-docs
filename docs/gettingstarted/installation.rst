@@ -142,6 +142,9 @@ You will need to add the ROS 2 apt repositories to your system. To do so, first 
 .. code-block:: bash
 
     sudo apt update && sudo apt install curl gnupg2 lsb-release
+    
+.. code-block:: bash
+
     sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 And the add the repository to your sources list:
@@ -192,6 +195,15 @@ Though if you want it to be sourced everytime you open a terminal, run the follo
 .. code-block:: bash
     
     echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+Installing Colcon
+^^^^^^^^^^^^^^^^^
+
+Sometimes when ROS2 is installed, it doesn't install ``colcon`` the package builder. To install this you can run the following command.
+
+.. code-block:: python
+
+sudo apt install python3-colcon-common-extensions
+
 
 UDEV Rules
 ----------
