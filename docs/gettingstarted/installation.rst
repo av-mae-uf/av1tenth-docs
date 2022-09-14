@@ -5,7 +5,7 @@ Before you can go ahead and start developing or use any of our packages, you wil
 Obviously you will need to install some sort of linux platform that ideally can install from debain packages. 
 This will be the buster distribution of Debian.
 
-Ubuntu Dual Boot
+`Ubuntu Dual Boot <https://medium.com/linuxforeveryone/how-to-install-ubuntu-20-04-and-dual-boot-alongside-windows-10-323a85271a73>`_
 
 
 Python Installation and Additional Packages Required
@@ -200,10 +200,9 @@ Installing Colcon
 
 Sometimes when ROS2 is installed, it doesn't install ``colcon`` the package builder. To install this you can run the following command.
 
-.. code-block:: python
+.. code-block:: bash
 
-sudo apt install python3-colcon-common-extensions
-
+    sudo apt install python3-colcon-common-extensions
 
 UDEV Rules
 ----------
