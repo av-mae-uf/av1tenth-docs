@@ -37,6 +37,7 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
    :caption: Assistance
    :maxdepth: 1
    
+   Videos <assistance/videos>
    Cheat Sheet <assistance/cheatsheet>
    Troubleshooting <assistance/troubleshoot>
    Instructor and TA Contacts and Office Hours <assistance/contact>
