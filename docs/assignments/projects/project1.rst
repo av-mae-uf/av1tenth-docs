@@ -7,7 +7,7 @@ how a twist works, which at this point should be covered in class. You can also 
 
 This assignment or milestone will be to map your controller to motion on your car. This will be an individual project, though you have been put into groups. This milestone has the following pertinent information.
 
-* **Due Date:** September 30th, 2022
+* **Due Date:** October 7th, 2022
 * **Points:** 100
 * ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command`` (pub)
 * ROS 2 Messages: ``Joy`` (in ``sensor_msgs``), ``Twist`` (in ``geometry_msgs``) and Int16 (in ``std_msgs``)

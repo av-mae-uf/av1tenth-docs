@@ -6,7 +6,7 @@ ROS 2 node that outputs the quotient for a divisor of 5 but only when the remain
 
 This assignment or milestone will be to complete a simple full ROS 2 node on your own. This milestone has the following pertinent information.
 
-* **Due Date:** September 16th, 2022 (after Python learning and beginning ROS 2)
+* **Due Date:** September 23rd, 2022 (after Python learning and beginning ROS 2)
 * **Points:** 20
 * ROS 2 Topics: ``rand_num`` (sub) and ``quotient`` (pub)
 * ROS 2 Messages: ``Int16`` (Part of std_msgs)
