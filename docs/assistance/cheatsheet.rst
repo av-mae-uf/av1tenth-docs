@@ -201,11 +201,24 @@ To run a custom package that is written you will have to first build the workspa
 
     colcon build
 
-this will essentially just copy your files over to the ``build`` , ``install`` , and ``log`` directories. Then you can source your local workspace by executing the following:
+You can also build singular packages using this command
+
+.. code-block:: bash
+
+    colcon build --packages-select <pkg_name>
+
+This will essentially just copy your files over to the ``build`` , ``install`` , and ``log`` directories. Then you can source your local workspace by executing the following:
 
 .. code-block:: bash
 
     . install/setup.bash
+
+or
+
+.. code-block:: bash
+
+    source install/setup.bash
+
 
 Git
 ---
