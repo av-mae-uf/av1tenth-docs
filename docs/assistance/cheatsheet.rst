@@ -11,8 +11,14 @@ There is a lot you can do with the terminal in linux, we will just cover the bas
 
 Listing and Changing Directories 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+To find which directory you are in you can run the command
 
-The simplest thing you can do is list all files and directories in your current directory.
+.. code-block:: bash
+
+    pwd
+
+
+You can do is list all files and directories in your current directory.
 
 .. code-block:: bash
 
