@@ -50,7 +50,7 @@ Hopefully this information is redundant, but it is here any way. The equation to
 .. math::
     \dfrac{x}{y} = z
 
-Where z is the dividend, y is the divisor and z is the quotient. That's pretty much all the info you need.
+Where x is the dividend, y is the divisor and z is the quotient. That's pretty much all the info you need.
 
 Logic
 ^^^^^
