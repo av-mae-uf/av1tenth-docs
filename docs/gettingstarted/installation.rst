@@ -226,9 +226,9 @@ Then you need to paste in the following rules
 
 .. code-block:: bash
 
-    KERNELS=="1-1.3", SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0666", GROUP="dialout", SYMLINK+="sensor/imu"
+    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="1456", MODE="0666", GROUP="dialout", SYMLINK+="sensor/imu"
 
-    KERNELS=="1-1.4", SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0666", GROUP="dialout", SYMLINK+="sensor/lidar"
+    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="sensor/lidar"
 
     SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}==“239a”, ATTRS{idProduct}==“80cb”, MODE="0666", GROUP="dialout", SYMLINK+="sensor/encoder”
 
