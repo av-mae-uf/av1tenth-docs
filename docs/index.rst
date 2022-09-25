@@ -20,7 +20,8 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
 .. toctree:: 
    :caption: Assignments
    :maxdepth: 1
-
+   
+   In Class <assignments/inclass/inclasses>
    Milestones <assignments/milestones/milestone>
    Projects <assignments/projects/project>
 

@@ -224,7 +224,7 @@ To allow us to communicate with our USB devices easily, we have set up some UDEV
 
 Then you need to paste in the following rules
 
-.. code-block:: 
+.. code-block:: bash
 
     KERNELS=="1-1.3", SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", MODE="0666", GROUP="dialout", SYMLINK+="sensor/imu"
 
