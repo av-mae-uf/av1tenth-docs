@@ -12,6 +12,13 @@ into a workspace of your choice, under an src folder.
 
     git clone https://github.com/av-mae-uf/av1tenth.git
 
+If you have completed the cloning process in the previous class, update your repository, which should be done within the av1tenth folder. You can do that with the following command:
+
+.. code-block:: bash
+
+    git pull
+    
+
 Once that has completed cloning, you can build the package.
 
 .. warning:: You must do this in the workspace directory, not the src folder nor the av1tenth folder. This will break things.
