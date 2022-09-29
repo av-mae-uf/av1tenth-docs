@@ -230,7 +230,7 @@ Then you need to paste in the following rules
 
     SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="sensor/lidar"
 
-    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}==“239a”, ATTRS{idProduct}==“80cb”, MODE="0666", GROUP="dialout", SYMLINK+="sensor/encoder”
+    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="80cb", MODE="0666", GROUP="dialout", SYMLINK+="sensor/encoder”
 
 
 Then run the following to set them up.
