@@ -204,6 +204,7 @@ Though if you want it to be sourced everytime you open a terminal, run the follo
 .. code-block:: bash
     
     echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+    
 Installing Colcon
 ^^^^^^^^^^^^^^^^^
 

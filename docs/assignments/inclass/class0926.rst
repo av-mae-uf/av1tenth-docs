@@ -53,9 +53,10 @@ If you'd like to do a lidar demo, you can run the launch files provided. First r
 
 Then to run rviz and see a live demo of the lidar, you would run the following launch file on your computer:
 
-.. code-block::
+.. code-block:: bash
 
     ros2 launch lidar_launch lidar_rviz_launch.py
+
 
 .. note:: You need to have the av1tenth package in a workspace, with the workspace sourced on your computer **NOT THE CAR** to run the rviz launch file.
     

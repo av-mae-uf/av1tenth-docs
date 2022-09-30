@@ -1,5 +1,11 @@
 Home
 ====
+
+.. image:: IMG_1888.jpeg
+   :width: 640px
+   :height: 283px
+   :align: center
+
 Welcome to EML4930: Autonomous Vehicles documentation. This site will serve as a main page for the class. All information to be successful in the class will be posted up here, including all assignments, milestones and projects. Explore the sections below to learn more about the
 hardware and software. 
 
