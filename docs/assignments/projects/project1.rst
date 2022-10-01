@@ -9,7 +9,7 @@ This assignment or milestone will be to map your controller to motion on your ca
 
 * **Due Date:** October 7th, 2022
 * **Points:** 100
-* ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command`` (pub)
+* ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command_twist`` (pub)
 * ROS 2 Messages: ``Joy`` (in ``sensor_msgs``), ``Twist`` (in ``geometry_msgs``) and Int16 (in ``std_msgs``)
 * A launch file to launch the ``motor_controller`` node and the ``joy_node`` node has been given but you can run the node with a normal ``ros2 run`` command.
   
@@ -22,10 +22,10 @@ this into the appropriate workspace source folder, something like ``class_ws/src
 
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node that maps controller keys etc. to a Twist and publishes to ``vehicle_command`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
+ROS 2 node that maps controller keys etc. to a Twist and publishes to ``vehicle_command_twist`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
 if it publishes data correctly and you car functions you will get full points. You can get creative, we will leave the mappings of your car up to you. A full list of deliverables are given below
 
-* ROS 2 Publisher Node publishing topics ``vehicle_command`` and ``led_color``
+* ROS 2 Publisher Node publishing topics ``vehicle_command_twist`` and ``led_color``
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
 * A launch file that launches the ``joy_node`` , ``motor_controller`` node and the controller node that you have created.
