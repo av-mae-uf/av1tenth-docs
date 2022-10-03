@@ -19,10 +19,10 @@ You can contact the instructors or the TA's Through `Canvas <https://ufl.instruc
 |   E-Mail                                     | carl.crane@gmail.com                 |    neap@ufl.edu           | apenumarti@ufl.edu                   |
 +----------------------------------------------+--------------------------------------+---------------------------+--------------------------------------+
 |Office Hours                                  |**W** 9:30AM - 10:30AM                |    N/A                    |**MWF** 9AM-10AM in MAE-B 131         |
-+                                              |                                      |                           |                                      |
++                                              |                                      |                           |**MW** 11AM-12PM in MAE-B 131         |
 |                                              |Zoom & MAE-B 326                      |                           |                                      |
 +----------------------------------------------+--------------------------------------+---------------------------+--------------------------------------+
-|**Extended Hours**                            |                                      |                           |**MW** 10AM-1:30PM & 3PM-4PM          |
+|**Extended Hours**                            |                                      |                           |**MW** 12PM-1:30PM & 3PM-4PM          |
 +                                              |                                      |                           |                                      |
 |**(Might be busy**                            |                                      |                           |**F** 12PM-1:30PM & 3PM-4PM           |
 +                                              |                                      |                           |                                      |
