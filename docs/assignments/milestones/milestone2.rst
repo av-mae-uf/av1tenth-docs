@@ -9,7 +9,7 @@ This assignment or milestone will be to complete a full ROS 2 node on your own t
 * **Due Date:** October 3rd, 2022
 * **Points:** 20
 * ROS 2 Topics: scan (sub) and cart_coord (pub)
-* ROS 2 Messages: ``LaserScan`` (in ``sensor_msgs``), ``PointCloud`` and ``Point32`` (both in ``geometry_msgs``)
+* ROS 2 Messages: ``LaserScan``  ``PointCloud``(both in ``sensor_msgs``), and ``Point32`` (in ``geometry_msgs``)
 * A launch file to launch the lidar topic has been give in the ``av1tenth`` repo but there should also be a ros2 bag file in the ``ros2bag`` folder. 
 
 First you wil need to clone the av1tenth repo into a workspace.
