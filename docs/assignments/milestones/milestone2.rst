@@ -31,7 +31,6 @@ ROS 2 node that converts the LaserScan message to PointCloud and publish a ``car
 if it publishes data correctly you will get full points. A full list of deliverables are given below
 
 * ROS 2 Publisher Node publishing topic ``cart_coord``
-* A launch file that will play the ROS 2 bag file and run your node
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
 * .zip file containing entire package (We should be able to download the file and put it into ROS 2 and run it without changing anything)
