@@ -2,15 +2,15 @@ Design of Basic Navigation System in ROS 2
 ==========================================
 Figure 1 shows a diagram of five ROS 2 nodes that can accomplish basic gps navigation.  Note that nodes are shown as ellipses, topics and services are shown as lines with arrows, standard messages are shown in black text, custom interface messages are shown in blue text, and parameters are shown in green text. A summary of what the nodes do is as follows:
 
-Route Pose Provider
-^^^^^^^^^^^^^^^^^^^^^
-The first node, route_pose_provider, reads a list of desired vehicle poses from a file.  These vehicle poses form the basis of a route that the vehicle is to follow.  The file name is passed into the node as a parameter.   Other parameters used to initialize the node are *want_loop* which is a boolean value and *state_defs* which is a string.  When *want_loop* is False, it indicates that the vehicle is to stop at the last pose in the list.  When True, the vehicle is to continue from the last pose in the list to the first pose and repeat the entire path over again.  Further, each pose is assigned an interger *state* value and the parameter *state_defs* allows the user to input any desired text to explain what the state values mean.
-
 .. figure:: images/gps_nav2.jpg
     :alt: ROS 2 Nodes and Message Definitions to Implement GPS Navigation
     :width: 100%
 
     Figure 1: ROS 2 Nodes and Message Definitions to Implement Basic Navigations
+
+Route Pose Provider
+^^^^^^^^^^^^^^^^^^^^^
+The first node, route_pose_provider, reads a list of desired vehicle poses from a file.  These vehicle poses form the basis of a route that the vehicle is to follow.  The file name is passed into the node as a parameter.   Other parameters used to initialize the node are *want_loop* which is a boolean value and *state_defs* which is a string.  When *want_loop* is False, it indicates that the vehicle is to stop at the last pose in the list.  When True, the vehicle is to continue from the last pose in the list to the first pose and repeat the entire path over again.  Further, each pose is assigned an interger *state* value and the parameter *state_defs* allows the user to input any desired text to explain what the state values mean.
 
 A client/server relationship is established with the goal_pose_creator node.  When the goal_pose_creator node requests the information, 
 the ``route_pose_provider`` node returns the message specified in the ``GetRoutePoints.srv`` definition.  A ``geometry_msgs:Pose`` message defines each position and 
