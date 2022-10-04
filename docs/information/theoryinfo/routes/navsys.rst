@@ -26,12 +26,14 @@ For planar motion, the quaternion :math:`q = w + a i + b j + c k` is defined in 
 .. math:: 
 
     w = \cos{\dfrac{\theta}{2}}, a=0, b=0, c=\sin{\dfrac{\theta}{2}} \tag{14}
-
-Vehicle Simulator
-^^^^^^^^^^^^^^^^^
-The node ``vehicle_simulator`` updates the vehicle pose based on the radius of curvature and speed data that it receives in the message 
-defined by ``VehicleCommand.msg``.  The current vehicle pose is continually published via the ``kubota_pose`` topic which uses a standard 
-``geometry_msgs:Pose`` message.
+    
+Goal Pose Creator
+^^^^^^^^^^^^^^
+The ``goal_pose_creator`` node is the most complicated node in this system.  It requests the list of poses from the ``route_pose_provider``
+node and then creates the array of route segments.  The structure used to define a route structure is shown in Figure 2.  The 
+default values for the route segment parameters :math:`w_1` and :math:`w_2` are set equal to 1.  The default values for :math:`L_1` and :math:`L_2` are set equal to ¼ 
+the distance between the pose locations that define the route segment, i.e. points :math:`P_0` and :math:`P_3`.  Note that the length of the path segment 
+is also calculated for use in future calculations.  The coordinates of the points and the length of the path segment are written in units of meters.
 
 .. figure:: images/Fig2_4.png
     :alt: Data Structure to Represent a Route Segment
@@ -39,13 +41,6 @@ defined by ``VehicleCommand.msg``.  The current vehicle pose is continually publ
 
     Figure 2: Data Structure to Represent a Route Segment
 
-Carrot Creator
-^^^^^^^^^^^^^^
-The ``carrot_creator`` node is the most complicated node in this system.  It requests the list of poses from the ``route_point_generator``
-node and then creates the array of route segments.  The structure used to define a route structure is shown in Figure 2.  The 
-default values for the route segment parameters :math:`w_1` and :math:`w_2` are set equal to 1.  The default values for :math:`L_1` and :math:`L_2` are set equal to ¼ 
-the distance between the pose locations that define the route segment, i.e. points :math:`P_0` and :math:`P_3`.  Note that the length of the path segment 
-is also calculated for use in future calculations.  The coordinates of the points and the length of the path segment are written in units of meters.
 
 During vehicle motion, after the ``carrot_creator`` node has calculated the entire array of route segments, it receives the current 
 vehicle pose from the ``vehicle_simulator`` node.  The next task is to determine the point on the first route segment (segment number 0) 
@@ -64,6 +59,12 @@ obtain the :math:`x` and :math:`y` coordinates at the look ahead pose and :ref:`
 
 The ``look-ahead-pose`` is calculated by the ``carrot_creator`` node each time it receives a pose message from the ``vehicle_simulator`` node. 
 This data, along with a desired speed and state, is published as the ``current_carrot`` topic. 
+
+Vehicle Simulator
+^^^^^^^^^^^^^^^^^
+The node ``vehicle_simulator`` updates the vehicle pose based on the radius of curvature and speed data that it receives in the message 
+defined by ``VehicleCommand.msg``.  The current vehicle pose is continually published via the ``kubota_pose`` topic which uses a standard 
+``geometry_msgs:Pose`` message.
 
 Vehicle Controller
 ^^^^^^^^^^^^^^^^^^
