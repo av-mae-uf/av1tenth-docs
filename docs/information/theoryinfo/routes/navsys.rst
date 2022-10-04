@@ -1,12 +1,12 @@
 Design of Basic Navigation System in ROS 2
 ==========================================
-Figure 1 shows a diagram of four ROS 2 nodes that can accomplish basic navigation.  A summary of what the nodes do is as follows:
+Figure 1 shows a diagram of four ROS 2 nodes that can accomplish basic gps navigation.  Note that nodes are shown as ellipses, topics and services are shown as lines with arrows, standard messages are shown in black text, custom interface messages are shown in blue text, and parameters are shown in green text. A summary of what the nodes do is as follows:
 
-Route Point Generator
+Route Pose Provider
 ^^^^^^^^^^^^^^^^^^^^^
-The first node, route_point_generator, reads a list of desired vehicle poses from a file.  These vehicle poses form the basis of a route that 
-the vehicle is to follow.  A client/server relationship is established with the carrot_creator node.  When the carrot_creator node requests the information, 
-the ``route_point_generator`` node returns the message specified in the ``GetRoutePoints.srv`` definition.  A ``geometry_msgs:Pose`` message defines each position and 
+The first node, route_pose_provider, reads a list of desired vehicle poses from a file.  The file name is passed into the node as a parameter..  These vehicle poses form the basis of a route that 
+the vehicle is to follow.  A client/server relationship is established with the goal_pose_creator node.  When the goal_pose_creator node requests the information, 
+the ``route_pose_provider`` node returns the message specified in the ``GetRoutePoints.srv`` definition.  A ``geometry_msgs:Pose`` message defines each position and 
 orientation.  Also a user-defined ‘state’ value can be set for each pose.  The units for the position data are in meters and the position data 
 can be expressed in UTM (Easting/Northing) coordinates.  Vehicle orientation at each pose is defined by a heading angle where the
 :math:`x` axis (East) is an orientation of :math:`0^{\circ}` and a direction along the :math:`y` axis (North) is an orientation of :math:`90^{\circ}`.  
