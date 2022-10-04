@@ -48,26 +48,20 @@ which is closest to the current vehicle position.  The simplest way to calculate
 determining the :math:`x`, :math:`y`` coordinate on the route segment for each value of :math:`u`.  The value of :math:`u` that corresponds to the closest point is recorded as well as the number of the route segment that it is on.  
 
 The next task of the ``goal_pose_creator`` node is to calculate the pose (position and heading) of a pose on the route segment that 
-is some specified distance, named the ``look-ahead-distance``, from the closest point.  The value for the look-ahead-distance is selected by the user.  
-The value is increased as the speed of the vehicle increases in order to maintain stability in control.  
-The ``look-ahead-distance`` in the current application is 8 m as the speed of the vehicle is assumed to be approximately 8 m/sec (18 mph).  
+is some specified distance, named the ``look-ahead-distance``, from the closest point.  The value for the look-ahead-distance is communicated to the ''goal_pose_creator'' from the ''motion_spec_provider'' along with the desired speed for the vehicle to traverse the path.    
+The ``look-ahead-distance`` in the current application is 8 m as the speed of the vehicle is assumed to be approximately 2 m/sec. The value is typically increased as the speed of the vehicle increases in order to maintain stability in control.
+
 To calculate the pose on the route segment that is the ``look-ahead-distance`` ahead of the closest point, the value of u is increased from 
 the value at the closest point until the ``look-ahead-distance`` is reached.  It may be the case that the ``look-ahead`` pose is on a different route 
 segment than the closest point and the segment number and value of :math:`u` for the ``look-ahead`` pose is recorded.  Equations :ref:`(2) <target to eq2>` and :ref:`(3) <target to eq3>` are used to 
 obtain the :math:`x` and :math:`y` coordinates at the look ahead pose and :ref:`(6) <target to eq6>` through :ref:`(10) <target to eq10>` are used to obtain the heading angle at the look ahead pose.
 
-The ``look-ahead-pose`` is calculated by the ``carrot_creator`` node each time it receives a pose message from the ``vehicle_simulator`` node. 
-This data, along with a desired speed and state, is published as the ``current_carrot`` topic. 
-
-Vehicle Simulator
-^^^^^^^^^^^^^^^^^
-The node ``vehicle_simulator`` updates the vehicle pose based on the radius of curvature and speed data that it receives in the message 
-defined by ``VehicleCommand.msg``.  The current vehicle pose is continually published via the ``kubota_pose`` topic which uses a standard 
-``geometry_msgs:Pose`` message.
+The ``look-ahead-pose`` is calculated by the ``goal_pose_creator`` node each time it receives a pose message from the ``vehicle_simulator`` node. 
+This data, along with a desired speed and state, is published as the ``current_goal_pose`` topic. 
 
 Vehicle Controller
 ^^^^^^^^^^^^^^^^^^
-The ``vehicle_controller`` node receives ``current_carrot`` topic from the ``carrot_creator`` node together with the current 
+The ``vehicle_controller`` node receives the ``current_goal_pose`` topic from the ``goal_pose_creator`` node together with the current 
 vehicle pose that is published by the ``vehicle_simulator`` node.  The responsibility of the ``vehicle_controller`` node 
 is to determine the "best" steering angle at each instant to move from the current pose to the goal pose.  This is 
 accomplished by creating a new route segment where the point :math:`P_0` is the current vehicle location and :math:`P_3` is at the 
@@ -98,3 +92,9 @@ calculated as 5.8 m. The positive value indicates that the vehicle is to turn le
     :width: 50%
 
     Figure 4: Heading and Curvature along Route Segment
+    
+Vehicle Simulator
+^^^^^^^^^^^^^^^^^
+The node ``vehicle_simulator`` updates the vehicle pose based on the twist data that it receives in the vehicle_command topic.  
+The current vehicle pose is continually published via the ``vehicle_pose`` topic which uses a standard 
+``geometry_msgs:PoseStamped`` message.
