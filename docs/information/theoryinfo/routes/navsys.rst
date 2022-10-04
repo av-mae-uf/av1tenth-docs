@@ -1,6 +1,6 @@
 Design of Basic Navigation System in ROS 2
 ==========================================
-Figure 1 shows a diagram of four ROS 2 nodes that can accomplish basic gps navigation.  Note that nodes are shown as ellipses, topics and services are shown as lines with arrows, standard messages are shown in black text, custom interface messages are shown in blue text, and parameters are shown in green text. A summary of what the nodes do is as follows:
+Figure 1 shows a diagram of five ROS 2 nodes that can accomplish basic gps navigation.  Note that nodes are shown as ellipses, topics and services are shown as lines with arrows, standard messages are shown in black text, custom interface messages are shown in blue text, and parameters are shown in green text. A summary of what the nodes do is as follows:
 
 Route Pose Provider
 ^^^^^^^^^^^^^^^^^^^^^
