@@ -27,10 +27,10 @@ For planar motion, the quaternion :math:`q = w + a i + b j + c k` is defined in 
 
     w = \cos{\dfrac{\theta}{2}}, a=0, b=0, c=\sin{\dfrac{\theta}{2}} \tag{14}
     
-Goal Pose Creator
+Goal Pose Creator and Motion Spec Provider
 ^^^^^^^^^^^^^^
 The ``goal_pose_creator`` node is the most complicated node in this system.  It requests the list of poses from the ``route_pose_provider``
-node and then creates the array of route segments.  The structure used to define a route structure is shown in Figure 2.  The 
+node and then creates the array of route segments.  The structure used to define a route segment is shown in Figure 2.  The 
 default values for the route segment parameters :math:`w_1` and :math:`w_2` are set equal to 1.  The default values for :math:`L_1` and :math:`L_2` are set equal to ¼ 
 the distance between the pose locations that define the route segment, i.e. points :math:`P_0` and :math:`P_3`.  Note that the length of the path segment 
 is also calculated for use in future calculations.  The coordinates of the points and the length of the path segment are written in units of meters.
@@ -42,13 +42,12 @@ is also calculated for use in future calculations.  The coordinates of the point
     Figure 2: Data Structure to Represent a Route Segment
 
 
-During vehicle motion, after the ``carrot_creator`` node has calculated the entire array of route segments, it receives the current 
+During vehicle motion, after the ``goal_pose_creator`` node has calculated the entire array of route segments, it receives the current 
 vehicle pose from the ``vehicle_simulator`` node.  The next task is to determine the point on the first route segment (segment number 0) 
 which is closest to the current vehicle position.  The simplest way to calculate this is to let :math:`u` vary from 0 to 1 in small steps and 
-determining the :math:`x`, :math:`y`` coordinate on the route segment for each value of :math:`u`.  The value of :math:`u` that corresponds to the closest point is recorded 
-as well as the number of the route segment that it is on.  
+determining the :math:`x`, :math:`y`` coordinate on the route segment for each value of :math:`u`.  The value of :math:`u` that corresponds to the closest point is recorded as well as the number of the route segment that it is on.  
 
-The next task of the ``carrot_creator`` node is to calculate the pose (position and heading) of a pose on the route segment that 
+The next task of the ``goal_pose_creator`` node is to calculate the pose (position and heading) of a pose on the route segment that 
 is some specified distance, named the ``look-ahead-distance``, from the closest point.  The value for the look-ahead-distance is selected by the user.  
 The value is increased as the speed of the vehicle increases in order to maintain stability in control.  
 The ``look-ahead-distance`` in the current application is 8 m as the speed of the vehicle is assumed to be approximately 8 m/sec (18 mph).  
