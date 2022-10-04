@@ -4,8 +4,9 @@ Figure 1 shows a diagram of five ROS 2 nodes that can accomplish basic gps navig
 
 Route Pose Provider
 ^^^^^^^^^^^^^^^^^^^^^
-The first node, route_pose_provider, reads a list of desired vehicle poses from a file.  The file name is passed into the node as a parameter..  These vehicle poses form the basis of a route that 
-the vehicle is to follow.  A client/server relationship is established with the goal_pose_creator node.  When the goal_pose_creator node requests the information, 
+The first node, route_pose_provider, reads a list of desired vehicle poses from a file.  These vehicle poses form the basis of a route that the vehicle is to follow.  The file name is passed into the node as a parameter.   Other parameters used to initialize the node are *want_loop* which is a boolean value and *state_defs* which is a string.  When *want_loop* is False, it indicates that the vehicle is to stop at the last pose in the list.  When True, the vehicle is to continue from the last pose in the list to the first pose and repeat the entire path over again.  Further, each pose is assigned an interger *state* value and the parameter *state_defs* allows the user to input any desired text to explain what the state values mean.
+
+A client/server relationship is established with the goal_pose_creator node.  When the goal_pose_creator node requests the information, 
 the ``route_pose_provider`` node returns the message specified in the ``GetRoutePoints.srv`` definition.  A ``geometry_msgs:Pose`` message defines each position and 
 orientation.  Also a user-defined ‘state’ value can be set for each pose.  The units for the position data are in meters and the position data 
 can be expressed in UTM (Easting/Northing) coordinates.  Vehicle orientation at each pose is defined by a heading angle where the
