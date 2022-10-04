@@ -12,8 +12,8 @@ can be expressed in UTM (Easting/Northing) coordinates.  Vehicle orientation at 
 :math:`x` axis (East) is an orientation of :math:`0^{\circ}` and a direction along the :math:`y` axis (North) is an orientation of :math:`90^{\circ}`.  
 A ``geometry_msgs:Pose`` message is used to define each pose and the heading angle is communicated as a quaternion.  
 
-.. figure:: images/Fig1_4.png
-    :alt: ROS 2 Nodes and Message Definitions to Implement Basic Navigation
+.. figure:: images/gps_nav2.jpg
+    :alt: ROS 2 Nodes and Message Definitions to Implement GPS Navigation
     :width: 100%
 
     Figure 1: ROS 2 Nodes and Message Definitions to Implement Basic Navigations
