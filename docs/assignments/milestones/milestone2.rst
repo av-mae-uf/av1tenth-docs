@@ -6,7 +6,7 @@ an assignment covering that with a full complex message structure would be usefu
 
 This assignment or milestone will be to complete a full ROS 2 node on your own that converts LiDAR radial distance measurements into the cartesian form. This milestone has the following pertinent information
 
-* **Due Date:** October 3rd, 2022
+* **Due Date:** October 5th, 2022
 * **Points:** 20
 * ROS 2 Topics: scan (sub) and cart_coord (pub)
 * ROS 2 Messages: ``LaserScan`` , ``PointCloud`` (both in ``sensor_msgs``), and ``Point32`` (in ``geometry_msgs``)
