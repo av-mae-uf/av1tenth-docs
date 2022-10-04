@@ -76,7 +76,9 @@ point :math:`(10, 10) m`, with a heading of :math:`45^{\circ}`.  The values for 
 The control points :math:`P_1` and :math:`P_2` are calculated and displayed along with the route as :math:`u` varies from 0 to 1.
 
 Once the route segment to move to the goal pose is defined, the radius of curvature of the path is evaluated at
-the start of the path, i.e. :math:`u = 0`.  Figure 4 shows the heading and curvature  along the route segment as :math:`u` 
+the start of the path, i.e. :math:`u = 0`.  This value is used to calculate the twist for the vehicle at this instant which is sent to the ''vehicle_simulator'' node.  A fraction of a second later, the ''vehicle_simulator'' node sends a new vehicle pose and the ''goal_pose_creator'' nodes sends an updated current goal pose.  The ''vehicle_controller'' node creates a new third-order curve from its current pose to the goal pose and the radius of curvature at the start of the curve is used to calculate a new twist to send to the ''vehicle_simulator'' node.
+
+Figure 4 shows the heading and curvature  along the route segment as :math:`u` 
 varies from 0 to 1.  The radius of curvature value when :math:`u =0` is the value that is used to command the steering of the 
 vehicle at each instant.  As an example, the radius of curvature at the start of the route segment shown in Figure 3 is 
 calculated as 5.8 m. The positive value indicates that the vehicle is to turn left.
