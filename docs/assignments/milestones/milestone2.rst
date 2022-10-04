@@ -9,7 +9,7 @@ This assignment or milestone will be to complete a full ROS 2 node on your own t
 * **Due Date:** October 3rd, 2022
 * **Points:** 20
 * ROS 2 Topics: scan (sub) and cart_coord (pub)
-* ROS 2 Messages: ``LaserScan``  ``PointCloud``(both in ``sensor_msgs``), and ``Point32`` (in ``geometry_msgs``)
+* ROS 2 Messages: ``LaserScan`` , ``PointCloud`` (both in ``sensor_msgs``), and ``Point32`` (in ``geometry_msgs``)
 * A launch file to launch the lidar topic has been give in the ``av1tenth`` repo but there should also be a ros2 bag file in the ``ros2bag`` folder. 
 
 First you wil need to clone the av1tenth repo into a workspace.
@@ -23,7 +23,7 @@ Then you can play the bag file with the following command.
   
 .. code-block:: bash
 
-    ros2 bag play -l filename
+    ros2 bag play -l milestone2_bagfile
 
 Deliverables
 ^^^^^^^^^^^^
@@ -52,7 +52,9 @@ The ranges are stored in the form of distances in meters. To parse through the r
 
 Here on our Lidar, distances are given from the :math:`-x` or :math:`180^{\circ}` from the red arrow and move in a counter clock-wise direction. Therefore the first distance will point straight back on your car.
 There are 720 data points, therefore the angular resolution of the LiDAR is half a degree. Therefore to parse through the data if you want to get :math:`90^{\circ}` degrees or :math:`180^{\circ}` from the blue line you need to 
-look for the data point :math:`[180]`. 
+look for the data point :math:`[180]`.
+
+.. warning:: Remember that the data is 180 degrees out of phase, so you will have to account for that.
 
 Converting Math
 ^^^^^^^^^^^^^^^
@@ -79,6 +81,18 @@ You should know how to iterate over an array by now so that will not be covered,
 .. code-block:: python
 
     append(var)
+
+Visualizing the ``LaserScan`` and ``PointCloud``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To visualize both the LaserScan and the PointCloud, you should be able to launch a file from your workspace that does this. The following command will launch Rviz2
+
+.. code-block:: bash
+
+    ros2 launch lidar_launch lidar_rviz_launch.py
+
+.. note:: You will have to pull the av1tenth repo, build it and source it before this works.
+
 
 That's pretty much all you need to be successful in completing this milestone. If you have any problems `contact the TA's or Instructor <../../assistance/contact.html>`_.
 
