@@ -6,7 +6,7 @@ mapping keys, joysticks and triggers on your Xbox controller to a throttle effor
 
 This assignment or milestone will be to map your controller to motion on your car. This will be a group project, though you have been put into groups. This milestone has the following pertinent information.
 
-* **Due Date:** October 7th, 2022
+* **Due Date:** October 14th, 2022
 * **Points:** 100
 * ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command_angle`` (pub)
 * ROS 2 Messages: ``Joy`` (in ``sensor_msgs``), ``VehCmd`` (in ``drive_interfaces.msg``) and Int16 (in ``std_msgs``)
