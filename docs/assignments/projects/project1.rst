@@ -23,7 +23,7 @@ If you have cloned it previously, run a :code:`git pull` to update the repositor
 
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node that maps controller keys etc. to a Twist and publishes to ``vehicle_command_angle`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
+ROS 2 node that maps controller keys etc. to a throttle effort and steering angle and published to ``vehicle_command_angle`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
 if it publishes data correctly and you car functions you will get full points. You can get creative, we will leave the mappings of your car up to you. A full list of deliverables are given below
 
 * ROS 2 Publisher Node publishing topics ``vehicle_command_angle`` and ``led_color``
