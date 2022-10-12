@@ -48,7 +48,7 @@ To map the buttons etc. you would have to map them as such
 
 .. code-block:: python
 
-    Joy().buttons[#] = #something.
+    Joy.buttons[#] = #something.
 
 This will allow you take the data coming in from the ``joy`` topic and publish a Twist.
 
