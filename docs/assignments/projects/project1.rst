@@ -23,14 +23,14 @@ If you have cloned it previously, run a :code:`git pull` to update the repositor
 
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node that maps controller keys etc. to a Twist and publishes to ``vehicle_command_angle`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
+ROS 2 node that maps controller keys etc. to a throttle effort and steering angle and published to ``vehicle_command_angle`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
 if it publishes data correctly and you car functions you will get full points. You can get creative, we will leave the mappings of your car up to you. A full list of deliverables are given below
 
 * ROS 2 Publisher Node publishing topics ``vehicle_command_angle`` and ``led_color``
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
-* A launch file that launches the ``joy_node`` , ``motor_controller`` node and the controller node that you have created.
-* Parameters in your launch file or ``.yaml`` file
+* A launch file that launches the ``joy_node`` , ``motor_controller`` node and the controller node that you have created. **(OPTIONAL)**
+* Parameters in your launch file or ``.yaml`` file **(OPTIONAL)**
 * This is a qualitative assessment so no submissions are needed. You will need to show us your completed node running on your car by the due date.
   
 .. warning:: The names of topics are important, writing the wrong name will result in a **25% point** deduction.
@@ -48,7 +48,7 @@ To map the buttons etc. you would have to map them as such
 
 .. code-block:: python
 
-    Joy().buttons[#] = #something.
+    Joy.buttons[#] = #something.
 
 This will allow you take the data coming in from the ``joy`` topic and publish a Twist.
 
@@ -62,12 +62,6 @@ will be between -45 and 45. -45 is turning to the left and 45 is right. A negati
 
 Later on you will be using a twist for consistency, the function of that can be found on the  page on `Bicycle Kinematics <../../information/theoryinfo/cyckinem.html>`_.
 
-Parameters
-^^^^^^^^^^
-You will also need to parameterize one button that functions as a stop button. Basically you need to be able to change the value of the button through your launch file or ``.yaml`` configuration file.
-When we ask you need to be able to easily change the button say from a ``X`` to a ``Xbox`` button. We will ask you to show this is working. If you want to do something else instead of a simple stop button your can 
-parameterize a button for your lights.
-
 Lights Operation
 ^^^^^^^^^^^^^^^^
 
@@ -75,8 +69,14 @@ To operate the lights on board you will need an additional publisher on a timer 
 you can activate the yellow and the red colors, but the green color has been locked into being on the safe mode. To do this you need to send an integer 1 or 2 with 1 being yellow and 2 being red.
 You can make these lights blink, or alternate or something creative if you'd like! You will need to have those operate in some form to get full points.
 
-Launch File
-^^^^^^^^^^^
+Parameters **(OPTIONAL)**
+^^^^^^^^^^^^^^^^^^^^^^^^^
+You will also need to parameterize one button that functions as a stop button. Basically you need to be able to change the value of the button through your launch file or ``.yaml`` configuration file.
+When we ask you need to be able to easily change the button say from a ``X`` to a ``Xbox`` button. We will ask you to show this is working. If you want to do something else instead of a simple stop button your can 
+parameterize a button for your lights.
+
+Launch File **(OPTIONAL)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To manage parameters and easily launch nodes, a launch file can be used. A launch file can essentially allow you run multiple nodes at the same time through one terminal window,
 and also allow you to change parameters in certain nodes. One parameter you might need to change is the neutral point of the car, in the case it does not drive straight. An example launch file with the motor_controller
