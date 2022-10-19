@@ -8,4 +8,5 @@ We will store any pertinent information to help you succeed in in class activiti
    :caption: Classes
 
    Class Sept 26: Car Demo <class0926>
+   Class Oct 19: GPS Bag <class1019>
    
