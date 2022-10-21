@@ -134,24 +134,6 @@ To install ROS2 through debian packages is quite simple, if you wish to install 
 
 .. warning:: If you install ROS2 Foxy through building from source, we will provide no support or help for any issues you run into as they can be so varied and is difficult to be informed on all of them.
 
-Set Locale
-^^^^^^^^^^
-
-Make sure you have a locale which supports ``UTF-8``.
-If you are in a minimal environment (such as a docker container), the locale may be something minimal like ``POSIX``.
-We test with the following settings. However, it should be fine if you're using a different UTF-8 supported locale.
-
-.. code-block:: bash
-
-   locale  # check for UTF-8
-
-   sudo apt update && sudo apt install locales
-   sudo locale-gen en_US en_US.UTF-8
-   sudo update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
-   export LANG=en_US.UTF-8
-
-   locale  # verify settings
-
 Setup Sources
 ^^^^^^^^^^^^^
 
@@ -192,7 +174,13 @@ Desktop Install (Recommended): ROS, RViz, demos, tutorials.
 
     sudo apt install ros-foxy-desktop
 
-That's pretty much it, all base packages are now installed. We do use a certain package to comminucate with the RPLiDAR, that can be installed using the following command:
+Install Colcon.
+
+.. code-block:: bash
+
+    sudo apt install python3-colcon-common-extensions
+
+That's pretty much it, all base packages are now installed. We do use a certain package to communiucate with the RPLiDAR, that can be installed using the following command:
 
 .. code-block:: bash
 
@@ -214,14 +202,6 @@ Though if you want it to be sourced everytime you open a terminal, run the follo
     
     echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
     
-Installing Colcon
-^^^^^^^^^^^^^^^^^
-
-Sometimes when ROS2 is installed, it doesn't install ``colcon`` the package builder. To install this you can run the following command.
-
-.. code-block:: bash
-
-    sudo apt install python3-colcon-common-extensions
 
 UDEV Rules
 ----------
