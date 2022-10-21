@@ -37,7 +37,7 @@ Python & pip
 
     sudo apt install python3
 
-To install ``pip``:
+To install ``pip3``:
 
 .. code-block:: bash
 
