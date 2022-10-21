@@ -242,6 +242,7 @@ Then you need to paste in the following rules
 
     SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="80cb", MODE="0666", GROUP="dialout", SYMLINK+="sensor/encoder"
 
+    SUBSYSTEMS=="tty", KERNEL=="ttyS1" ACTION=="add", MODE="0666", GROUP="dialout", SYMLINK+="sensor/gps"
 
 Then run the following to set them up.
 
