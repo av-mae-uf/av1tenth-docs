@@ -69,6 +69,15 @@ We use a python installed UTM converter to convert from the Latitude and Longitu
 
     python3 -m pip install utm
 
+Adafruit GPS Library
+^^^^^^^^^^^^^^^^^^^^
+
+An adafruit gps library is used to interface with the gps module that is onboard the car.
+
+.. code-block:: bash
+    
+    python3 -m pip install adafruit-circuitpython-gps
+
 Git Installation and Configuration
 -----------------------------------
 
