@@ -14,7 +14,7 @@ A route segment will be defined by specifying the three-dimensional coordinates 
 
 .. math:: 
 
-    p(u) = \dfrac {(1-u)^3 P_0 + 3u(1-8u)^2 w_1 P_1 + 3u^2 (1-u)w_2 P_2 + u^3 P_3} {(1-u)^3 + 3u(1-u)^2 w_1 +3u^2 (1-u) w_2 + u^3} \label{1} \tag{1}
+    p(u) = \dfrac {(1-u)^3 P_0 + 3u(1-u)^2 w_1 P_1 + 3u^2 (1-u)w_2 P_2 + u^3 P_3} {(1-u)^3 + 3u(1-u)^2 w_1 +3u^2 (1-u) w_2 + u^3} \label{1} \tag{1}
 
 
 

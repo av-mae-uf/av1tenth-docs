@@ -11,4 +11,5 @@ Milestone information for the EML4930 AV Class are available here. The assignmen
 
    Milestone 1: Creating a Simple ROS 2 Node (Pub & Sub) <milestone1>
    Milestone 2: Creating a ROS 2 Node for Converting Data <milestone2>
+   Milestone 3: Processing Bag Data <milestone3>
    
