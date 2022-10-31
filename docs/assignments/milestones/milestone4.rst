@@ -99,7 +99,7 @@ Testing the Speed Controller
 To easily test the speed controller, map buttons to have set speeds, ideally the buttons will set a throttle percentage of 10%, 20%, 30% etc. to test out your controller.
 We will show you how to test out your controller live and also how plot the data after bagging it. You will need to publish the value set_point under VehCmd.msg to make this possible.
 You can also disable the limiter in the motor_controller node to test out higher speeds, by setting a parameter in a launch file. The easiest way to test this out
-will be on your cars. Come around to MAE-B 131 during `office hours or extended hours <../../assistance/contact>`_. We do not think we'll have time to test out
+will be on your cars. Come around to MAE-B 131 during `office hours or extended hours <../../assistance/contact.html>`_. We do not think we'll have time to test out
 during class at the moment, but this can change.
 
 Launch and Setup Files to Change Parameters
