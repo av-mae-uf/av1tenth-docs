@@ -25,7 +25,7 @@ math used is given below,
 
 .. math::
 
-    \dot{x}_max = \dfrac{N(2 \pi R)}{60} ,
+    \dot{x}_{max} = \dfrac{N(2 \pi R)}{60} ,
 
 where :math:`N` is the revolutions per minute (here 585 RPM), :math:`R` is the radius of the wheel (here .12 m). So now you can find out what the corresponding Odometry
 throttle effort is using percentage calculations with the max velocity. 
