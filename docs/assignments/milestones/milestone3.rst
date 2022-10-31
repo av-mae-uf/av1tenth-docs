@@ -3,7 +3,7 @@ Milestone 3: Processing Bag Data
 
 This assignment covers working on processing your bag data that you collected and plotting the GPS data in a graph and in Google Earth submitting a PDF.
 
-.. note:: We have a couple of bag files that we have created with team names in the av1tenth repo under ``bag_files`` if you weren't able to collect your bag file.
+.. note:: We have a couple of bag files that we have created in the av1tenth repo under ``ros2bag/GPS_Processing_BagFiles`` if you weren't able to collect your bag file.
 
 * **Due Date:** November 4th, 2022
 * **Points:** 20
