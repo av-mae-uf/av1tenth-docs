@@ -1,4 +1,4 @@
-Milestone 3: Creating a Speed Controller
+Milestone 4: Creating a Speed Controller
 ============================================
 
 This assignment covers working on a simple PID controller to control the speed that is coming out of your 
@@ -25,7 +25,7 @@ math used is given below,
 
 .. math::
 
-    \dot{x}_max = \dfrac{N*(2*\pi*R)}{60} ,
+    \dot{x}_max = \dfrac{N(2 \pi R)}{60} ,
 
 where :math:`N` is the revolutions per minute (here 585 RPM), :math:`R` is the radius of the wheel (here .12 m). So now you can find out what the corresponding Odometry
 throttle effort is using percentage calculations with the max velocity. 
@@ -62,8 +62,8 @@ where :math:`K_i` is the integral gain. The integral controller in this form is 
 
     u = K_i \sum_{k=1}^{k} e_k \Delta t.
 
-    The idea is you take your old values of :math:`e_k` (the error) and you keep adding to it's self and multiplying by a fixed integral gain :math:`K_i`.
-    :math:`\Delta t` is just taking your current :math:`t_k` and subtracting the old one (previous iteration) :math:`t_k-1`, where :math:`k^th` is the current iteration.
+The idea is you take your old values of :math:`e_k` (the error) and you keep adding to it's self and multiplying by a fixed integral gain :math:`K_i`.
+:math:`\Delta t` is just taking your current :math:`t_k` and subtracting the old one (previous iteration) :math:`t_{k-1}`, where :math:`k^th` is the current iteration.
 
 The final term is the derivative (D) controller which multiplies a gain by the derivative or slope of your error over time. The equation of this controller would be
 
@@ -75,7 +75,7 @@ where :math:`K_d` is the derivative gain. A more useful form of this controller 
 
 .. math::
 
-    u = K_d \dfrac {e_k - e_{k-1} } {t_k - (t_k-1)}
+    u = K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})}
 
 A full Proportional, Integral and Derivate (PID) controller is essentially just mashing all three controllers together and has the following equation,
 
@@ -87,7 +87,7 @@ or
 
 .. math:: 
 
-    u = K_p e_k + K_i \sum_{k=1}^{k} e_k \Delta t + K_d \dfrac {e_k - e_{k-1} } {t_k - (t_k-1)}.
+    u = K_p e_k + K_i \sum_{k=1}^{k} e_k \Delta t + K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})}.
 
 You do not need to use the full PID controller you can use PI or PD controllers as well or other formats. See which one works best and use that for your controller.
 

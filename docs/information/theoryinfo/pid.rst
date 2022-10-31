@@ -56,7 +56,7 @@ Another way of writing this would be
  
 .. math::
 
-    u = K_d \dfrac {e_k - e_{k-1} } {t_k - (t_k-1)}
+    u = K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})}
 
 This controller helps with maintaining stability and ensures that the system settles quickly.
 
@@ -75,7 +75,7 @@ or
 
 .. math:: 
 
-    u = K_p e_k + K_i \sum_{k=1}^{k} e_k \Delta t + K_d \dfrac {e_k - e_{k-1} } {t_k - (t_k-1)} \tag{5}
+    u = K_p e_k + K_i \sum_{k=1}^{k} e_k \Delta t + K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})} \tag{5}
 
 When you are working on any controllers in code, you probably want to use equation 5. You must understand how these terms work and how to implement them in code first!
 
