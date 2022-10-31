@@ -113,14 +113,14 @@ You need to have launch files to allow you to change parameters on start or you 
 
 But a better and easier way to do this is using launch files. To set the limiter to off set the value limiter to ``False``
 
-:download:`Launch File <../project/project_files/example_launch.py>`
+:download:`Launch File <../projects/project_files/example_launch.py>`
 
 .. note:: Your launch file should be a launch folder inside your package, something like ``package_name/launch/example_launch.py`` . Otherwise when you build the package it will fail.
 
 
 There are certain things that need to be added to your ``setup.py`` file for your speed controller node which also has been given below.
 
-:download:`Setup File <../project/project_files/setup.py>`
+:download:`Setup File <../projects/project_files/setup.py>`
 
 
 
