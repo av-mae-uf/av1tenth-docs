@@ -98,7 +98,29 @@ Testing the Speed Controller
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 To easily test the speed controller, map buttons to have set speeds, ideally the buttons will set a throttle percentage of 10%, 20%, 30% etc. to test out your controller.
 We will show you how to test out your controller live and also how plot the data after bagging it. You will need to publish the value set_point under VehCmd.msg to make this possible.
-You can also disable the limiter in the motor_controller node to test out higher speeds, by setting a parameter in a launch file. 
+You can also disable the limiter in the motor_controller node to test out higher speeds, by setting a parameter in a launch file. The easiest way to test this out
+will be on your cars. Come around to MAE-B 131 during `office hours or extended hours <../../assistance/contact>`_. We do not think we'll have time to test out
+during class at the moment, but this can change.
+
+Launch and Setup Files to Change Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You need to have launch files to allow you to change parameters on start or you can run the following command,
+
+.. code-block:: bash
+
+    ros2 run motor_driver motor_controller --ros-args -p limiter:=False
+
+But a better and easier way to do this is using launch files. To set the limiter to off set the value limiter to ``False``
+
+:download:`Launch File <project_files/example_launch.py>`
+
+.. note:: Your launch file should be a launch folder inside your package, something like ``package_name/launch/example_launch.py`` . Otherwise when you build the package it will fail.
+
+
+There are certain things that need to be added to your ``setup.py`` file for your speed controller node which also has been given below.
+
+:download:`Setup File <project_files/setup.py>`
 
 
 
