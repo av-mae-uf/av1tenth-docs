@@ -28,7 +28,7 @@ For planar motion, the quaternion :math:`q = w + a i + b j + c k` is defined in 
     w = \cos{\dfrac{\theta}{2}}, a=0, b=0, c=\sin{\dfrac{\theta}{2}} \tag{14}
     
 Goal Pose Creator and Motion Spec Provider
-^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The ``goal_pose_creator`` node is the most complicated node in this system.  It requests the list of poses from the ``route_pose_provider``
 node and then creates the array of route segments.  The structure used to define a route segment is shown in Figure 2.  The 
 default values for the route segment parameters :math:`w_1` and :math:`w_2` are set equal to 1.  The default values for :math:`L_1` and :math:`L_2` are set equal to ¼ 
