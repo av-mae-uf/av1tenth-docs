@@ -7,7 +7,7 @@ Joy Mapping Node that you completed in `Project 1 <../projects/project1.html>`_
 * **Due Date:** November 9th, 2022
 * **Points:** 20
 * ROS 2 Topics: ``odometry`` (sub), ``joy`` (sub) and ``vehicle_command_angle`` (pub)
-* ROS 2 Messages: ``Odometry`` (in ``nav_msgs``), ``VehCmd`` (in ``drive_interfaces/VehCmd.msg``) and ``Joy`` (in ``sensor_msgs)
+* ROS 2 Messages: ``Odometry`` (in ``nav_msgs``), ``VehCmd`` (in ``drive_interfaces/VehCmd.msg``) and ``Joy`` (in ``sensor_msgs``)
 
 .. warning:: The message and topic names are important, not following this convention can have your car not working. Please ensure they are correct.
 
