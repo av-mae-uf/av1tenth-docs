@@ -8,7 +8,7 @@ such as the Model Predictive Control (MPC) and the Linear Quadratic Regulator (L
 .. note:: A `PID <../pid.html>`_ will work as well for path following but it tends to have many drawbacks to it as it is essentially just 
     minimizing a single error.
 
-.. toc-tree::
+.. toctree::
     :maxdepth: 1
     :caption: Controllers
 

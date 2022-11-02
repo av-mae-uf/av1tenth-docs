@@ -2,14 +2,15 @@ Pure Pursuit Controllers
 ========================
 
 The pure pursuit controllers that are discussed are split in two different types; Point-at-Carrot and Circular Arc. They require the following
-information to be input as the vehicle dynamics into the controller.
+information to be input as the vehicle dynamics into the controller. An evaluation [1]_ was conducted between PID's, Pure Pursuit and Weighted Steering Control
+to see which one was best by Arturo Rankin, Carl Crane and David Armstrong.
 
 Inputs: 
     * Goal Pose: :math:`x_{goal}`, :math:`y_{goal}`
     * Vehicle Pose: :math:`x_{veh}`, :math:`y_{veh}`, :math:`\theta_{veh}`
   
 Outputs:
-    * Point-at-Carrot: :math:`\phi` which is the steering angle 
+    * Point-at-Carrot: :math:`\Delta \phi` which is the change in steering angle 
     * Circular Arc: :math:`R` which is the radius of curvature
 
 Point-at-Carrot
@@ -24,7 +25,7 @@ Then the steering angle delta can be determined,
 
 .. math::
 
-    \delta \phi = \phi_{current} + K_p \theta_{error},
+    \Delta \phi = \phi_{current} + K_p \theta_{error},
 
 where :math:`K_p` is the gain that must be tuned.
 
@@ -66,6 +67,8 @@ but a function will be given that can be used to calculate it.
 
 Then the :math:`\beta` value can be calculated. Then using equation of the line from the vehicle and carrot position and :math:`\beta` can be used
 to calculate the intersection which will be center of this point. Then the radius can be calculated from here.
+
+.. [1] Arturo L. Rankin, Carl D. Crane III, David G. Armstrong II, "Evaluating a PID, pure pursuit, and weighted steering controller for an autonomous land vehicle," Proc. SPIE 3210, Mobile Robots XII, (25 January 1998); https://doi.org/10.1117/12.299554
 
 
 
