@@ -7,10 +7,11 @@ Here you can find all the theoretical information pertaining to the class and th
    :maxdepth: 1
    :caption: Pages
 
-   Twist Message <twist>
    Bicycle Kinematic Model <cyckinem>
-   Route Representation and Navigation <routes/routesrep>
    PID Controllers <pid>
    Pose Message <pose>
+   Route Representation and Navigation <routes/routesrep>
+   Twist Message <twist>
+   Vehicle Controller Approaches <vehicle_control/vehicle_control>
 
 
