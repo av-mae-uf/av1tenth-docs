@@ -18,3 +18,4 @@ In Class Videos
 * `Class Oct 26th - GPS Processing, Quaternion Explanations and Google Earth Info <http://www.ccrane3.com/eml4930AV/videos/221026_eml4930.mp4>`_
 * `Class Oct 28th - GPS Nav Walkthrough <http://www.ccrane3.com/eml4930AV/videos/221028_eml4930.mp4>`_
 * `Class Oct 31st - GPS Nav Path Planning and Following <http://www.ccrane3.com/eml4930AV/videos/221031_eml4930.mp4>`_
+* `Class Nov 4th - Controller Introduction and Code <http://www.ccrane3.com/eml4930AV/videos/221104_eml4930.mp4>`_
