@@ -23,7 +23,7 @@ You will use this data to dead reckon. To convert the orientation data to a :mat
 
 .. math::
 
-    \theta_{veh} = 2 atan2(z , w) 
+    \theta_{veh} = 2*atan2(z , w) 
 
 
 Dead Reckoning
@@ -34,10 +34,10 @@ To dead reckon you will do the following,
 
 .. math::
 
-    \x = x + v \cos (\theta) \Delta t 
-    \y = y + v \sin (\theta) \Delta t 
+    x = x + v \cos (\theta) \Delta t 
+    y = y + v \sin (\theta) \Delta t 
 
-Then everytime the GPSData comes in you will update your x with that. store it in a ``self.`` variable to pass it between the callbacks. Make sure the x in above is also being stored in a ``self`` variable.
+where, :math:`\Delta t` is ``0.15s``. Then every time the GPSData comes in you will update your x with that. store it in a ``self.`` variable to pass it between the callbacks. Make sure the x in above is also being stored in a ``self`` variable.
 You will be publishing a ``PoseStamped`` in the odometry callback, some information for that is available below
 
 .. code-block:: python

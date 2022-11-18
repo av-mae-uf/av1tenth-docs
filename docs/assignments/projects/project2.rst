@@ -78,7 +78,7 @@ on the path and the pose of the car to calculate the error. This can be done usi
 
 .. math::
 
-    \theta = 2 atan2(z , w) 
+    \theta = 2*atan2(z , w) 
 
 Check the ``vehicle_pose_callback`` and ``current_goal_pose_callback`` for all this data which has been calculated for you
 
