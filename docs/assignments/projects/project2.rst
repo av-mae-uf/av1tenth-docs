@@ -22,7 +22,6 @@ Deliverables
 ^^^^^^^^^^^^
 ROS 2 node that writes a Stanley controller as discussed in class in place of the ``vehicle_controller`` node.
 
-* ROS 2 Publisher Node publishing topics ``vehicle_command_angle`` 
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
 * This is a qualitative assessment so no submissions are needed. You will need to run the node at Flavet Field by the due date. Grading will be based
