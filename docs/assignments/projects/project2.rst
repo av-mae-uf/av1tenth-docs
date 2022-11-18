@@ -1,10 +1,8 @@
 Project 2: Stanley Controller Path Following
 =============================================
 
-This next node is important to understand how the car operates and what the main operation node of the car is. Here you will be taken through the process of 
-mapping keys, joysticks and triggers on your Xbox controller to a throttle effort and a steering angle. 
-
-This assignment or milestone will be to map your controller to motion on your car. This will be a group project, though you have been put into groups. This project has the following pertinent information.
+This project will cover how to write a stanley controller on your car to follow a path around a set of gps points. All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo. You will need a 
+pose estimator from `Milestone 5 <../milestones/milestone5.html>`_
 
 * **Due Date:** December 7th, 2022
 * **Points:** 100
@@ -49,7 +47,7 @@ Inputs:
     * Closest Pose on Path: :math:`x_{c}`, :math:`y_{c}`, :math:`\theta_{c}`
 
 Outputs:
-    * Change in Steering Angle: :math:`\Delta \phi`
+    * Steering Angle: :math:`\phi`
 
 The objective is to essentially determine the change is steering angle to drive to the closest point and orientation 
 on a path based on the current vehicle position and orientation. It will essentially be minimizing the difference in heading and the 
