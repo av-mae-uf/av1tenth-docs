@@ -13,4 +13,4 @@ Milestone information for the EML4930 AV Class are available here. The assignmen
    Milestone 2: Creating a ROS 2 Node for Converting Data <milestone2>
    Milestone 3: Processing Bag Data <milestone3>
    Milestone 4: Creating a Speed Controller <milestone4>
-   
+   Milestone 5: Pose Estimator <milestone5>

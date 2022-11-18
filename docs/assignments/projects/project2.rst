@@ -27,7 +27,6 @@ ROS 2 node that writes a Stanley controller as discussed in class in place of th
 * ROS 2 Publisher Node publishing topics ``vehicle_command_angle`` 
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
-* Parameters in your launch file or ``.yaml`` file **(OPTIONAL)**
 * This is a qualitative assessment so no submissions are needed. You will need to run the node at Flavet Field by the due date. Grading will be based
 on the closeness to the path given.
   
@@ -79,7 +78,7 @@ on the path and the pose of the car to calculate the error. This can be done usi
 
 .. math::
 
-    \theta = 2 \atantwo (z , w) 
+    \theta = 2 atan2(z , w) 
 
 Check the ``vehicle_pose_callback`` and ``current_goal_pose_callback`` for all this data which has been calculated for you
 
