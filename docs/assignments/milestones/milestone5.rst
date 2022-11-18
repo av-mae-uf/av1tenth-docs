@@ -34,7 +34,7 @@ To dead reckon you will do the following,
 
 .. math::
 
-    x = x + v \cos (\theta) \Delta t 
+    x = x + v \cos (\theta) \Delta t , \\
     y = y + v \sin (\theta) \Delta t 
 
 where, :math:`\Delta t` is ``0.15s``. Then every time the GPSData comes in you will update your x with that. store it in a ``self.`` variable to pass it between the callbacks. Make sure the x in above is also being stored in a ``self`` variable.
