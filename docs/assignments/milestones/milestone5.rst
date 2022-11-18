@@ -41,6 +41,7 @@ where, :math:`\Delta t` is ``0.15s``. Then every time the GPSData comes in you w
 You will be publishing a ``PoseStamped`` in the odometry callback, some information for that is available below
 
 .. code-block:: python
+    
     msgEst = PoseStamped()
     msgEst.pose.position.x = # put x here
     msgUTM.pose.position.y = # put y here
