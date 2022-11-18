@@ -10,3 +10,4 @@ Here you can find the projects that are required to be completed. The projects w
    :caption: List of Projects
 
    Project 1: Open-Loop Control (Xbox Controller Mapping) <project1>
+   Project w: Stanley Controller Path Following <project2>

@@ -1,0 +1,106 @@
+Project 2: Stanley Controller Path Following
+=============================================
+
+This next node is important to understand how the car operates and what the main operation node of the car is. Here you will be taken through the process of 
+mapping keys, joysticks and triggers on your Xbox controller to a throttle effort and a steering angle. 
+
+This assignment or milestone will be to map your controller to motion on your car. This will be a group project, though you have been put into groups. This project has the following pertinent information.
+
+* **Due Date:** December 7th, 2022
+* **Points:** 100
+* ROS 2 Topics: ``vehicle_pose`` (sub), ``current_goal_pose`` (sub) and ``vehicle_command_angle`` (pub)
+* ROS 2 Messages: ``PoseStamped`` (in ``geometry_msgs``) and ``VehCmd`` (in ``drive_interfaces.msg``)
+  
+To run this on your car you will need to git clone the ``eml4930_gps_nav`` repository that we have created for the car. You will need to clone
+this into the appropriate workspace source folder, something like ``class_ws/src``. That can be done by using the following command
+
+.. code-block:: bash
+
+    git clone https://github.com/av-mae-uf/eml4930_gps_nav.git
+
+If you have cloned it previously, run a :code:`git pull` to update the repository. Don't put any of your packages in the repo directory it will be deleted when you run the next update command.
+
+Deliverables
+^^^^^^^^^^^^
+ROS 2 node that writes a Stanley controller as discussed in class in place of the ``vehicle_controller`` node.
+
+* ROS 2 Publisher Node publishing topics ``vehicle_command_angle`` 
+* ``setup.py`` file filled out
+* ``package.xml`` file filled out properly
+* Parameters in your launch file or ``.yaml`` file **(OPTIONAL)**
+* This is a qualitative assessment so no submissions are needed. You will need to run the node at Flavet Field by the due date. Grading will be based
+on the closeness to the path given.
+  
+.. warning:: The names of topics are important writing the topic names incorrectly will break the node.
+
+Stanley Controller (Or Controller You Prefer)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You can use any controller you'd like for this project except the point at the carrot and the controller that is given in the repository.
+
+.. note:: The stanley controller would be the easiest to implement.
+
+The stanley controller [1]_  is controller developed by the Stanford Racing Team during the 2005 DARPA Grand Challenge. Stanley, the teams 
+vehicle went on to win the competition. 
+
+The outputs and inputs to this controller are given below.
+
+Inputs:
+    * Vehicle Pose: :math:`x_{veh}`. :math:`y_{veh}`, :math:`\theta_{veh}`
+    * Closest Pose on Path: :math:`x_{c}`, :math:`y_{c}`, :math:`\theta_{c}`
+
+Outputs:
+    * Change in Steering Angle: :math:`\Delta \phi`
+
+The objective is to essentially determine the change is steering angle to drive to the closest point and orientation 
+on a path based on the current vehicle position and orientation. It will essentially be minimizing the difference in heading and the 
+the cross track error :math:`e`.
+
+.. figure:: images/stanley.png
+    :alt: Stanley Controller Diagram
+    :width: 75%
+    
+    Figure 1: Definition of Stanley Controller Problem
+
+The governing equation of this controller is given as follows,
+
+.. math:: 
+
+    \phi = \phi_{current} + K_{p1} (\theta_c - \theta_{veh}) + K_{p2} e
+
+where e is the distance between the two points. 
+
+.. note:: :math:`e` will be negative if the closest point on the path is to the right of the vehicle pose.
+
+Controller File Template
+^^^^^^^^^^^^^^^^^^^^^^^^
+A controller file template has been given, you will need to get the ``position.x``, ``position.y`` and calculate the orientation data of the closest pose
+on the path and the pose of the car to calculate the error. This can be done using the following,
+
+.. math::
+
+    \theta = 2 \atantwo (z , w) 
+
+Check the ``vehicle_pose_callback`` and ``current_goal_pose_callback`` for all this data which has been calculated for you
+
+The template file can be downloaded below,
+
+:download:`Controller Template <project_files/vehicle_controller_template.py>`
+
+Put your controller around **line 133** onwards.
+
+Simulate your project by using a launch file similar to this,
+
+:download:`Launch File for Point at Carrot <project_files/launch_point_at_carrot.py>`
+
+You'll have to replace the packages and executables respectively where the ``uf_extra`` launch description is.
+
+.. note:: Your launch file should be a launch folder inside your package, something like ``package_name/launch/example_launch.py`` . Otherwise when you build the package it will fail.
+
+
+There are certain things that need to be added to your ``setup.py`` file for your xbox controller mapping node which also has been given below.
+
+:download:`Setup File <project_files/setup.py>`
+
+.. [1] G. M. Hoffmann, C. J. Tomlin, M. Montemerlo and S. Thrun, "Autonomous Automobile Trajectory Tracking for Off-Road Driving: Controller Design, Experimental Validation and Racing," 2007 American Control Conference, 2007, pp. 2296-2301, doi: 10.1109/ACC.2007.4282788.
+
