@@ -18,7 +18,7 @@ Odometry and GPSData Basics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The ``odometry`` topic outputs an ``Odometry`` message which has information on its structure `here <http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html>`_.
-The values for the velocity, position and orientation are in ``twist.twist.linear.x``, ``pose.pose.position.x``, ``pose.pose.position.y``, ``pose.pose.orientation.z`` and ``pose.pose.orientation.w``.
+The values for the velocity and orientation are in ``twist.twist.linear.x``, ``pose.pose.orientation.z`` and ``pose.pose.orientation.w``.
 You will use this data to dead reckon. To convert the orientation data to a :math:`\theta_{veh}` do the following
 
 .. math::
@@ -40,13 +40,15 @@ To dead reckon you will do the following,
 where, :math:`\Delta t` is ``0.15s``. Then every time the GPSData comes in you will update your x with that. store it in a ``self.`` variable to pass it between the callbacks. Make sure the x in above is also being stored in a ``self`` variable.
 You will be publishing a ``PoseStamped`` in the odometry callback, some information for that is available below
 
+A Power point on Dead Reckoning is available :download:`here <milestone_files/DeadReckoning.pptx>`
+
 .. code-block:: python
     
     msgEst = PoseStamped()
     msgEst.pose.position.x = # put x here
-    msgUTM.pose.position.y = # put y here
-    msgUTM.pose.orientation.z = # pass in the odometry pose.pose.orientation.z
-    msgUTM.pose.orientation.w =  # pass in the odometry pose.pose.orientation.z
+    msgEst.pose.position.y = # put y here
+    msgEst.pose.orientation.z = # pass in the odometry pose.pose.orientation.z
+    msgEst.pose.orientation.w =  # pass in the odometry pose.pose.orientation.w
     msgEst.header.stamp = self.get_clock().now().to_msg()
 
 Plotting Data
