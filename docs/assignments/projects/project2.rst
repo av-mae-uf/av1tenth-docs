@@ -29,6 +29,8 @@ on the closeness to the path given.
   
 .. warning:: The names of topics are important writing the topic names incorrectly will break the node.
 
+The points that you will be visiting are available :download:`here <project_files/points.kml>`
+
 Stanley Controller (Or Controller You Prefer)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
