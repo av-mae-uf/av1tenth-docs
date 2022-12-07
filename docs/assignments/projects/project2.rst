@@ -118,7 +118,7 @@ heading value should be 0. To set this you can run
 
 .. code-block:: bash
 
-    ros2 param set odom_pub z_angle_offset <angle_to_get_to_zero>
+    ros2 param set publisher z_angle_offset <angle_to_get_to_zero>
 
 Then go ahead and launch your launch file with your controller. Your controller should be in place of the ``vehicle_controller`` in the ``example_launch.py`` given.
 Then to launch visualizer run the launch file:
