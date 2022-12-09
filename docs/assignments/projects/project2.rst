@@ -100,7 +100,7 @@ Put your controller around **line 133** onwards.
 
 Simulate your project by using a launch file similar to this,
 
-:download:`Launch File for Point at Carrot <project_files/launch_point_at_carrot.py>`
+:download:`Launch File for Point at Carrot <project_files/simulation_demo.launch.py>`
 
 You'll have to replace the packages and executables respectively where the ``uf_extra`` launch description is.
 
@@ -120,7 +120,14 @@ heading value should be 0. To set this you can run
 
     ros2 param set odom_pub z_angle_offset <angle_to_get_to_zero>
 
-Then go ahead and launch your launch file with your controller. Your controller should be in place of the ``vehicle_controller`` in the ``example_launch.py`` given.
+Then go ahead and launch your launch file with your controller. An example of this can be downloaded :download:`here <project_files/vehicle.launch.py>`. Your controller should be in place of the ``stanley_controller`` in the ``example_launch.py`` given.
+You will also need to put your pose list in your package inside a folder called ``data``, then update the launch file with the necessary names where it asks for the pose list. Then launch the vehicle launch file.
+
+.. code-block:: bash
+
+    ros2 launch <pkg-name> vehicle.launch.py
+
+
 Then to launch visualizer run the launch file:
 
 .. code-block:: bash
