@@ -6,7 +6,7 @@ Home
    :height: 283px
    :align: center
 
-Welcome to EML4930: Autonomous Vehicles documentation. This site will serve as a main page for the class. All information to be successful in the class will be posted up here, including all assignments, milestones and projects. Explore the sections below to learn more about the
+Welcome to EML4930: Autonomous Vehicles class documentation. This site will serve as a main page for the class. All information to be successful in the class will be posted up here, including all assignments, milestones and projects. Explore the sections below to learn more about the
 hardware and software. 
 
 If you are a student in the class, start at the top with `tutorial resources <gettingstarted/tutresources.html>`_ so that you are prepared for the class.
@@ -18,7 +18,8 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
 .. toctree::
    :caption: Getting Started
    :maxdepth: 1
-
+   
+   Syllabus <gettingstarted/syllabus>
    Tutorial Resources <gettingstarted/tutresources>
    Requirements <gettingstarted/reqs>
    Installation <gettingstarted/installation>
