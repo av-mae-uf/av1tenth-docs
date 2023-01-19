@@ -79,13 +79,13 @@ Removing a directory is as simple, run the following:
 
 .. code-block:: bash
 
-    rm -rf <dir-name>
+    rm -r <dir-name>
 
 You can remove multiple directories the same way as making them.
 
 .. code-block:: bash
 
-    rm -rf <dir1> <dir2> <dir3>
+    rm -r <dir1> <dir2> <dir3>
 
 To create a file you can command as such:
 
@@ -110,7 +110,7 @@ To exit out of this file, command ``Ctrl+X``.
 SSH Into Another Computer
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can ``ssh`` into computer, which is basically connecting to them remoteley over a local network (Remote networks can be achieved as well through a VPN). You will need to enable ssh on the computer being connected to before you can do this.
+You can ``ssh`` into computer, which is basically connecting to them remotely over a local network (Remote networks can be achieved as well through a VPN). You will need to enable ssh on the computer being connected to before you can do this.
 To ssh into a computer you will need to run the following command.
 
 .. code-block:: bash
@@ -183,12 +183,60 @@ To run a package and executable in ROS, run the following.
 
     ros2 run <package-name> <executable-name>
 
+ROS2 Packages
+^^^^^^^^^^^^^
+
+.. note:: Whenever something like ``<package-name>`` or ``<node-name>`` is written, you will replace this with the specific node or package name that you are 
+    interested in.
+
+ROS2 places its programs in directories called packages. Packages can be created using the following command.
+
+.. code-block:: bash
+
+    ros2 pkg create --build-type ament_python <package-name>
+
+This is specifically for creating python packages. This creates all the necessary files and connections. You will still have to put in your program and add the correct information
+to the ``setup.py``. You can list all the executables inside a package using the following command,
+
+.. code-block:: bash
+
+    ros2 pkg executables <package-name>
+
+ROS2 Nodes
+^^^^^^^^^^
+
+ROS2 runs its programs as something called nodes. To see a full list of nodes, the following command can be run.
+
+.. code-block:: bash
+
+    ros2 node list
+
+To find out more info about a particular node you can run,
+
+.. code-block:: bash
+
+    ros2 node info <node-name>
+
+ROS2 Topics
+^^^^^^^^^^^
+
 A useful debugging tool in ros is ``topic list`` and ``topic echo``. They can be run with the following commands.
 
 .. code-block:: bash
 
     ros2 topic list
     ros2 topic echo <topic-name>
+
+``topic list`` provides a list of running topics. ``topic echo`` echoes the topic that you select.
+
+.. code-block:: bash
+
+    ros2 topic hz
+
+``topic hz`` will give you the publish speed of the topic.
+
+ROS2 Launch
+^^^^^^^^^^^
 
 A launch file is something that will launch multiple nodes in ROS, to use a launch file run the following command:
 
@@ -197,6 +245,28 @@ A launch file is something that will launch multiple nodes in ROS, to use a laun
     ros2 launch <package-name> <launch-file>.py
 
 Launch files will be covered in class.
+
+ROS2 Setting Parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+
+Sometimes a Node will have parameters associated with it. Consider parameters as variables that you can set for your when starting them up or during the process of running the node.
+This removes the requirement of building the workspace again. parameters can be set as follows:
+
+.. code-block:: bash
+
+    ros2 param set <node-name> <parameter-name> <value>
+
+Sometimes the node name will be replaced by the name field in launch files. Parameters can be listed using,
+
+.. code-block:: bash
+
+    ros2 param list
+
+You can get the current value of a parameter using,
+
+.. code-block:: bash
+     
+    ros2 param get <node-name> <parameter-name>
 
 Building a Workspace
 ^^^^^^^^^^^^^^^^^^^^
@@ -283,7 +353,7 @@ That will stage changes in a certain directory or a certain file that was change
 
     git commit -m "Message regarding your changes"
 
-This will commit your changes and now they are ready for synchronisation to your remote repo. That can be done with the following command.
+This will commit your changes and now they are ready for synchronization to your remote repo. That can be done with the following command.
 
 .. code-block:: bash
 

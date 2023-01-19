@@ -6,27 +6,45 @@ mapping keys, joysticks and triggers on your Xbox controller to a throttle effor
 
 This assignment or milestone will be to map your controller to motion on your car. This will be a group project, though you have been put into groups. This milestone has the following pertinent information.
 
-* **Due Date:** October 14th, 2022
-* **Points:** 100
-* ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command_angle`` (pub)
-* ROS 2 Messages: ``Joy`` (in ``sensor_msgs``), ``VehCmd`` (in ``drive_interfaces.msg``) and Int16 (in ``std_msgs``)
-* A launch file to launch the ``motor_controller`` node and the ``joy_node`` node has been given but you can run the node with a normal ``ros2 run`` command.
-  
-To run this on your car you will need to git clone the appropriate driver package that we have created for the car. You will need to clone
-this into the appropriate workspace source folder, something like ``class_ws/src``. That can be done by using the following command
+* **Due Date:** February 17th, 2023
+* **Pseudo Code Due Date: ** February 3rd, 2023
+* **Code Review Due Date: ** February 13th, 2023
+* **Total Points:** 100
+* ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command_ackermann`` (pub)
+* ROS 2 Messages: ``Joy`` (in ``sensor_msgs``), ``AckermannDriveStamped`` (in ``ackermann_msgs.msg``) and ``Int16`` (in ``std_msgs``)
+* A launch file to launch the car sensor and drivers stack has been installed in the car.
+
+To launch the car the following command can be entered on **on the car**.
 
 .. code-block:: bash
 
-    git clone https://github.com/av-mae-uf/av1tenth.git
+    ros2 launch vehicle_launch vehicle.launch.py
+ 
+Grading Rubric
+^^^^^^^^^^^^^^
+Grading for this assignment will be based on the following rubric
 
-If you have cloned it previously, run a :code:`git pull` to update the repository. Don't put any of your packages in the repo directory it will be deleted when you run the next update command.
++--------------------------------------------------------+---------+
+| Criteria                                               | Points  |
++========================================================+=========+
+| Pseudo Code/Flow Chart/Block Diagram                   | 25 Pts  |
++--------------------------------------------------------+---------+
+| Code Review                                            | 25 Pts  |
++--------------------------------------------------------+---------+
+| Node Performance and Code Efficacy                     | 50 Pts  |
++--------------------------------------------------------+---------+
+| **Total**                                              | 100 Pts |
++--------------------------------------------------------+---------+
+
+.. note:: If after the code review, changes that were suggested are not implemented, the latter 50% of the grade will be affected.
 
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node that maps controller keys etc. to a throttle effort and steering angle and published to ``vehicle_command_angle`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
+ROS 2 node that maps controller keys etc. to a throttle effort and steering angle and published to ``vehicle_command_ackermann`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
 if it publishes data correctly and you car functions you will get full points. You can get creative, we will leave the mappings of your car up to you. A full list of deliverables are given below
 
-* ROS 2 Publisher Node publishing topics ``vehicle_command_angle`` and ``led_color``
+* Pseudo Code/Flow Chart detailing how the code will work
+* ROS 2 Publisher Node publishing topics ``vehicle_command_ackermann`` and ``led_color``
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
 * A launch file that launches the ``joy_node`` , ``motor_controller`` node and the controller node that you have created. **(OPTIONAL)**

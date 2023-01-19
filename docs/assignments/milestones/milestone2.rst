@@ -6,20 +6,16 @@ an assignment covering that with a full complex message structure would be usefu
 
 This assignment or milestone will be to complete a full ROS 2 node on your own that converts LiDAR radial distance measurements into the cartesian form. This milestone has the following pertinent information
 
-* **Due Date:** October 5th, 2022
-* **Points:** 20
+* **Due Date:** February 8th, 2022
+* **Block Diagram Due Date:** February 3rd, 2022
+* **Points:** 20 (5 for Block Diagram)
 * ROS 2 Topics: scan (sub) and cart_coord (pub)
 * ROS 2 Messages: ``LaserScan`` , ``PointCloud`` (both in ``sensor_msgs``), and ``Point32`` (in ``geometry_msgs``)
-* A launch file to launch the lidar topic has been give in the ``av1tenth`` repo but there should also be a ros2 bag file in the ``ros2bag`` folder. 
 
-First you wil need to clone the av1tenth repo into a workspace.
+Download the Bag File :download:`here <../files/bagfile.zip>`.
 
-.. code-block:: bash
-
-    git clone https://github.com/av-mae-uf/av1tenth.git
-
-
-Then you can play the bag file with the following command.
+You will need to run the bag file above to do this. Put the entire folder from this zip file in a folder, navigate to the 
+specific folder and play it using the following command. the `-l` loops the bag file infinitely till you interrupt it.
   
 .. code-block:: bash
 
@@ -30,6 +26,7 @@ Deliverables
 ROS 2 node that converts the LaserScan message to PointCloud and publish a ``cart_coord`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
 if it publishes data correctly you will get full points. A full list of deliverables are given below
 
+* Block Diagram of your proposed code structure. More information can be found `here <../../information/code/pseudocode.html>`_
 * ROS 2 Publisher Node publishing topic ``cart_coord``
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
@@ -70,6 +67,8 @@ and
 
 where :math:`d` is the distance from ranges, :math:`\theta` is the angle that you are currently at, but remember it is :math:`180^{\circ}` out of phase. That's pretty much it,
 that is all you need to complete the conversion. Your :math:`z` point will be 0.
+
+.. hint:: You can accomplish this efficiently using Numpy.
 
 PointCloud Message
 ^^^^^^^^^^^^^^^^^^

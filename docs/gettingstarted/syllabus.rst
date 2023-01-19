@@ -56,13 +56,16 @@ By the end of the class, the students should have successfully met these objecti
 Assignments and Grading
 ---------------------------
 
-* 8 Milestones 35%
-* 3 Projects 65%
+* 8 Milestones 30%
+* 3 Projects 60%
+* Class Activities 10%
 
-Each assignment will be broken down further as follows:
+The first two milestones will be individual, but the rest will be group work. 
 
-- Pseudo Code, Flow Charts or Block Diagram 25% of Assignment Grade
-- Code Review 25% of Assignment Grade
+Each group assignment will be broken down further as follows:
+
+- Pseudo Code, Flow Charts or Block Diagrams 25% of Assignment Grade (A student will be randomly selected from each group to explain their process flow to the instructor/TA)
+- Code Review 25% of Assignment Grade (A student will be randomly selected from each group to review the code)
 - Program Performance 50% of the Grade
 
 Other Pertinent Information
