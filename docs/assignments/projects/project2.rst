@@ -4,7 +4,7 @@ Project 2: Stanley Controller Path Following
 This project will cover how to write a stanley controller on your car to follow a path around a set of gps points. All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo. You will need a 
 pose estimator from `Milestone 5 <../milestones/milestone5.html>`_
 
-* **Due Date:** December 7th, 2022
+* **Due Date:** TBD
 * **Points:** 100
 * ROS 2 Topics: ``vehicle_pose`` (sub), ``current_goal_pose`` (sub) and ``vehicle_command_angle`` (pub)
 * ROS 2 Messages: ``PoseStamped`` (in ``geometry_msgs``) and ``VehCmd`` (in ``drive_interfaces.msg``)

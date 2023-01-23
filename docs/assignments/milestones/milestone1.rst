@@ -6,7 +6,7 @@ ROS 2 node that outputs the quotient for a divisor of 5 but only when the remain
 
 This assignment or milestone will be to complete a simple full ROS 2 node on your own. This milestone has the following pertinent information.
 
-* **Due Date:** September 23rd, 2022 (after Python learning and beginning ROS 2)
+* **Due Date:** February 1st, 2023
 * **Points:** 20
 * ROS 2 Topics: ``rand_num`` (sub) and ``quotient`` (pub)
 * ROS 2 Messages: ``Int16`` (Part of std_msgs)
@@ -21,7 +21,7 @@ ROS 2 node that publishes the quotient in the ``quotient`` topic. Grading will b
 * ``package.xml`` file filled out properly
 * .zip file containing entire package (We should be able to download the file and put it into ROS 2 and run it without changing anything)
   
-.. warning:: The names of topics are important, writing the wrong name will result in a **25% point** deduction.
+.. warning:: The names of topics are important, writing the wrong name will result in a **5 point** deduction of the overall grade.
 
 Grading Rubric
 ^^^^^^^^^^^^^^
@@ -60,7 +60,7 @@ You will need to check whenever data comes in that the data is divisible by 5 an
 
     x%y
 
-Which would return the remainder. Then you would need to use an ``if`` statement to check if it is 0.
+Which would return the remainder. Then you would need to use an ``if`` statement or ternary operator to check if it is 0.
 
 
 

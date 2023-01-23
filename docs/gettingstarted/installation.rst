@@ -2,7 +2,10 @@ Installation
 ============
 
 Before you can go ahead and start developing or use any of our packages, you will need to install certain things. 
-Obviously you will need to install some sort of linux platform that ideally can install from debain packages. 
+Obviously you will need to install some sort of linux platform that ideally can install from Debian packages. We use Ubunutu 20.04 Focal Fossa as the installation
+is easy, the minimum requirements are available `here <reqs.html>`_. 
+
+.. warning:: Other linux OS's will not be supported by the class to maintain simplicity.
 
 Ubuntu Installation
 -------------------
@@ -14,8 +17,6 @@ Common Issues
 * Disable RST - Many manufacturers now put your storage into RAID mode instead of the standard AHCI mode. You can switch this in your BIOS, but there is a risk of bricking your windoes installation. We can install Ubuntu on a usb drive for you, you will need to have a minimum of a 128 GB drive.
 * Disable Secure Boot - You can disable secure boot from your computers bios, should be under security or boot settings.
 * Can't Boot into Bootable Drive - You've likely not created your bootable disk properly, if this problem persists, see the TA's, they have bootable drives available for use.
-
-
 
 Python Installation and Additional Packages Required
 -----------------------------------------------------
@@ -137,21 +138,30 @@ To install ROS2 through debian packages is quite simple, if you wish to install 
 Setup Sources
 ^^^^^^^^^^^^^
 
-You will need to add the ROS 2 apt repositories to your system. To do so, first authorize our GPG key with apt like this:
+You will need to add the ROS 2 apt repositories to your system. First ensure that the Ubuntu Universe repository is enabled:
 
 .. code-block:: bash
 
-    sudo apt update && sudo apt install curl gnupg2 lsb-release
+    sudo apt install software-properties-common
+    sudo add-apt-repository universe
+
+Then you can add the ROS2 GPG Key using apt. Start by installing `curl`.
+
+.. code-block::bash
+
+    sudo apt update && sudo apt install curl
+
+Then add the GPG key
     
 .. code-block:: bash
 
-    sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key  -o /usr/share/keyrings/ros-archive-keyring.gpg
+    sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
 
 And the add the repository to your sources list:
 
 .. code-block:: bash
 
-    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(source /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
 
 Install ROS2 Packages
 ^^^^^^^^^^^^^^^^^^^^^
@@ -172,7 +182,7 @@ Desktop Install (Recommended): ROS, RViz, demos, tutorials.
 
 .. code-block:: bash
 
-    sudo apt install ros-foxy-desktop
+    sudo apt install ros-foxy-desktop python3-argcomplete
 
 Install Colcon.
 
@@ -203,8 +213,8 @@ Though if you want it to be sourced everytime you open a terminal, run the follo
     echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
     
 
-UDEV Rules
-----------
+UDEV Rules (These are only run on the car)
+------------------------------------------
 
 To allow us to communicate with our USB devices easily, we have set up some UDEV rules to make sure the ports are interchanged on startup. To do this on your car you need to run the following commands
 
