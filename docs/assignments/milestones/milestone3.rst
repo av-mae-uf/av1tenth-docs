@@ -5,7 +5,7 @@ This assignment covers working on processing your bag data that you collected an
 
 .. note:: We have a couple of bag files that we have created in the av1tenth repo under ``ros2bag/GPS_Processing_BagFiles`` if you weren't able to collect your bag file.
 
-* **Due Date:** November 4th, 2022
+* **Due Date:** TBD
 * **Points:** 20
 * ROS 2 Topics: GPSData (pub)
 * ROS 2 Messages: ``PoseStamped`` ( in ``geometry_msgs``)

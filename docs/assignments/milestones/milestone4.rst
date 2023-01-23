@@ -4,7 +4,7 @@ Milestone 4: Creating a Speed Controller
 This assignment covers working on a simple PID controller to control the speed that is coming out of your 
 Joy Mapping Node that you completed in `Project 1 <../projects/project1.html>`_
 
-* **Due Date:** November 16th, 2022
+* **Due Date:** TBD
 * **Points:** 20
 * ROS 2 Topics: ``odometry`` (sub), ``joy`` (sub) and ``vehicle_command_angle`` (pub)
 * ROS 2 Messages: ``Odometry`` (in ``nav_msgs``), ``VehCmd`` (in ``drive_interfaces/VehCmd.msg``) and ``Joy`` (in ``sensor_msgs``)

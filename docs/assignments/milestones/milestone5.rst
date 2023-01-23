@@ -3,7 +3,7 @@ Milestone 5: Pose Estimator
 
 This assignment covers working on a Pose Estimator for `Project 2 <../projects/project2.html>`_
 
-* **Due Date:** December 2nd, 2022
+* **Due Date:** TBD
 * **Points:** 20
 * ROS 2 Topics: ``odometry`` (sub), ``GPSData`` (sub) and ``vehicle_pose`` (pub)
 * ROS 2 Messages: ``Odometry`` (in ``nav_msgs``) and ``PoseStamped`` (in ``geometry_msgs``) 
