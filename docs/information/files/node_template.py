@@ -8,7 +8,7 @@
 import something
 
 # Import all Necessary ROS2 Modules Here, this includes messages (std_msgs.msg for Int16, geometry_msgs.msg for Pose) Look at this
-# for all message data: link
+# for all message data: https://av1tenth-docs.readthedocs.io/en/latest/information/ros2_common_msgs.html
 
 import rclpy
 from rclpy.node import Node
@@ -22,8 +22,8 @@ class NodeTemplate(Node):
         super().__init__("node_name")
 
         # self.subscription = self.create_subscription(msg_type = , topic = , callback = , qos_profile = 1)
-        # self.publisher_ = self.create_publisher(msg_type = , topic = , qos_profile = 1)
-        # self.timer = self.create_timer(timer_period_secs = , callback = )
+        # self.publisher = self.create_publisher(msg_type = , topic = , qos_profile = 1)
+        # self.timer = self.create_timer(timer_period_sec = , callback = )
 
     def callback(self, msg: Int16):
         """Description of Callback"""
