@@ -16,7 +16,7 @@ understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.h
 Template Files and ROS2 Messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To find a listing of all common messages for ROS2 please check here `<information/ros2_common_msgs.html>`_. 
+To find a listing of all common messages for ROS2 please check `here <information/ros2_common_msgs.html>`_. 
 
 For the node template you can download that :download:`here <information/files/node_template.py>`
 
