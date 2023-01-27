@@ -4,7 +4,7 @@ Project 2: Stanley Controller Path Following
 This project will cover how to write a stanley controller on your car to follow a path around a set of gps points. All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo. You will need a 
 pose estimator from `Milestone 5 <../milestones/milestone5.html>`_
 
-* **Due Date:** December 7th, 2022
+* **Due Date:** TBD
 * **Points:** 100
 * ROS 2 Topics: ``vehicle_pose`` (sub), ``current_goal_pose`` (sub) and ``vehicle_command_angle`` (pub)
 * ROS 2 Messages: ``PoseStamped`` (in ``geometry_msgs``) and ``VehCmd`` (in ``drive_interfaces.msg``)
@@ -29,7 +29,18 @@ on the closeness to the path given.
   
 .. warning:: The names of topics are important writing the topic names incorrectly will break the node.
 
-The points that you will be visiting are available :download:`here <project_files/points.kml>`
+
+Creating the Path to Follow
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The points that you will be visiting are available :download:`here <project_files/points.kml>`. You will then need to create a path in google earth that follows these points and output a path ``.kml`` file. The order does not matter.
+To convert this navigate into scripts inside the ``eml4930_gps_nav`` package that was provided, there is a ``.kml`` file converter to ``.txt`` of poses.  You can do this by running the following command inside the scripts folder.
+
+.. code-block:: bash
+
+    python3 kml_to_route.py  example_file.kml  output_file.txt
+
+Now you should have a complete pose list to run this project.
 
 Stanley Controller (Or Controller You Prefer)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,16 +100,48 @@ Put your controller around **line 133** onwards.
 
 Simulate your project by using a launch file similar to this,
 
-:download:`Launch File for Point at Carrot <project_files/launch_point_at_carrot.py>`
+:download:`Launch File for Point at Carrot <project_files/simulation_demo.launch.py>`
 
 You'll have to replace the packages and executables respectively where the ``uf_extra`` launch description is.
 
 .. note:: Your launch file should be a launch folder inside your package, something like ``package_name/launch/example_launch.py`` . Otherwise when you build the package it will fail.
 
-
-There are certain things that need to be added to your ``setup.py`` file for your xbox controller mapping node which also has been given below.
+Use the setup.py file given below to allow for launch files to work.
 
 :download:`Setup File <project_files/setup.py>`
+
+Running of Flavet Field
+^^^^^^^^^^^^^^^^^^^^^^^
+
+To run the car on Flavet field, you will need to run the motor_controller, odometry and the gps publishers. Then you can point your car East. When the car is east the 
+heading value should be 0. To set this you can run
+
+.. code-block:: bash
+
+    ros2 param set publisher z_angle_offset <angle_to_get_to_zero>
+
+Then go ahead and launch your launch file with your controller. An example of this can be downloaded :download:`here <project_files/vehicle.launch.py>`. Your controller should be in place of the ``stanley_controller`` in the ``example_launch.py`` given.
+You will also need to put your pose list in your package inside a folder called ``data``, then update the launch file with the necessary names where it asks for the pose list. Then launch the vehicle launch file.
+
+.. code-block:: bash
+
+    ros2 launch <pkg-name> vehicle.launch.py
+
+
+Then to launch visualizer run the launch file:
+
+.. code-block:: bash
+
+    ros2 launch gps_nav visualization.launch.py
+
+Then to have the car move, you need to set a speed parameter on the ``motion_spec_provider``, to do this run the following command.
+
+.. code-block:: bash
+
+    ros2 param set motion_spec_provider speed 2.0
+
+Your car should start following the path, the person running the car should follow it with their laptop, so that your don't lose connection.
+
 
 .. [1] G. M. Hoffmann, C. J. Tomlin, M. Montemerlo and S. Thrun, "Autonomous Automobile Trajectory Tracking for Off-Road Driving: Controller Design, Experimental Validation and Racing," 2007 American Control Conference, 2007, pp. 2296-2301, doi: 10.1109/ACC.2007.4282788.
 
