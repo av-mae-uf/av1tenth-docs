@@ -88,5 +88,40 @@ sensor_msgs
 * `Temperature <http://docs.ros.org/en/api/sensor_msgs/html/msg/Temperature.html>`_
 * `TimeReference <http://docs.ros.org/en/api/sensor_msgs/html/msg/TimeReference.html>`_
 
+std_msgs
+^^^^^^^^
+
+* `Bool <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Bool.html>`_
+* `Byte <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Byte.html>`_
+* `ByteMultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/ByteMultiArray.html>`_
+* `Char <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Char.html>`_
+* `ColorRGBA <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/ColorRGBA.html>`_
+* `Duration <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Duration.html>`_
+* `Empty <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Empty.html>`_
+* `Float32 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Float32.html>`_
+* `Float32MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Float32MultiArray.html>`_
+* `Float64 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Float64.html>`_
+* `Float64MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Float64MultiArray.html>`_
+* `Header <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Header.html>`_
+* `Int16 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int16.html>`_
+* `Int16MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int16MultiArray.html>`_
+* `Int32 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int32.html>`_
+* `Int32MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int32MultiArray.html>`_
+* `Int64 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int64.html>`_
+* `Int64MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int64MultiArray.html>`_
+* `Int8 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int8.html>`_
+* `Int8MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Int8MultiArray.html>`_
+* `MultiArrayDimension <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/MultiArrayDimension.html>`_
+* `MultiArrayLayout <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/MultiArrayLayout.html>`_
+* `String <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/String.html>`_
+* `Time <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/Time.html>`_
+* `UInt16 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt16.html>`_
+* `UInt16MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt16MultiArray.html>`_
+* `UInt32 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt32.html>`_
+* `UInt32MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt32MultiArray.html>`_
+* `UInt64 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt64.html>`_
+* `UInt64MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt64MultiArray.html>`_
+* `UInt8 <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt8.html>`_
+* `UInt8MultiArray <http://docs.ros.org/en/noetic/api/std_msgs/html/msg/UInt8MultiArray.html>`_
 
 
