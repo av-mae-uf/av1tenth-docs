@@ -13,6 +13,15 @@ If you are a student in the class, start at the top with `tutorial resources <ge
 Don't be discouraged if you are confused, we will assist you through completing this class. ROS2 is confusing. It takes sometime to fully 
 understand what it is doing. `ROS2 website <https://docs.ros.org/en/foxy/index.html>`_ does a decent job of explaining what is going on.
 
+Template Files and ROS2 Messages
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To find a listing of all common messages for ROS2 please check here `<information/ros2_common_msgs.html>`_. 
+
+For the node template you can download that :download:`here <information/files/node_template.py>`
+
+
+
 .. tip:: If you want to build the car yourself for personal or other educational use, look at the information section. The `parts <information/parts.html>`_ section outlines every piece of hardware required.
 
 .. toctree::
