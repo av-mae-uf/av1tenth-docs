@@ -25,7 +25,7 @@ class NodeTemplate(Node):
         # self.publisher = self.create_publisher(msg_type = , topic = , qos_profile = 1)
         # self.timer = self.create_timer(timer_period_sec = , callback = )
 
-    def callback(self, msg = Int16):
+    def callback(self, msg=Int16):
         """Description of Callback"""
         # Do Something
 
