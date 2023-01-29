@@ -5,7 +5,7 @@
 
 # Import all Necessary Python Modules Here
 
-import something
+#import something
 
 # Import all Necessary ROS2 Modules Here, this includes messages (std_msgs.msg for Int16, geometry_msgs.msg for Pose) Look at this
 # for all message data: https://av1tenth-docs.readthedocs.io/en/latest/information/ros2_common_msgs.html
