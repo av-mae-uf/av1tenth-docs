@@ -404,8 +404,16 @@ Once installed you can run it using the following:
 
     tmux
 
-To do any tmux command you must first hit ``Ctrl`` + ``b``, release it, then use whatever other command you need to do. 
+To do any tmux command you must first hit ``Ctrl`` + ``b`` (which is commonly referred to as ``Leader``), release it, then use whatever other command you need to do. 
 
-To split your terminal vertically you can do ``Ctrl`` + ``b``, release it, then hit ``%``. To split a terminal window horizontally do the initial command, then hit ``"``. To move between the terminal blocks use the initial command and then the arrow keys.
-To exit out of the split up terminals, just type exit in each terminal, and it will close you out of tmux.
+To split your terminal vertically you can do ``Leader``, release it, then hit ``%``. To split a terminal window horizontally do ``Leader`` ``"``. To move between the terminal blocks use ``Leader`` and then the arrow keys.
+To exit out of the split up terminals, just type exit in each terminal, and it will close you out of tmux. You can also use ``Leader`` ``x`` to prompt to  close an individual pane (a single terminal prompt). This can be very helpful when a command is stuck.
+
+A more complete cheat sheet can be found at `this link <https://tmuxcheatsheet.com/>`_
+
+If you want your terminal prompt to be colored in inside tmux, you can add a file called .tmux.conf to your home directory
+
+.. code-block:: bash
+
+    echo set -g default-terminal \"screen-256color\" >> ~/.tmux.conf
 
