@@ -1,7 +1,15 @@
-Class Videos
-============
+ROS2 Lecture Videos
+===================
 
-Here we will store the class videos for the class in terms of following along with code and ROS2 
+Here we will store the class videos for the class in terms of following along with code and ROS2.
+
+* `Video 1 <http://www.ccrane3.com/eml4930AV/videos/230128_ros2_vid1.mp4>`_ - Beginner tutorial. Introduce concepts of nodes, topics, services, actions, parameters, launch files, log files. Use turtlesim to have some nodes running.
+* `Video 2 <http://www.ccrane3.com/eml4930AV/videos/230128_ros2_vid2.mp4>`_ - Create a workspace. Create a package. Get the tutorial pub and sub nodes to run.
+* `Video 3 <http://www.ccrane3.com/eml4930AV/videos/230129_ros2_vid3.mp4>`_ - Create our own pub node and sub/pub node in Python.
+* `Video 4 <http://www.ccrane3.com/eml4930AV/videos/230131_ros2_vid4.mp4>`_ - Parameters and Launch files.
+* `Video 5 <http://www.ccrane3.com/eml4930AV/videos/230202_ros2_vid5.mp4>`_ - Writing a simple service and client in Python. Creating custom msg and srv files.
+  
+
 
 Lecture Videos
 ^^^^^^^^^^^^^^
