@@ -18,7 +18,7 @@ Template Files and ROS2 Messages
 
 To find a listing of all common messages for ROS2 please check `here <information/ros2_common_msgs.html>`_. 
 
-For the node template you can download that :download:`here <information/files/node_template.py>`
+For the node template you can download that :download:`here <information/files/node_template.py>`. We also have a :download:`launch file <projects/project_files/example_launch.py>` template with a :download:`setup file for launch <projects/project_files/setup.py>`
 
 
 
@@ -54,7 +54,7 @@ For the node template you can download that :download:`here <information/files/n
    :caption: Assistance
    :maxdepth: 1
    
-   Videos <assistance/videos>
+   Lecture Videos <assistance/videos>
    Cheat Sheet <assistance/cheatsheet>
    Troubleshooting <assistance/troubleshoot>
    Instructor and TA Contacts and Office Hours <assistance/contact>

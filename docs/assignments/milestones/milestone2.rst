@@ -6,13 +6,14 @@ an assignment covering that with a full complex message structure would be usefu
 
 This assignment or milestone will be to complete a full ROS 2 node on your own that converts LiDAR radial distance measurements into the cartesian form. This milestone has the following pertinent information
 
-* **Due Date:** February 8th, 2022
-* **Psuedo Code Due Date:** February 3rd, 2022
-* **Points:** 20 (5 for Block Diagram)
-* ROS 2 Topics: scan (sub) and cart_coord (pub)
-* ROS 2 Messages: ``LaserScan`` , ``PointCloud`` (both in ``sensor_msgs``), and ``Point32`` (in ``geometry_msgs``)
+* **Due Date:** February 10th, 2022
+* **Pseudo Code Due Date:** February 8th, 2022
+* **Points:** 20 (5 for Pseudo Code)
+* ROS 2 Topics: scan (subscribe to this) and cart_coord (publish to this)
+* `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``LaserScan`` (subscribing to this) , ``PointCloud`` (both in ``sensor_msgs``, publishing this), and ``Point32`` (in ``geometry_msgs``)
 
 Download the Bag File :download:`here <../files/bagfile.zip>`.
+Download Launch Package :download:`here <milestone_files/lidar_launch.zip>`
 
 You will need to run the bag file above to do this. Put the entire folder from this zip file in a folder, navigate to the 
 specific folder and play it using the following command. the `-l` loops the bag file infinitely till you interrupt it.
@@ -26,7 +27,7 @@ Deliverables
 ROS 2 node that converts the LaserScan message to PointCloud and publish a ``cart_coord`` topic. If you want to test this live you can come in to the lab MAE-B 131 to test it out on one of the vehicles. Grading will be based on performance of the node,
 if it publishes data correctly you will get full points. A full list of deliverables are given below
 
-* Block Diagram of your proposed code structure. More information can be found `here <../../information/code/pseudocode.html>`_
+* Pseudo Code for your Node. More information can be found `here <../../information/code/pseudocode.html>`_
 * ROS 2 Publisher Node publishing topic ``cart_coord``
 * ``setup.py`` file filled out
 * ``package.xml`` file filled out properly
@@ -81,16 +82,16 @@ You should know how to iterate over an array by now so that will not be covered,
 
     append(var)
 
+.. hint:: Use two loops to accomplish this, the first one to loop through and figure out the :math:`x` and :math:`y` , with :math:`z` as 0, add those to a ``Point32`` message, then in the outer loop append it to the point cloud field ``PointCloud.points`` . Then publish the ``PointCloud`` outside both loops.
+
 Visualizing the ``LaserScan`` and ``PointCloud``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To visualize both the LaserScan and the PointCloud, you should be able to launch a file from your workspace that does this. The following command will launch Rviz2
+To visualize both the LaserScan and the PointCloud, you should be able to launch a file from your workspace that does this. You can download the launch package :download:`here <milestone_files/lidar_launch.zip>`. The following command will launch Rviz2
 
 .. code-block:: bash
 
     ros2 launch lidar_launch lidar_rviz_launch.py
-
-.. note:: You will have to pull the av1tenth repo, build it and source it before this works.
 
 
 That's pretty much all you need to be successful in completing this milestone. If you have any problems `contact the TA's or Instructor <../../assistance/contact.html>`_.

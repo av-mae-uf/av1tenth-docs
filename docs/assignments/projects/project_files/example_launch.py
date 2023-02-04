@@ -5,10 +5,16 @@ from launch_ros.actions import Node
 
 def generate_launch_description():
     ld = LaunchDescription()
-    motor_controller_node = Node(
-        package="motor_driver",
-        executable="motor_controller",
-        parameters=[{"steering_offset": 0.0, "limiter": True}],
+    example_node = Node(
+        package="",
+        executable="",
+        parameters=[{"param1": value, "param2": value}],
     )
-    ld.add_action(motor_controller_node)
+    example_node2 = Node(
+        package="",
+        executable="",
+        parameters=[{"param1": value, "param2": value}],
+    )
+    ld.add_action(example_node)
+    ld.add_action(example_node2)
     return ld
