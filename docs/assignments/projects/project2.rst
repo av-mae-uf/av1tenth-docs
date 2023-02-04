@@ -7,7 +7,7 @@ pose estimator from `Milestone 5 <../milestones/milestone5.html>`_
 * **Due Date:** TBD
 * **Points:** 100
 * ROS 2 Topics: ``vehicle_pose`` (sub), ``current_goal_pose`` (sub) and ``vehicle_command_angle`` (pub)
-* ROS 2 Messages: ``PoseStamped`` (in ``geometry_msgs``) and ``VehCmd`` (in ``drive_interfaces.msg``)
+* `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``PoseStamped`` (in ``geometry_msgs``) and ``VehCmd`` (in ``drive_interfaces.msg``)
   
 To run this on your car you will need to git clone the ``eml4930_gps_nav`` repository that we have created for the car. You will need to clone
 this into the appropriate workspace source folder, something like ``class_ws/src``. That can be done by using the following command

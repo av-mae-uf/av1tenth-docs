@@ -3,6 +3,12 @@ ROS2 Common Messages
 
 Here are some common messages that you will probably need during this class.
 
+ackermann_msgs
+^^^^^^^^^^^^^^
+
+* `AckermannDrive <http://docs.ros.org/en/api/ackermann_msgs/html/msg/AckermannDrive.html>`_
+* `AckermannDriveStamped <http://docs.ros.org/en/api/ackermann_msgs/html/msg/AckermannDriveStamped.html>`_
+
 actionlib_msgs
 ^^^^^^^^^^^^^^
 

@@ -9,7 +9,7 @@ This assignment or milestone will be to complete a simple full ROS 2 node on you
 * **Due Date:** February 1st, 2023
 * **Points:** 20
 * ROS 2 Topics: ``rand_num`` (sub) and ``quotient`` (pub)
-* ROS 2 Messages: ``Int16`` (Part of std_msgs)
+* `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``Int16`` (Part of std_msgs)
 * Publisher can be accessed :download:`here <../files/rand_num.zip>`
 
 Deliverables
