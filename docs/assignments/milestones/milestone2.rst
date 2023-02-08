@@ -82,7 +82,7 @@ You should know how to iterate over an array by now so that will not be covered,
 
     append(var)
 
-.. hint:: Use two loops to accomplish this, the first one to loop through and figure out the :math:`x` and :math:`y` , with :math:`z` as 0, add those to a ``Point32`` message, then in the outer loop append it to the point cloud field ``PointCloud.points`` . Then publish the ``PointCloud`` outside both loops.
+.. hint:: Use a loop to accomplish this, the first one to loop through and figure out the :math:`x` and :math:`y` , with :math:`z` as 0, add those to a ``Point32`` message, then in the outer loop append it to the point cloud field ``PointCloud.points`` . Then publish the ``PointCloud`` outside both loops.
 
 Visualizing the ``LaserScan`` and ``PointCloud``
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
