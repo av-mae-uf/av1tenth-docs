@@ -10,7 +10,7 @@ This assignment or milestone will be to map your controller to motion on your ca
 * **Pseudo Code Due Date:** February 13th, 2023
 * **Code Review Due Date:** February 15th, 2023
 * **Total Points:** 100
-* ROS 2 Topics: ``joy`` (sub), ``led_color`` (pub) and ``vehicle_command_ackermann`` (pub)
+* ROS 2 Topics: ``joy`` (sub), and ``vehicle_command_ackermann`` (pub)
 * `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``Joy`` (in ``sensor_msgs``), ``AckermannDriveStamped`` (in ``ackermann_msgs.msg``)
 * A launch file to launch the car sensor and drivers stack has been installed in the car.
 
