@@ -75,7 +75,7 @@ Converting Joy Data to Message
 Start by connecting the joy stick to your computer, running ``joy_node`` and then echo the ``joy`` topic. See how the controller is being converted into data messages. Based on that selected the appropriate axes or buttons that you want.
 
 The ``AckermannDriveStamped`` message has an ``AckermannDrive`` message that requires to be published. In the ``AckermannDrive`` message there is a ``steering_angle``and ``speed`` fields, which is what we are concerned with. 
-You will need to send a message between -45 and 45, with 45 being steer to the right, and -45 being to the left. The speed value will need to be between 0 and 100. The rest are not necessary.
+You will need to send a message between -45 and 45, with -45 being steer to the right, and 45 being to the left. The speed value will need to be between 0 and 100. The rest are not necessary.
 
 .. note:: If you want to use the triggers for the throttle, note that they do not behave like the joysticks on the controller the start points and neutral points are slightly different. 
 
