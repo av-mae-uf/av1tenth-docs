@@ -75,7 +75,7 @@ Converting Joy Data to Message
 Start by connecting the joy stick to your computer, running ``joy_node`` and then echo the ``joy`` topic. See how the controller is being converted into data messages. Based on that selected the appropriate axes or buttons that you want.
 
 The ``AckermannDriveStamped`` message has an ``AckermannDrive`` message that requires to be published. In the ``AckermannDrive`` message there is a ``steering_angle``and ``speed`` fields, which is what we are concerned with. 
-You will need to send a message between -45 and 45, with -45 being steer to the right, and 45 being to the left. The speed value will need to be between 0 and 100. The rest are not necessary.
+You will need to send a message between -45 and 45, with -45 being steer to the right, and 45 being to the left. The speed value will need to be between -6.35 and 6.35. The rest are not necessary.
 
 .. note:: If you want to use the triggers for the throttle, note that they do not behave like the joysticks on the controller the start points and neutral points are slightly different. 
 
@@ -101,3 +101,36 @@ parameters has been attached below.
 There are certain things that need to be added to your ``setup.py`` file for your xbox controller mapping node which also has been given below.
 
 :download:`Setup File <project_files/setup.py>`
+
+SSH into Car
+^^^^^^^^^^^^
+
+To ``ssh`` into the cars, first Eduroam needs to be put on to the cars, this will be done through monitors and keyboards connected to the cars. Next you can ssh into the cars network
+by first connecting to the cars network. The SSID and password are given on the cars router (Blue TP-Link router).
+
+Then from a terminal type the following
+
+.. code-block:: bash
+
+    ssh $user$@192.168.0.100
+
+It will prompt you for a security verification, you should type ``yes`` and hit return. Then enter the password.
+
+.. hint:: Both the user and password have been placed on the cars computer. Type them exactly as they appear.
+
+Sometimes the cars may not have the appropriate ackermann_msgs package installed. You can install them using:
+
+.. code-block:: bash
+
+    sudo apt install ros-foxy-ackermann-msgs
+
+Then you can launch the vehicle using:
+
+.. code-block:: bash
+
+    ros2 launch vehicle_launch vehicle.launch.py
+
+.. note:: If something isn't running correctly check the USB ports, you may have pulled out the wrong one. The green lights on the car should be on when the correct port is plugged in.
+
+.. warning:: Whenever there is changes to the main ``av1tenth`` git repository, the car automatically pulls the repo every time you open a terminal. Though it does not ``colcon build``. So sometimes the TA's might tell you to colcon build in the ``class_ws`` directory
+
