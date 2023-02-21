@@ -46,7 +46,7 @@ To find the perpendicular distance, first the angle alpha as shown in the figure
 
 .. figure:: milestone_files/perpdistance.png
     :alt: Geometry for Perpendicular Distance
-    :width: 50%
+    :width: 75%
     
 
     Figure 1: Geometry for Perpendicular Distance
@@ -56,7 +56,7 @@ Alpha can be found using the following:
 
 .. math:: 
 
-    \alpha = \atan (\frac{d_{offset} \cos \theta - d)}{d_{offset} \sin \theta}
+    \alpha = \arctan \left( \frac{d_{offset} \cos \theta - d}{d_{offset} \sin \theta} \right)
 
 where :math:`\theta` is the offset angle you chose from the right side of the car, with :math:`d_{offset}` being the offset distance and :math:`d` as the perpendicular distance from the vehicle coordinate system.
 
