@@ -1,126 +1,60 @@
-Milestone 4: Creating a Speed Controller
-============================================
+Milestone 3: Processing Bag Data
+======================================================
 
-This assignment covers working on a simple PID controller to control the speed that is coming out of your 
-Joy Mapping Node that you completed in `Project 1 <../projects/project1.html>`_
+This assignment covers working on processing your bag data that you collected and plotting the GPS data in a graph and in Google Earth submitting a PDF.
+
+.. note:: We have a couple of bag files that we have created in the av1tenth repo under ``ros2bag/GPS_Processing_BagFiles`` if you weren't able to collect your bag file.
 
 * **Due Date:** TBD
 * **Points:** 20
-* ROS 2 Topics: ``odometry`` (sub), ``joy`` (sub) and ``vehicle_command_angle`` (pub)
-* ROS 2 Messages: ``Odometry`` (in ``nav_msgs``), ``VehCmd`` (in ``drive_interfaces/VehCmd.msg``) and ``Joy`` (in ``sensor_msgs``)
+* ROS 2 Topics: GPSData (pub)
+* ROS 2 Messages: ``PoseStamped`` ( in ``geometry_msgs``)
 
-.. warning:: The message and topic names are important, not following this convention can have your car not working. Please ensure they are correct.
+You can play a bag file with the following command.
+  
+.. code-block:: bash
+
+    ros2 bag play -l <bag_file_name>
 
 Deliverables
 ^^^^^^^^^^^^
-A package ``.zip`` with your Joy Mapper and Controller Node
+A PDF with the two plots for GPS.
 
-Odometry and Speed Basics
-^^^^^^^^^^^^^^^^^^^^^^^^^
+Bag File Output to a CSV File
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The ``odometry`` topic outputs an ``Odometry`` message which has information on its structure `here <http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html>`_.
-The value for the speed of the vehicle can be found in the ``twist.x`` section of the message. It is output in ``m/s``. You will be publishing your message
-in the form of a percentage so there is some simple math involved. Using an optical tachometer the Max speed of the car was measured to be 7.3513268 m/s. The
-math used is given below,
+To plot the data a file was given that is just the python file for a ROS2 Node. You will have to put this in a package and write the appropriate entry points. You should be 
+able to do this now with ease. Run the converters first before running your bag file.
 
-.. math::
+The two files for the GPS converter and Odometry converter is given below.
 
-    \dot{x}_{max} = \dfrac{N(2 \pi R)}{60} ,
+:download:`GPS Processor <milestone_files/process_GPSData_bagfile.py>`
 
-where :math:`N` is the revolutions per minute (here 585 RPM), :math:`R` is the radius of the wheel (here .12 m). So now you can find out what the corresponding Odometry
-throttle effort is using percentage calculations with the max velocity. 
+:download:`Odometry Processor <milestone_files/process_Odom_bagfile.py>`
 
-PID Controller
-^^^^^^^^^^^^^^
-More info on PID Controllers can be found `here <../../information/theoryinfo/pid.html>`_. PID controllers are simple controllers that employ feedback and continuously controls
-as system based on an error. The idea is to drive that error to 0 based on the Proportional (P), Integral (I) and Derivate (D) controller terms. The error
-can be calculated as follows,
+The GPS data is UTM data and the Odometry data is in the form of Quaternions. These two nodes will output a file that is of the format ``.txt``. You can take the values and put both into Excel with the Text Import Wizard.
+You might need to set the first point of your data as the zero point so all your other Poses can be scaled to that point. This can be done by subtracting all the other points from the first
+point. Your points should start with a ``0,0`` in the first row.
 
-.. math::
+GPS Data to Google Earth
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-    e(t) = r - y,
+So you have your data in UTM and you will need to put it into Google Earth in the form of Latitude and Longitude. You can either do this through python using the ``utm`` python
+library and using the function ``utm.to_latlon``. Pertinent information for this will be that we are in Zone 17R.
 
-where :math:`e(t)` is the error w.r.t time, :math:`r` is the desired set point (value you want your system to be at) and :math:`y` is the system output (:math:`\dot{x}`).
+You can also do this through the website `Zonum Solutions UTM to LatLong Converter <http://www.zonums.com/online/coords/cotrans.php?module=14>`_. The same information for the zone above applies here.
+This can take a comma seperated list and output a comma seperated list. The python file you will have to get creative to output it correctly. 
 
-The simplest form of a PID is multiplying your controller by a fixed or proportional gain. A form that is often given in theoretical controls classes (EML4312)
+You can now take this into Google Earth and plot these as a path. A video of how to do this is located `here <../../assistance/videos.html>`_
 
-.. math::
-
-    u = K_p e(t),
-
-where :math:`u` is the control command given to the system and :math:`K_p` is the proportional gain.
-
-The next term, the Integral (I) controller has the following equation,
-
-.. math::
-
-    u = \int_{0}^{t} K_i \, e(t) \, dt,
-
-where :math:`K_i` is the integral gain. The integral controller in this form is not very useful to us. An alternative form is,
-
-.. math::
-
-    u = K_i \sum_{k=1}^{k} e_k \Delta t.
-
-The idea is you take your old values of :math:`e_k` (the error) and you keep adding to it's self and multiplying by a fixed integral gain :math:`K_i`.
-:math:`\Delta t` is just taking your current :math:`t_k` and subtracting the old one (previous iteration) :math:`t_{k-1}`, where :math:`k^th` is the current iteration.
-
-The final term is the derivative (D) controller which multiplies a gain by the derivative or slope of your error over time. The equation of this controller would be
-
-.. math::
-
-    u = \dfrac{d}{dt} e(t) K_d.
-
-where :math:`K_d` is the derivative gain. A more useful form of this controller is,
-
-.. math::
-
-    u = K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})}
-
-A full Proportional, Integral and Derivate (PID) controller is essentially just mashing all three controllers together and has the following equation,
-
-.. math::
-    
-    u = K_p e(t) + \int_{0}^{t} K_i \, e(t) \, dt + \dfrac{d}{dt} e(t) K_d
-
-or
-
-.. math:: 
-
-    u = K_p e_k + K_i \sum_{k=1}^{k} e_k \Delta t + K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})}.
-
-You do not need to use the full PID controller you can use PI or PD controllers as well or other formats. See which one works best and use that for your controller.
-
-You will need to assign a :code:`self.var` to store your old values of integral addition errors time and error. You can get time 
-using the :code:`time.monotonic()` function. You will then use the :math:`u` message as the ``vehicle_command_angle`` value.
-
-Testing the Speed Controller
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-To easily test the speed controller, map buttons to have set speeds, ideally the buttons will set a throttle percentage of 10%, 20%, 30% etc. to test out your controller.
-We will show you how to test out your controller live and also how plot the data after bagging it. You will need to publish the value set_point under VehCmd.msg to make this possible.
-You can also disable the limiter in the motor_controller node to test out higher speeds, by setting a parameter in a launch file. The easiest way to test this out
-will be on your cars. Come around to MAE-B 131 during `office hours or extended hours <../../assistance/contact.html>`_. We do not think we'll have time to test out
-during class at the moment, but this can change.
-
-Launch and Setup Files to Change Parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-You need to have launch files to allow you to change parameters on start or you can run the following command,
-
-.. code-block:: bash
-
-    ros2 run motor_driver motor_controller --ros-args -p limiter:=False
-
-But a better and easier way to do this is using launch files. To set the limiter to off set the value limiter to ``False``
-
-:download:`Launch File <../projects/project_files/example_launch.py>`
-
-.. note:: Your launch file should be a launch folder inside your package, something like ``package_name/launch/example_launch.py`` . Otherwise when you build the package it will fail.
+.. 
+    Odometry to RViz
+   To show your data in RViz, you can run the bag file, open RViz, add and then By Topic and you should see a message called odometry being published. You will need to change the frame to ``odom`` for this to work in RViz.
+    You should now see your orientation plotted as an arrow changing continuously and overlapping.
 
 
-There are certain things that need to be added to your ``setup.py`` file for your speed controller node which also has been given below.
-
-:download:`Setup File <../projects/project_files/setup.py>`
 
 
+
+    That's pretty much all you need to be successful in completing this milestone. If you have any problems `contact the TA's or Instructor <../../assistance/contact.html>`_.
 

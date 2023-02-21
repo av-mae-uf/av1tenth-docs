@@ -1,60 +1,86 @@
-Milestone 3: Processing Bag Data
-======================================================
+Milestone 3: Wall Following Controller (Bang-Bang)
+====================================================
 
-This assignment covers working on processing your bag data that you collected and plotting the GPS data in a graph and in Google Earth submitting a PDF.
+This assignment introduces a wall following algorithm to stay a set distance away from the wall. The controller used here is a bang-bang controller, which is a feedback based controller
+that discretely cycles from state to another (think thermostat or your oven).
 
-.. note:: We have a couple of bag files that we have created in the av1tenth repo under ``ros2bag/GPS_Processing_BagFiles`` if you weren't able to collect your bag file.
-
-* **Due Date:** TBD
+* **Due Date:** March 3rd, 2023
+* * **Pseudo Code Due Date:** February 27th, 2023
 * **Points:** 20
-* ROS 2 Topics: GPSData (pub)
-* ROS 2 Messages: ``PoseStamped`` ( in ``geometry_msgs``)
-
-You can play a bag file with the following command.
-  
-.. code-block:: bash
-
-    ros2 bag play -l <bag_file_name>
+* ROS 2 Topics: ``scan`` (sub) and ``vehicle_command_ackermann`` (pub)
+* ROS 2 Messages: ``LaserScan`` in ``sensor_msgs`` (sub) and ``AckermannDriveStamped`` in ``ackermann_msgs`` (pub) 
 
 Deliverables
 ^^^^^^^^^^^^
-A PDF with the two plots for GPS.
+ROS 2 node with a Bang-Bang controller for your vehicle steering.
 
-Bag File Output to a CSV File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Pseudo Code for your Node. More information can be found `here <../../information/code/pseudocode.html>`_
+* ROS 2 Publisher Node publishing topic ``vehicle_command_ackermann``
+* ``setup.py`` file filled out
+* ``package.xml`` file filled out properly
+* .zip file containing entire package (We should be able to download the file and put it on a vehicle and run it without changing anything)
 
-To plot the data a file was given that is just the python file for a ROS2 Node. You will have to put this in a package and write the appropriate entry points. You should be 
-able to do this now with ease. Run the converters first before running your bag file.
+Bang-Bang Controller
+^^^^^^^^^^^^^^^^^^^^
 
-The two files for the GPS converter and Odometry converter is given below.
+A Bang-Bang controller is a 2 state controller that abruptly changes from a state to another, in our case from steering left to right. To determine which state
+you are in, providing feedback to your controller, you will find the perpendicular distance from the wall to your car (covered in the next section). If it is too far away from the wall,
+steer in the opposite direction that you are currently and vice versa. 
 
-:download:`GPS Processor <milestone_files/process_GPSData_bagfile.py>`
+For our problem here, we will be following the right wall. If it is too far from the right wall you want to max turn right, and if it is too close, max turn left.
+You can model this by using two states of -1 and 1. If an error you take from a set distance and the true distance, depending on how you structure the math, each sign will 
+correspond to a turning right or left. The error can be calculated as such
 
-:download:`Odometry Processor <milestone_files/process_Odom_bagfile.py>`
+.. math:: 
 
-The GPS data is UTM data and the Odometry data is in the form of Quaternions. These two nodes will output a file that is of the format ``.txt``. You can take the values and put both into Excel with the Text Import Wizard.
-You might need to set the first point of your data as the zero point so all your other Poses can be scaled to that point. This can be done by subtracting all the other points from the first
-point. Your points should start with a ``0,0`` in the first row.
+    e = d_{setpoint} - D_{perp}
 
-GPS Data to Google Earth
-^^^^^^^^^^^^^^^^^^^^^^^^
+.. note:: You can change the order as needed to get a certain positive or negative value.
 
-So you have your data in UTM and you will need to put it into Google Earth in the form of Latitude and Longitude. You can either do this through python using the ``utm`` python
-library and using the function ``utm.to_latlon``. Pertinent information for this will be that we are in Zone 17R.
+.. hint:: Try to get the right turn to be positive and the left turn as negative. Using the ``numpy.sign`` function should make this trivial. Just ensure you filter out ``NaN`` values.
 
-You can also do this through the website `Zonum Solutions UTM to LatLong Converter <http://www.zonums.com/online/coords/cotrans.php?module=14>`_. The same information for the zone above applies here.
-This can take a comma seperated list and output a comma seperated list. The python file you will have to get creative to output it correctly. 
+Finding The Perpendicular Distance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You can now take this into Google Earth and plot these as a path. A video of how to do this is located `here <../../assistance/videos.html>`_
+To find the perpendicular distance, first the angle alpha as shown in the figure below has to be found.
 
-.. 
-    Odometry to RViz
-   To show your data in RViz, you can run the bag file, open RViz, add and then By Topic and you should see a message called odometry being published. You will need to change the frame to ``odom`` for this to work in RViz.
-    You should now see your orientation plotted as an arrow changing continuously and overlapping.
+.. figure:: milestone_files/perpdistance.png
+    :alt: Geometry for Perpendicular Distance
+    :width: 50%
+    
 
-
+    Figure 1: Geometry for Perpendicular Distance
 
 
+Alpha can be found using the following:
 
-    That's pretty much all you need to be successful in completing this milestone. If you have any problems `contact the TA's or Instructor <../../assistance/contact.html>`_.
+.. math:: 
+
+    \alpha = \atan (\frac{d_{offset} \cos \theta - d)}{d_{offset} \sin \theta}
+
+where :math:`\theta` is the offset angle you chose from the right side of the car, with :math:`d_{offset}` being the offset distance and :math:`d` as the perpendicular distance from the vehicle coordinate system.
+
+Next you can simply find the perpendicular distance :math:`D_{perp}` by using the following
+
+.. math::
+
+    D_{perp} = d \cos \alpha
+
+Now, you cannot simply use the perpendicular distance as with this the car will not be able to react quickly enough causing overshoots. To counteract this, 
+a look ahead distance :math:`L` is established. You can use this :math:`L` to find a perpendicular distance to add as such
+
+.. math::
+
+    D_{perp+L} = L \sin \alpha + D_{perp}
+
+
+.. hint:: You :math:`L` should be between 10 and to 30 cm in front of the car and :math:`\theta` should be between 15 and 30 degrees from the cars perpendicular.
+
+.. warning:: Set your values for speed to be relatively slow, around 1m/s. Any faster it could possibly crash into the wall.
+
+
+
+
+
+
 
