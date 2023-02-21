@@ -1,7 +1,7 @@
 Project 2: Stanley Controller Path Following
 =============================================
 
-This project will cover how to write a stanley controller on your car to follow a path around a set of gps points. All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo. You will need a 
+This project will cover how to write a stanley controller on your car to follow a path around a set of gps points. A brief powerpoint presentation on this can be found :download:`here <project_files/1_gps_nav_problem.pptx>` . All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo. You will need a 
 pose estimator from `Milestone 5 <../milestones/milestone5.html>`_
 
 * **Due Date:** TBD
