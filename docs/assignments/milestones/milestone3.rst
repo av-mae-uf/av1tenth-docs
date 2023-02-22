@@ -91,6 +91,17 @@ a look ahead distance :math:`L` is established. You can use this :math:`L` to fi
 
 .. warning:: Set your values for speed to be relatively slow, around 1m/s. Any faster it could possibly crash into the wall.
 
+Running The Car
+^^^^^^^^^^^^^^^
+
+To launch the lidar on the car you can run the following command:
+
+.. code-block:: bash
+
+    ros2 launch vehicle_launch vehicle_lidar.launch.py
+
+
+
 
 
 
