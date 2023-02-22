@@ -35,6 +35,21 @@ correspond to a turning right or left. The error can be calculated as such
 
     e = d_{setpoint} - D_{perp}
 
+Which then can give you the equation for a Bang-Bang as 
+
+.. math::
+    
+    \phi = 
+        \begin{cases}
+            -\beta & \text{if} e > 0\\
+            \beta & \text{if} e < 0\\
+
+        \end{cases}
+
+where :math:`\phi` is the steering angle, and :math:`\beta` is a set steering angle that your controller will oscillate between. 
+
+.. warning:: Remember that the car has actuation limits on the steering to be between -45 and 45.
+
 .. note:: You can change the order as needed to get a certain positive or negative value.
 
 .. hint:: Try to get the right turn to be positive and the left turn as negative. Using the ``numpy.sign`` function should make this trivial. Just ensure you filter out ``NaN`` values.
@@ -52,7 +67,7 @@ To find the perpendicular distance, first the angle alpha as shown in the figure
     Figure 1: Geometry for Perpendicular Distance
 
 
-Alpha can be found using the following:
+:math:`\alpha` can be found using the following:
 
 .. math:: 
 
