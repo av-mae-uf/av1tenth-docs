@@ -39,7 +39,10 @@ Which then can give you the equation for a Bang-Bang as
 
 .. math::
     
-    \phi = \begin{cases} -\beta & \text{if} e > 0\\ \beta & \text{if} e < 0\\ \end{cases}
+    \phi = \left\{\begin{array} 
+        -\beta & \text{if} e > 0\\ 
+        \beta & \text{if} e < 0\\ 
+        \end{array}
 
 where :math:`\phi` is the steering angle, and :math:`\beta` is a set steering angle that your controller will oscillate between. 
 
@@ -47,7 +50,7 @@ where :math:`\phi` is the steering angle, and :math:`\beta` is a set steering an
 
 .. note:: You can change the order as needed to get a certain positive or negative value.
 
-.. hint:: Try to get the right turn to be positive and the left turn as negative. Using the ``numpy.sign`` function should make this trivial. Just ensure you filter out ``NaN`` values.
+.. hint:: Try to get the right turn to be positive and the left turn as negative. Using the ``numpy.sign()`` function should make this trivial. Just ensure you filter out ``NaN`` values with ``np.isnan()``.
 
 Finding The Perpendicular Distance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
