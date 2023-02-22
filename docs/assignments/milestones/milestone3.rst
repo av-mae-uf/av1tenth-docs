@@ -39,12 +39,7 @@ Which then can give you the equation for a Bang-Bang as
 
 .. math::
     
-    \phi = 
-        \begin{cases}
-            -\beta & \text{if} e > 0\\
-            \beta & \text{if} e < 0\\
-
-        \end{cases}
+    \phi = \begin{cases} -\beta & \text{if} e > 0\\ \beta & \text{if} e < 0\\ \end{cases}
 
 where :math:`\phi` is the steering angle, and :math:`\beta` is a set steering angle that your controller will oscillate between. 
 
