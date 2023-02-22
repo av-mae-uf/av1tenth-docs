@@ -38,11 +38,11 @@ correspond to a turning right or left. The error can be calculated as such
 Which then can give you the equation for a Bang-Bang as 
 
 .. math::
-    
-    \phi = \left\{\begin{array} 
-        -\beta & \text{if} e > 0\\ 
-        \beta & \text{if} e < 0\\ 
-        \end{array}
+
+    \phi =    \begin{matrix}
+              -\beta & \text{if } e > 0\\
+              \beta & \text{if } e < 0\\
+              \end{matrix}
 
 where :math:`\phi` is the steering angle, and :math:`\beta` is a set steering angle that your controller will oscillate between. 
 
