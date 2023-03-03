@@ -1,60 +1,145 @@
-Milestone 3: Processing Bag Data
+Milestone 4: PID Control Wall Following
 ======================================================
 
-This assignment covers working on processing your bag data that you collected and plotting the GPS data in a graph and in Google Earth submitting a PDF.
+This assignment introduces a wall following algorithm to stay a set distance away from the wall. The controller used here is a PID controller, think 
+cruise control on your car.
 
-.. note:: We have a couple of bag files that we have created in the av1tenth repo under ``ros2bag/GPS_Processing_BagFiles`` if you weren't able to collect your bag file.
-
-* **Due Date:** TBD
+* **Due Date:** March 10th, 2023
+* * **Pseudo Code Due Date:** March 8th, 2023
 * **Points:** 20
-* ROS 2 Topics: GPSData (pub)
-* ROS 2 Messages: ``PoseStamped`` ( in ``geometry_msgs``)
-
-You can play a bag file with the following command.
-  
-.. code-block:: bash
-
-    ros2 bag play -l <bag_file_name>
+* ROS 2 Topics: ``scan`` (sub) and ``vehicle_command_ackermann`` (pub)
+* ROS 2 Messages: ``LaserScan`` in ``sensor_msgs`` (sub) and ``AckermannDriveStamped`` in ``ackermann_msgs`` (pub) 
 
 Deliverables
 ^^^^^^^^^^^^
-A PDF with the two plots for GPS.
+ROS 2 node with a Bang-Bang controller for your vehicle steering.
 
-Bag File Output to a CSV File
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Pseudo Code for your Node. More information can be found `here <../../information/code/pseudocode.html>`_
+* ROS 2 Publisher Node publishing topic ``vehicle_command_ackermann``
+* ``setup.py`` file filled out
+* ``package.xml`` file filled out properly
+* .zip file containing entire package (We should be able to download the file and put it on a vehicle and run it without changing anything)
 
-To plot the data a file was given that is just the python file for a ROS2 Node. You will have to put this in a package and write the appropriate entry points. You should be 
-able to do this now with ease. Run the converters first before running your bag file.
+PID Controller
+^^^^^^^^^^^^^^^^^^^^
 
-The two files for the GPS converter and Odometry converter is given below.
+More info on PID Controllers can be found `here <../../information/theoryinfo/pid.html>`_. PID controllers are simple controllers that employ feedback and continuously controls
+as system based on an error. The idea is to drive that error to 0 based on the Proportional (P), Integral (I) and Derivate (D) controller terms. The error
+can be calculated as follows,
 
-:download:`GPS Processor <milestone_files/process_GPSData_bagfile.py>`
+.. math::
 
-:download:`Odometry Processor <milestone_files/process_Odom_bagfile.py>`
+    e(t) = r - y,
 
-The GPS data is UTM data and the Odometry data is in the form of Quaternions. These two nodes will output a file that is of the format ``.txt``. You can take the values and put both into Excel with the Text Import Wizard.
-You might need to set the first point of your data as the zero point so all your other Poses can be scaled to that point. This can be done by subtracting all the other points from the first
-point. Your points should start with a ``0,0`` in the first row.
+where :math:`e(t)` is the error w.r.t time, :math:`r` is the desired set point (value you want your system to be at) and :math:`y` is the system output (:math:`\dot{x}`).
 
-GPS Data to Google Earth
-^^^^^^^^^^^^^^^^^^^^^^^^
+The simplest form of a PID is multiplying your controller by a fixed or proportional gain. A form that is often given in theoretical controls classes (EML4312)
 
-So you have your data in UTM and you will need to put it into Google Earth in the form of Latitude and Longitude. You can either do this through python using the ``utm`` python
-library and using the function ``utm.to_latlon``. Pertinent information for this will be that we are in Zone 17R.
+.. math::
 
-You can also do this through the website `Zonum Solutions UTM to LatLong Converter <http://www.zonums.com/online/coords/cotrans.php?module=14>`_. The same information for the zone above applies here.
-This can take a comma seperated list and output a comma seperated list. The python file you will have to get creative to output it correctly. 
+    u = K_p e(t),
 
-You can now take this into Google Earth and plot these as a path. A video of how to do this is located `here <../../assistance/videos.html>`_
+where :math:`u` is the control command given to the system and :math:`K_p` is the proportional gain.
 
-.. 
-    Odometry to RViz
-   To show your data in RViz, you can run the bag file, open RViz, add and then By Topic and you should see a message called odometry being published. You will need to change the frame to ``odom`` for this to work in RViz.
-    You should now see your orientation plotted as an arrow changing continuously and overlapping.
+The next term, the Integral (I) controller has the following equation,
+
+.. math::
+
+    u = \int_{0}^{t} K_i \, e(t) \, dt,
+
+where :math:`K_i` is the integral gain. The integral controller in this form is not very useful to us. An alternative form is,
+
+.. math::
+
+    u = K_i \sum_{k=1}^{k} e_k \Delta t.
+
+The idea is you take your old values of :math:`e_k` (the error) and you keep adding to it's self and multiplying by a fixed integral gain :math:`K_i`.
+:math:`\Delta t` is just taking your current :math:`t_k` and subtracting the old one (previous iteration) :math:`t_{k-1}`, where :math:`k^th` is the current iteration.
+
+.. note:: :math:`\Delta t` Can and probably should be set to a constant value of 10Hz or 0.1s.
+
+You will need to window your integral controller, i.e. only sum up the last certain amount of error values. Usually for our case it could be around 100 to 200 values.
+
+.. hint:: Storing the errors as a list and then summing them up will be the easiest method to achieve this. You can also use the ``pop()`` function in python to remove a certain value from a list.
+
+The final term is the derivative (D) controller which multiplies a gain by the derivative or slope of your error over time. The equation of this controller would be
+
+.. math::
+
+    u = \dfrac{d}{dt} e(t) K_d.
+
+where :math:`K_d` is the derivative gain. A more useful form of this controller is,
+
+.. math::
+
+    u = K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})}
+
+A full Proportional, Integral and Derivate (PID) controller is essentially just mashing all three controllers together and has the following equation,
+
+.. math::
+    
+    u = K_p e(t) + \int_{0}^{t} K_i \, e(t) \, dt + \dfrac{d}{dt} e(t) K_d
+
+or
+
+.. math:: 
+
+    u = K_p e_k + K_i \sum_{k=1}^{k} e_k \Delta t + K_d \dfrac {e_k - e_{k-1} } {t_k - (t_{k-1})}.
+
+You do not need to use the full PID controller you can use PI or PD controllers as well or other formats. See which one works best and use that for your controller.
+
+You will need to assign a :code:`self.var` to store your old values of integral addition errors time and error. You will then use the :math:`u` message as the ``vehicle_command_angle`` value.
+
+.. warning:: Remember that the car has actuation limits on the steering to be between -45 and 45.
+
+.. note:: You can change the order as needed to get a certain positive or negative value.
+
+.. hint:: Try to get the right turn to be positive and the left turn as negative. Using the ``numpy.sign()`` function should make this trivial. Just ensure you filter out ``NaN`` values with ``np.isnan()``.
+
+Finding The Perpendicular Distance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+To find the perpendicular distance, first the angle alpha as shown in the figure below has to be found.
+
+.. figure:: milestone_files/perpdistance.png
+    :alt: Geometry for Perpendicular Distance
+    :width: 75%
+    
+
+    Figure 1: Geometry for Perpendicular Distance
+
+
+:math:`\alpha` can be found using the following:
+
+.. math:: 
+
+    \alpha = \arctan \left( \frac{d_{offset} \cos \theta - d}{d_{offset} \sin \theta} \right)
+
+where :math:`\theta` is the offset angle you chose from the right side of the car, with :math:`d_{offset}` being the offset distance and :math:`d` as the perpendicular distance from the vehicle coordinate system.
+
+Next you can simply find the perpendicular distance :math:`D_{perp}` by using the following
+
+.. math::
+
+    D_{perp} = d \cos \alpha
+
+Now, you cannot simply use the perpendicular distance as with this the car will not be able to react quickly enough causing overshoots. To counteract this, 
+a look ahead distance :math:`L` is established. You can use this :math:`L` to find a perpendicular distance to add as such
+
+.. math::
+
+    D_{perp+L} = L \sin \alpha + D_{perp}
+
+
+.. hint:: You :math:`L` should be between 10 and to 30 cm in front of the car and :math:`\theta` should be between 15 and 30 degrees from the cars perpendicular.
+
+.. warning:: Set your values for speed to be relatively slow, around 1m/s. Any faster it could possibly crash into the wall. Also do note the faster you go, the larger your look ahead distance :math:`L` needs to be.
 
 
 
 
 
-    That's pretty much all you need to be successful in completing this milestone. If you have any problems `contact the TA's or Instructor <../../assistance/contact.html>`_.
+
+
+
 

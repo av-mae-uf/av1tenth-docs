@@ -12,6 +12,6 @@ Milestone information for the EML4930 AV Class are available here. The assignmen
    Milestone 1: Creating a Simple ROS 2 Node (Pub & Sub) <milestone1>
    Milestone 2: Creating a ROS 2 Node for Converting Data <milestone2>
    Milestone 3: Wall Following Controller (Bang-Bang) <milestone3>
-   Milestone 4: Processing Bag Data <milestone4>
-   Milestone 5: Creating a Speed Controller <milestone5>
-   Milestone 6: Pose Estimator <milestone6>
+   Milestone 4: PID Wall Following <milestone4>
+   .. Milestone 5: Creating a Speed Controller <milestone5>
+   .. Milestone 6: Pose Estimator <milestone6>
