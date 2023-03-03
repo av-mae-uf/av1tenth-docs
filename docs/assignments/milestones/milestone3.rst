@@ -38,11 +38,11 @@ correspond to a turning right or left. The error can be calculated as such
 Which then can give you the equation for a Bang-Bang as 
 
 .. math::
-    
-    \phi = \left\{\begin{array} 
-        -\beta & \text{if} e > 0\\ 
-        \beta & \text{if} e < 0\\ 
-        \end{array}
+
+    \phi =    \begin{matrix}
+              -\beta & \text{if } e > 0\\
+              \beta & \text{if } e < 0\\
+              \end{matrix}
 
 where :math:`\phi` is the steering angle, and :math:`\beta` is a set steering angle that your controller will oscillate between. 
 
@@ -90,6 +90,17 @@ a look ahead distance :math:`L` is established. You can use this :math:`L` to fi
 .. hint:: You :math:`L` should be between 10 and to 30 cm in front of the car and :math:`\theta` should be between 15 and 30 degrees from the cars perpendicular.
 
 .. warning:: Set your values for speed to be relatively slow, around 1m/s. Any faster it could possibly crash into the wall.
+
+Running The Car
+^^^^^^^^^^^^^^^
+
+To launch the lidar on the car you can run the following command:
+
+.. code-block:: bash
+
+    ros2 launch vehicle_launch vehicle_lidar.launch.py
+
+
 
 
 
