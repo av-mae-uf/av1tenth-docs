@@ -12,7 +12,7 @@ cruise control on your car.
 
 Deliverables
 ^^^^^^^^^^^^
-ROS 2 node with a Bang-Bang controller for your vehicle steering.
+ROS 2 node with a PID controller for your vehicle steering.
 
 * Pseudo Code for your Node. More information can be found `here <../../information/code/pseudocode.html>`_
 * ROS 2 Publisher Node publishing topic ``vehicle_command_ackermann``
