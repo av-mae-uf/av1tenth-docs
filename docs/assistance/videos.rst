@@ -13,6 +13,13 @@ ROS2 Lectures
 * `Video 5 <http://www.ccrane3.com/eml4930AV/videos/230203_ros2_vid5.mp4>`_ (:download:`PPT <files/230202_ros2_custom_messages5.pptx>`) - Writing a simple service and client in Python. Creating custom msg and srv files.
 * `Video 6 <http://www.ccrane3.com/eml4930AV/videos/230206_ros2_vid6.mp4>`_ (:download:`PPT <files/230204_ros2_service_client__6.pptx>`) - Service/Client.
 
+GNSS Navigation Presentations
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* :download:`The Navigation Problem <files/230220_gps_nav_problem.pptx>`
+* :download:`Vehicle Navigation <files/230224_gps_nav.pptx>`
+* :download:`Vehicle Controllers <files/230302_vehicle_controller.pptx>`
+
 
 .. In Class Videos
 .. ^^^^^^^^^^^^^^^
