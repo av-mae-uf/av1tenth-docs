@@ -31,7 +31,7 @@ ROS 2 node that runs a Stanley controller as discussed in class in place of the 
 Creating the Path to Follow
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The points that you will be visiting are available :download:`here <project_files/points.kml>`. You will then need to create a path in google earth that follows these points and output a path ``.kml`` file.
+The points that you will be visiting are available :download:`here <../projects/project_files/points.kml>`. You will then need to create a path in google earth that follows these points and output a path ``.kml`` file.
 To convert the ``.kml`` file, navigate to the scripts directory inside the ``eml4930_gps_nav`` repo. There is a ``.kml`` file converter to ``.txt`` of poses.  You can do this by running the following command inside the scripts folder.
 
 .. code-block:: bash
@@ -85,17 +85,17 @@ This should return a tuple with the two errors you need for the stanley.
 
 The template file can be downloaded below,
 
-:download:`Controller Template <project_files/vehicle_controller_template.py>`
+:download:`Controller Template <../projects/project_files/vehicle_controller_template.py>`
 
 Put your controller in the ``main_timer_callback`` onwards.
 
 Simulate your project by using a launch file similar to this,
 
-:download:`Launch File for Point at Carrot <project_files/simulation_demo.launch.py>`
+:download:`Launch File for Point at Carrot <../projects/project_files/simulation_demo.launch.py>`
 
 
 .. note:: Your launch file should be in a launch folder inside your package, something like ``package_name/launch/example_launch.py`` . Otherwise when you build the package it will fail.
 
 Use the setup.py file given below to allow for launch files to work.
 
-:download:`Setup File <project_files/setup.py>`
+:download:`Setup File <../projects/project_files/setup.py>`
