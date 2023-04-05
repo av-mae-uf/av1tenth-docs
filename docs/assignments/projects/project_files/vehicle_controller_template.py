@@ -4,13 +4,10 @@ from rclpy.node import Node
 import math
 import numpy as np
 
-from geometry_msgs.msg import Twist
+
 from geometry_msgs.msg import PoseStamped
 from gps_nav_interfaces.msg import CurrentGoalPose
-from std_msgs.msg import Int8
-from std_msgs.msg import Int16
 from ackermann_msgs.msg import AckermannDriveStamped
-from gps_nav.uf_support.geometry_support import value_near
 from gps_nav.uf_support.route_support import get_cross_track_and_heading_error
 
 D2R = math.pi / 180.0
@@ -30,15 +27,6 @@ class VehicleControllerTemplate(Node):
         # set up the timer (0.1 sec) to send over the current_carrot message to the vehicle controller
         self.main_timer = self.create_timer(0.1, self.main_timer_callback)
 
-        self.declare_parameter("L_wheelbase", 0.3)  # meters
-        self.declare_parameter("K_p", 0.2)  # PID parameter
-        self.declare_parameter("K_d", 0.1)  # PID parameter
-        self.declare_parameter("K_i", 0.0)  # PID parameter
-        self.K_p = self.get_parameter("K_p").get_parameter_value().double_value
-        self.K_d = self.get_parameter("K_d").get_parameter_value().double_value
-        self.K_i = self.get_parameter("K_i").get_parameter_value().double_value
-
-        self.wheelbase = self.get_parameter("L_wheelbase").get_parameter_value().double_value
 
         # define the variables that will store the data from the two message inputs
         self.current_goal_point = np.array([0.0, 0.0, 0.0])
@@ -52,8 +40,6 @@ class VehicleControllerTemplate(Node):
         self.vehicle_point = np.array([0.0, 0.0, 0.0])
         self.vehicle_heading_rad = 0.0
         self.vehicle_pose_cnt = 0
-
-        self.pause = False
 
         self.have_vehicle_pose = False
         self.have_goal_pose = False
