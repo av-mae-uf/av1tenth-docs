@@ -96,47 +96,6 @@ You will need to assign a :code:`self.var` to store your old values of integral 
 
 .. hint:: Try to get the right turn to be positive and the left turn as negative. Using the ``numpy.sign()`` function should make this trivial. Just ensure you filter out ``NaN`` values with ``np.isnan()``.
 
-Finding The Perpendicular Distance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To find the perpendicular distance, first the angle alpha as shown in the figure below has to be found.
-
-.. figure:: milestone_files/perpdistance.png
-    :alt: Geometry for Perpendicular Distance
-    :width: 75%
-    
-
-    Figure 1: Geometry for Perpendicular Distance
-
-
-:math:`\alpha` can be found using the following:
-
-.. math:: 
-
-    \alpha = \arctan \left( \frac{d_{offset} \cos \theta - d}{d_{offset} \sin \theta} \right)
-
-where :math:`\theta` is the offset angle you chose from the right side of the car, with :math:`d_{offset}` being the offset distance and :math:`d` as the perpendicular distance from the vehicle coordinate system.
-
-Next you can simply find the perpendicular distance :math:`D_{perp}` by using the following
-
-.. math::
-
-    D_{perp} = d \cos \alpha
-
-Now, you cannot simply use the perpendicular distance as with this the car will not be able to react quickly enough causing overshoots. To counteract this, 
-a look ahead distance :math:`L` is established. You can use this :math:`L` to find a perpendicular distance to add as such
-
-.. math::
-
-    D_{perp+L} = L \sin \alpha + D_{perp}
-
-
-.. hint:: You :math:`L` should be between 10 and to 30 cm in front of the car and :math:`\theta` should be between 15 and 30 degrees from the cars perpendicular.
-
-.. warning:: Set your values for speed to be relatively slow, around 1m/s. Any faster it could possibly crash into the wall. Also do note the faster you go, the larger your look ahead distance :math:`L` needs to be.
-
-
-
 
 
 

@@ -75,9 +75,16 @@ The governing equation of this controller is given as follows,
 
 .. math:: 
 
-    \phi = \phi_{current} + K_{p1} (\theta_c - \theta_{veh}) + K_{p2} e
+    \phi = (\theta_c - \theta_{veh}) + \arctan \frac{k e}{v}
 
-where e is the distance between the two points. 
+where e is the distance between the two points and :math:`v` is the velocity. To calculate the crosstrack error call the function 
+
+.. code-block:: python
+
+    crosstrack_error,error_heading_rad, ~ = get_cross_track_and_heading_error(closest_pt,heading_closest_rad,vehicle_pt, heading_vehicle_rad)
+    
+
+This should return a tuple with the two errors you need for the stanley. 
 
 .. note:: :math:`e` will be negative if the closest point on the path is to the right of the vehicle pose.
 
