@@ -1,12 +1,13 @@
-Milestone 5: Pose Estimator
+Milestone 6: Pose Estimator
 ===========================
 
 This assignment covers working on a Pose Estimator for `Project 2 <../projects/project2.html>`_
 
-* **Due Date:** TBD
+* **Due Date:** April 17th, 2023
+* **Psuedocode Due Date:** April 14th, 2023
 * **Points:** 20
-* ROS 2 Topics: ``odometry`` (sub), ``GPSData`` (sub) and ``vehicle_pose`` (pub)
-* ROS 2 Messages: ``Odometry`` (in ``nav_msgs``) and ``PoseStamped`` (in ``geometry_msgs``) 
+* ROS 2 Topics: ``/odometry`` (sub), ``/gps`` (sub) and ``vehicle_pose`` (pub)
+* ROS 2 Messages: ``Odometry`` (in ``nav_msgs``) and ``NavSatFix`` (in ``sensor_msgs``) and `PoseStamped`` (in ``geometry_msgs``).
 
 .. warning:: The message and topic names are important, not following this convention can have your car not working. Please ensure they are correct.
 
@@ -19,12 +20,15 @@ Odometry and GPSData Basics
 
 The ``odometry`` topic outputs an ``Odometry`` message which has information on its structure `here <http://docs.ros.org/en/noetic/api/nav_msgs/html/msg/Odometry.html>`_.
 The values for the velocity and orientation are in ``twist.twist.linear.x``, ``pose.pose.orientation.z`` and ``pose.pose.orientation.w``.
-You will use this data to dead reckon. To convert the orientation data to a :math:`\theta_{veh}` do the following
+You will use this data to dead reckon. To convert the orientation data from quaternion to a :math:`\theta_{veh}` do the following
 
 .. math::
 
     \theta_{veh} = 2*atan2(z , w) 
 
+.. code-block:: python
+
+    theta = 2*math.atan(z,w)
 
 Dead Reckoning
 ^^^^^^^^^^^^^^
@@ -54,8 +58,8 @@ A Power point on Dead Reckoning is available :download:`here <milestone_files/De
 Plotting Data
 ^^^^^^^^^^^^^
 
-To plot the data use the same node that was given in `milestone 3 <milestone3.html>`_, just change the subscriber topic name to the correct one, output to a txt file
-import to excel and plot as normal. Use one of the bag files provided in ``ros2bag`` to do this. I've added some more for convenience.
+You will have to go out and bag GPS data at some point to go ahead and complete this assignment. You will then need to use a CSV converter to convert it into a usable format to plot.
+You will need to submit these plots along with your pose estimator to get full points. A sample node for CSV is give :download:`here <milestone_files/process__bagfile_csv.py>`_
 
 
 
