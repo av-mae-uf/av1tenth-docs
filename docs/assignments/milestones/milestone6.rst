@@ -30,6 +30,20 @@ You will use this data to dead reckon. To convert the orientation data from quat
 
     theta = 2*math.atan(z,w)
 
+To convert the GPS data from latitude and longitude to UTM coordinates you can use the python library ``utm``. You can install through
+
+.. code-block:: bash
+
+    pip3 install utm
+
+Then you can call it as follows:
+
+.. code-block:: python
+
+    utm.from_latlon(latitude,longitude)
+
+This will give you data in the form (Easting, Northing, Zone Number, Zone Letter). You only need Easting and Northing which Easting is x and Northing is y for the pose.
+
 Dead Reckoning
 ^^^^^^^^^^^^^^
 
