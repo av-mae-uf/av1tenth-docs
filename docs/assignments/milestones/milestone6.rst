@@ -73,7 +73,7 @@ Plotting Data
 ^^^^^^^^^^^^^
 
 You will have to go out and bag GPS data at some point to go ahead and complete this assignment. You will then need to use a CSV converter to convert it into a usable format to plot.
-You will need to submit these plots along with your pose estimator to get full points. A sample node for CSV is give :download:`here <milestone_files/process__bagfile_csv.py>`_
+You will need to submit these plots along with your pose estimator to get full points. A sample node for CSV is give :download:`here <milestone_files/process_bagfile_csv.py>`
 
 
 
