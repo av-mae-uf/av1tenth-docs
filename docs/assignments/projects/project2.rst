@@ -3,19 +3,12 @@ Project 2: Stanley Controller Path Following
 
 This project will cover how to write a stanley controller on your car to follow a path through a set of gps points. A brief powerpoint presentation on this can be found :download:`here <project_files/1_gps_nav_problem.pptx>` . All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo.
 
-* **Due Date:** TBD
+* **Due Date:** April 26th, 2023
+* **Pseudo Code Due Date:** April 21th, 2023
 * **Points:** 100
 * ROS 2 Topics: ``vehicle_pose`` (sub), ``current_goal_pose`` (sub) and ``vehicle_command_ackermann`` (pub)
 * `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``PoseStamped`` (in ``geometry_msgs``) and ``AckermannDriveStamped`` (in ``ackermann_msgs``)
   
-To run this on your car you will need to git clone the ``eml4930_gps_nav`` repository that we have created for the car. You will need to clone
-this into the appropriate workspace source folder, something like ``class_ws/src``. That can be done by using the following command
-
-.. code-block:: bash
-
-    git clone https://github.com/av-mae-uf/eml4930_gps_nav.git
-
-If you have cloned it previously, run a :code:`git pull` to update the repository. Don't put any of your packages in the repo directory it will be deleted when you run the next update command.
 
 Deliverables
 ^^^^^^^^^^^^
