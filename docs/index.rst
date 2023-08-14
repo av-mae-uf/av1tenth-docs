@@ -51,6 +51,7 @@ For the node template you can download that :download:`here <information/files/n
    Code Explanations <information/code/code>
    ROS2 Common Messages <information/ros2_common_msgs>
    Pseudo Code <information/code/pseudocode>
+   Charging the Battery <information/battery>
 
 .. toctree::
    :caption: Assistance

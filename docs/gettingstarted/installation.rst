@@ -226,13 +226,10 @@ Then you need to paste in the following rules
 
 .. code-block:: bash
 
-    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="1456", MODE="0666", GROUP="dialout", SYMLINK+="sensor/imu"
-
+    SUBSYSTEMS=="tty", KERNEL=="ttyS1" ACTION=="add", MODE="0666", GROUP="dialout", SYMLINK+="sensor/gps"
+    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="8057",MODE="0666", GROUP="dialout", SYMLINK+="sensor/arduino"
     SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="sensor/lidar"
 
-    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="239a", ATTRS{idProduct}=="80cb", MODE="0666", GROUP="dialout", SYMLINK+="sensor/encoder"
-
-    SUBSYSTEMS=="tty", KERNEL=="ttyS1" ACTION=="add", MODE="0666", GROUP="dialout", SYMLINK+="sensor/gps"
 
 Then run the following to set them up.
 
