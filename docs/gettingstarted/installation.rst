@@ -151,7 +151,6 @@ Then you can add the ROS2 GPG Key using apt. Start by installing `curl`.
 
     sudo apt update && sudo apt install curl -y
 
-
 Then add the GPG key
     
 .. code-block:: bash
