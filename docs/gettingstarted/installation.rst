@@ -2,7 +2,7 @@ Installation
 ============
 
 Before you can go ahead and start developing or use any of our packages, you will need to install certain things. 
-Obviously you will need to install some sort of linux platform that ideally can install from Debian packages. We use Ubunutu 20.04 Focal Fossa as the installation
+Obviously you will need to install some sort of linux platform that ideally can install from Debian packages. We use Ubunutu 22.04 Jammy Jellyfish as the installation
 is easy, the minimum requirements are available `here <reqs.html>`_. 
 
 .. warning:: Other linux OS's will not be supported by the class to maintain simplicity.
@@ -129,11 +129,11 @@ This should be all you need to run everything that we have provided.
 ROS2 Installation and Configuration from Debian Packages
 --------------------------------------------------------
 
-These installation instructions are a direct copy from `ROS2 Foxy's installation page <https://docs.ros.org/en/foxy/Installation/Ubuntu-Install-Debians.html>`_
+These installation instructions are a direct copy from `ROS2 Humble's installation page <https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html>`_
 
-To install ROS2 through debian packages is quite simple, if you wish to install through binary packages or build from source you can find those instructions on the ROS2 Foxy documentation website.
+To install ROS2 through debian packages is quite simple, if you wish to install through binary packages or build from source you can find those instructions on the ROS2 Humble documentation website.
 
-.. warning:: If you install ROS2 Foxy through building from source, we will provide no support or help for any issues you run into as they can be so varied and is difficult to be informed on all of them.
+.. warning:: If you install ROS2 Humble through building from source, we will provide no support or help for any issues you run into as they can be so varied and is difficult to be informed on all of them.
 
 Setup Sources
 ^^^^^^^^^^^^^
@@ -149,7 +149,8 @@ Then you can add the ROS2 GPG Key using apt. Start by installing `curl`.
 
 .. code-block::bash
 
-    sudo apt update && sudo apt install curl
+    sudo apt update && sudo apt install curl -y
+
 
 Then add the GPG key
     
@@ -182,7 +183,13 @@ Desktop Install (Recommended): ROS, RViz, demos, tutorials.
 
 .. code-block:: bash
 
-    sudo apt install ros-foxy-desktop python3-argcomplete
+    sudo apt install ros-humble-desktop
+
+Base Install
+
+.. code-block:: bash
+
+    sudo apt install ros-humble-ros-base
 
 Install Colcon.
 
@@ -194,7 +201,7 @@ That's pretty much it, all base packages are now installed. We do use a certain 
 
 .. code-block:: bash
 
-    sudo apt install ros-foxy-rplidar-ros
+    sudo apt install ros-humble-rplidar-ros
 
 This should allow it to directly be installed into the ROS2 directory and build the package.
 
@@ -204,13 +211,13 @@ The following command sources ROS2. Though everytime you want to run any package
 
 .. code-block:: bash
 
-    source /opt/ros/foxy/setup.bash
+    source /opt/ros/humble/setup.bash
 
 Though if you want it to be sourced everytime you open a terminal, run the following command:
 
 .. code-block:: bash
     
-    echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
+    echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
     
 
 UDEV Rules (These are only run on the car)
@@ -227,7 +234,9 @@ Then you need to paste in the following rules
 .. code-block:: bash
 
     SUBSYSTEMS=="tty", KERNEL=="ttyS1" ACTION=="add", MODE="0666", GROUP="dialout", SYMLINK+="sensor/gps"
+
     SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="8057",MODE="0666", GROUP="dialout", SYMLINK+="sensor/arduino"
+    
     SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="sensor/lidar"
 
 
