@@ -109,7 +109,7 @@ Next a callback for the LED subscription is defined, that is given below.
                 self.serial_.set_target(4, 3000)
         self.lastmsg = msg
 
-Here the channels 3 corresponds to yello and 5 corresponds to red.
+Here the channels 3 corresponds to yellow and 5 corresponds to red.
 Green is the safe indicator and that correspondsto channel 4. 
 As in normal subscriptions, the message data is pulled into a variable and then a conditional is used to check whether a red or yellow LED is desired. 
 If the number 0 is sent, all LED's are turned off.
