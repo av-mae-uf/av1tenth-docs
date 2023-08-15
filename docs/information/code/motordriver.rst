@@ -73,7 +73,7 @@ This will be true for the servo, for the drive motor the target will be speed, s
 
 ROS2, Callbacks and Logic
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-The next part of the code is the ROS2 critical code inside a ``__init__`` function. This is where you put in the subscriptions to a twist and a subscription for the warning LED's. All the ROS2 code is packaged in a ``MotorController`` classThat code is shown below.
+The next part of the code is the ROS2 critical code inside a ``__init__`` function. This is where you put in the subscriptions to a twist and a subscription for the warning LED's. All the ROS2 code is packaged in a ``MotorController`` class. That code is shown below.
 
 .. code-block:: python
 
