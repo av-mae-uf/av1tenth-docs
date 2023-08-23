@@ -163,20 +163,6 @@ Sometimes you will need to add ``GPG`` keys to your apt sources to install certa
 ROS2
 ----
 
-ROS2 has a couple of bash commands that are required to make it run. If you haven't added a source script to the ``.bashrc`` file yet you will need to run the following command.
-
-.. code-block:: bash
-
-    source /opt/ros/foxy/setup.bash
-
-To add this to your ``.bashrc`` run the following:
-
-.. code-block:: bash
-
-    echo "source /opt/ros/foxy/setup.bash" >> ~/.bashrc
-
-This will source ROS2 everytime you open a terminal.
-
 To run a package and executable in ROS, run the following.
 
 .. code-block:: bash
@@ -391,21 +377,3 @@ Now you are in a new branch. Now add and commit your changes. Then to push, run 
     git push --set-upstream origin <branch-name>
 
 Then up on GitHub or GitLab, create a pull request to merge to your main branch, when your team is satisfied with your code.
-
-TMUX
-----
-
-TMUX is a useful tool to use when working with SSH or even in general. TMUX allows you to split up your terminal into different terminals inside your current terminal without having to open new windows.
-By now you should know how to install tmux using the ``apt`` package manager.
-
-Once installed you can run it using the following:
-
-.. code-block:: bash
-
-    tmux
-
-To do any tmux command you must first hit ``Ctrl`` + ``b``, release it, then use whatever other command you need to do. 
-
-To split your terminal vertically you can do ``Ctrl`` + ``b``, release it, then hit ``%``. To split a terminal window horizontally do the initial command, then hit ``"``. To move between the terminal blocks use the initial command and then the arrow keys.
-To exit out of the split up terminals, just type exit in each terminal, and it will close you out of tmux.
-

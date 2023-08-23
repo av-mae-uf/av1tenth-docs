@@ -4,23 +4,23 @@ Instructor and TA Contacts and Office Hours
 You can contact the instructors or the TA's Through `Canvas <https://ufl.instructure.com>`_. Generally we will get back to you in 24 hours. Additional contact information is given below:
 
 +----------------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+
-| Names                                        | Carl Crane                           |  Aditya Penumarti                    |  John (Jack) Parker                  |
+| Names                                        | Carl Crane                           |  James Zhao                          |  Patrick Neal                        |
 +==============================================+======================================+======================================+======================================+
-|  Pictures                                    |.. image:: images/crane-carl.jpg      | .. image:: images/apenu.jpg          | .. image:: images/Jack.jpg           |
-|                                              |    :width: 180px                     |     :width: 160px                    |     :width: 160px                    |
-|                                              |    :align: center                    |     :align: center                   |     :align: center                   |
-|                                              |    :height: 180px                    |     :height: 160px                   |     :height: 180px                   |
+|  Pictures                                    |.. image:: images/crane-carl.jpg      |  .. image images/james_z.jpg         | .. image:: images/neap.png           |
+|                                              |    :width: 180px                     |      :width: 160px                   |     :width: 160px                    |
+|                                              |    :align: center                    |      :align: center                  |     :align: center                   |
+|                                              |    :height: 180px                    |      :height: 180px                  |     :height: 180px                   |
 |                                              |                                      |                                      |                                      |
 +----------------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+
-|   Role                                       | Instructor                           |  Teaching Assistant                  |  Teaching Assistant                  |
+|   Role                                       | Instructor                           | Teaching Assistant                   | Teaching Assistant                   |
 +----------------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+
-| Office/Lab                                   | MAE-B 326/131                        |  MAE-B 313 / 131 (Office Hours)      |  MAE-B 131                           |
+| Office/Lab                                   | MAE-B 326/131                        | MAE-B 131                            | MAE-B 131                            |
 +----------------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+
-|   E-Mail                                     | carl.crane@gmail.com                 | apenumarti@ufl.edu                   | johnparker@ufl.edu                   |
+|   E-Mail                                     | carl.crane@gmail.com                 | TBD                                  | neap@ufl.edu                         |
 +----------------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+
-|Office Hours                                  |**W** 9:30AM - 10:30AM                |**MWF** 9AM-10AM                      |**MWF** 9AM-10AM                      |
+|Office Hours                                  |**W** 11AM - 12:30PM                  | TBD                                  | TBD                                  |
 +                                              |                                      |                                      |                                      |
-|                                              |Zoom & MAE-B 326                      |**MW** 11AM-12PM                      |**MW** 11AM-12PM                      |
+|                                              |Zoom & MAE-C 105                      |                                      |                                      |
 +----------------------------------------------+--------------------------------------+--------------------------------------+--------------------------------------+
 
 

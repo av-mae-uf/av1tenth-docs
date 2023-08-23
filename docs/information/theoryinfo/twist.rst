@@ -15,7 +15,7 @@ The twist message defines a set of six variables. Usually a twist is written as
                 \dot{z}\\
                 \dot{\phi_x}\\
                 \dot{\phi_y}\\
-                \dot{\phi_z}\\
+                \dot{\phi_z}
                 \end{bmatrix}
 
 where :math:`\dot{x}` ... is the linear velocity and :math:`\dot{\phi_x}`... is the angular velocity. In our case for our car, we will only have a :math:`\dot{x}` linear velocity and 

@@ -41,7 +41,7 @@ To convert the ``.kml`` file, navigate to the scripts directory inside the ``eml
 Stanley Controller 
 ^^^^^^^^^^^^^^^^^^^
 
-The stanley controller [1]_  is controller developed by the Stanford Racing Team during the 2005 DARPA Grand Challenge. Stanley, the teams 
+The stanley controller is controller developed by the Stanford Racing Team during the 2005 DARPA Grand Challenge. Stanley, the teams 
 vehicle, went on to win the competition. 
 
 The outputs and inputs for this controller are given below.

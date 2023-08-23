@@ -2,14 +2,18 @@ Installation
 ============
 
 Before you can go ahead and start developing or use any of our packages, you will need to install certain things. 
-Obviously you will need to install some sort of linux platform that ideally can install from Debian packages. We use Ubunutu 22.04 Jammy Jellyfish as the installation
-is easy, the minimum requirements are available `here <reqs.html>`_. 
+Obviously you will need to install some sort of linux platform that ideally can install from Debian packages.
 
-.. warning:: Other linux OS's will not be supported by the class to maintain simplicity.
+Ubuntu Operating System
+--------------------------------------
 
-Ubuntu Installation
--------------------
-You can follow the instructions at `Ubuntu Dual Boot <https://medium.com/linuxforeveryone/how-to-install-ubuntu-20-04-and-dual-boot-alongside-windows-10-323a85271a73>`_ to dual boot your computer. If you are having trouble doing this come talk to the TA's, we can help you install Ubuntu.
+You will need a laptop that can boot `Ubuntu 22.04 <https://releases.ubuntu.com/jammy/>`_. You can also choose to dual boot your current Windows computer,
+i.e. have both Windows and Ubuntu installed on the same hard drive. It is recommended to have some knowledge of how operating systems are stored on the hard drive 
+before doing this.
+
+.. warning:: Using a Virtual Machine is not recommended. The ROS 2 middleware relies on network communications for which a Virtual Machine must be correctly configured to allow.
+
+If you're looking for a used computer, check out the `UF Surplus website <https://surplus.ufl.edu/buy-now/>`_.
 
 Common Issues
 ^^^^^^^^^^^^^
@@ -18,7 +22,7 @@ Common Issues
 * Disable Secure Boot - You can disable secure boot from your computers bios, should be under security or boot settings.
 * Can't Boot into Bootable Drive - You've likely not created your bootable disk properly, if this problem persists, see the TA's, they have bootable drives available for use.
 
-Python Installation and Additional Packages Required
+Python Installation and Required Packages 
 -----------------------------------------------------
 
 For some of our packages you may require certain extra packages. This section will take you through all the required packages.
@@ -29,7 +33,7 @@ Please run the following commands first before doing anything else.
 
     sudo apt update && sudo apt upgrade
 
-First ensure pip is installed and python3 is installed. This can be done through the following commands. For ``python3``:
+First ensure python3 and pip are installed. This can be done through the following commands. For ``python3``:
 
 Python & pip
 ^^^^^^^^^^^^
@@ -50,7 +54,7 @@ You will also need NumPy for various things. They have arrays, array operations,
 
 .. code-block:: bash
 
-    python3 -m pip install numpy
+    pip3 install numpy
 
 PySerial
 ^^^^^^^^
@@ -59,7 +63,7 @@ Once you have these two installed, we can further install a couple of other pack
 
 .. code-block:: bash
 
-    python3 -m pip install pyserial
+    pip3 install pyserial
 
 UTM Converter
 ^^^^^^^^^^^^^
@@ -68,7 +72,7 @@ We use a python installed UTM converter to convert from the Latitude and Longitu
 
 .. code-block:: bash
 
-    python3 -m pip install utm
+    pip3 install utm
 
 Adafruit GPS Library
 ^^^^^^^^^^^^^^^^^^^^
@@ -77,59 +81,12 @@ An adafruit gps library is used to interface with the gps module that is onboard
 
 .. code-block:: bash
     
-    python3 -m pip install adafruit-circuitpython-gps
-
-Git Installation and Configuration
------------------------------------
-
-To install git you will need to open the terminal and enter the following commands.
-
-.. code-block:: bash
-
-    sudo apt install git
-
-This command will install git from the APT tool usually installed in most linux distros by default. Once installed you will need to configure a few things. To do this run the following commands:
-
-.. code-block:: bash
-
-    git config --global user.name "FirstName LastName"
-    git config --global user.email "email@email.com"
-
-This should mostly setup whatever you need till the first time you push a repository to whichever Git distributor you are using. 
-Then it will ask for a user name and password, generally we use GitHub which requires a Personal Access Token which you can generate
-under Settings -> Developer Settings -> and Personal Access Tokens. To ensure you don't need to keep entering this on your computer you can run
-the following command
-
-.. code-block:: bash 
-
-    git config --global credential.helper store
-
-This will store your access token with the local git so you don't have to keep re-entering it.
-
-
-Visual Studio Code Installation
--------------------------------
-
-To install vscode you can run the following command, though sometimes you have to download it from their website and run another command which is given after.
-
-.. code-block:: bash
-
-    snap install code
-
-If this does not work, go to the `Visual Studio Code website <https://code.visualstudio.com/Download>`_ and download the linux package. Then you can run the follwing command to install it.
-
-.. code-block:: bash
-
-    cd Downloads && sudo dpkg -i <package_name.deb>
-
-.. note:: Please change the ``package_name.deb`` to what ever your package is named.
-
-This should be all you need to run everything that we have provided.
+    pip3 install adafruit-circuitpython-gps
 
 ROS2 Installation and Configuration from Debian Packages
 --------------------------------------------------------
 
-These installation instructions are a direct copy from `ROS2 Humble's installation page <https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html>`_
+These installation instructions are a direct copy from `ROS 2 Humble's installation page <https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html>`_
 
 To install ROS2 through debian packages is quite simple, if you wish to install through binary packages or build from source you can find those instructions on the ROS2 Humble documentation website.
 
@@ -178,17 +135,11 @@ ROS 2 packages are built on frequently updated Ubuntu systems. It is always reco
 
     sudo apt upgrade
 
-Desktop Install (Recommended): ROS, RViz, demos, tutorials.
+Desktop Install: ROS, RViz, demos, tutorials.
 
 .. code-block:: bash
 
     sudo apt install ros-humble-desktop
-
-Base Install
-
-.. code-block:: bash
-
-    sudo apt install ros-humble-ros-base
 
 Install Colcon.
 
@@ -206,50 +157,8 @@ This should allow it to directly be installed into the ROS2 directory and build 
 
 Configuring ROS2 to Source Everytime a Terminal is Opened
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following command sources ROS2. Though everytime you want to run any package or anything in ROS for that matter you need to run it.
-
-.. code-block:: bash
-
-    source /opt/ros/humble/setup.bash
-
-Though if you want it to be sourced everytime you open a terminal, run the following command:
+If you want ROS 2 to be sourced everytime you open a terminal, run the following command:
 
 .. code-block:: bash
     
     echo "source /opt/ros/humble/setup.bash" >> ~/.bashrc
-    
-
-UDEV Rules (These are only run on the car)
-------------------------------------------
-
-To allow us to communicate with our USB devices easily, we have set up some UDEV rules to make sure the ports are interchanged on startup. To do this on your car you need to run the following commands
-
-.. code-block:: bash
-
-    sudo nano /etc/udev/rules.d/99-sensor.rules
-
-Then you need to paste in the following rules
-
-.. code-block:: bash
-
-    SUBSYSTEMS=="tty", KERNEL=="ttyS1" ACTION=="add", MODE="0666", GROUP="dialout", SYMLINK+="sensor/gps"
-
-    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="2341", ATTRS{idProduct}=="8057",MODE="0666", GROUP="dialout", SYMLINK+="sensor/arduino"
-    
-    SUBSYSTEMS=="usb", ACTION=="add", ATTRS{idVendor}=="10c4", ATTRS{idProduct}=="ea60", ATTRS{serial}=="0001", MODE="0666", GROUP="dialout", SYMLINK+="sensor/lidar"
-
-
-Then run the following to set them up.
-
-.. code-block:: bash
-
-    sudo udevadm control --reload-rules && sudo service udev restart && sudo udevadm trigger
-
-
-You will need to replug all your usb ports or just reboot your Odroid for these to work.
-
-
-
-
-
-

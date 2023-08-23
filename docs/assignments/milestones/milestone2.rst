@@ -42,7 +42,7 @@ First you must understand how the LiDAR data is being published. The LiDAR data 
 
 The ranges are stored in the form of distances in meters. To parse through the range data, it is important to understand Figure 1.
 
-.. figure:: ../../information/images/RPlidar.png
+.. figure:: ../../vehicle_information/images/RPlidar.png
     :alt: Ranges defined from 0 degrees
     :width: 100%
 

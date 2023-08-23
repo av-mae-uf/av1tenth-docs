@@ -43,10 +43,10 @@ GPS unit and get back the Latitude and Longitude information for the sensor. We 
 IMU
 ---
 
-The IMU that is currently being used is a 9DOF sensor, the MPU 9250. The sensor has a accelerometer, gyroscope, and magnetometer. It has been encased by the company WitMotion with custom software and a UART connection to it.
+The 9-Axis IMU, BNO055 is currently being used. The sensor has a accelerometer, gyroscope, and magnetometer.
+ It is part of the `Arduino Nano Motor Carrier <https://store.arduino.cc/products/arduino-nano-motor-carrier>`_.
 
-Optical Encoder
-----------------
+Magnetic Encoders
+-----------------
 
-The optical encoder uses, sends out digital signals everytime the beam of light is crossed. We are using this to measure the speed of the motor output shaft for odometry. This will be used later
-for SLAM.
+The vehicle chassis are currently equiped with two hand made magnetic encoders (hall effect).

@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "EML4930: Autonomous Vehicles"
+project = "EML 4832: Autonomous Vehicles"
 copyright = "2023, Patrick Neal, Aditya Penumarti"
 author = "Patrick Neal, Aditya Penumarti"
 
@@ -28,7 +28,7 @@ release = "0.2"
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["sphinx.ext.viewcode", "sphinx.ext.graphviz", "recommonmark", "sphinx_copybutton"]
+extensions = ["sphinx.ext.viewcode", "sphinx.ext.graphviz", "recommonmark", "sphinx_copybutton", "sphinx_design"]
 
 
 source_suffix = {
