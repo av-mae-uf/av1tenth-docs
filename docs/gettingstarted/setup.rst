@@ -56,15 +56,6 @@ You will also need NumPy for various things. They have arrays, array operations,
 
     pip3 install numpy
 
-PySerial
-^^^^^^^^
-
-Once you have these two installed, we can further install a couple of other packages that we require. First we will install PySerial, this is the package that allows us to communicate serially with connected devices.
-
-.. code-block:: bash
-
-    pip3 install pyserial
-
 UTM Converter
 ^^^^^^^^^^^^^
 
@@ -74,14 +65,6 @@ We use a python installed UTM converter to convert from the Latitude and Longitu
 
     pip3 install utm
 
-Adafruit GPS Library
-^^^^^^^^^^^^^^^^^^^^
-
-An adafruit gps library is used to interface with the gps module that is onboard the car.
-
-.. code-block:: bash
-    
-    pip3 install adafruit-circuitpython-gps
 
 ROS2 Installation and Configuration from Debian Packages
 --------------------------------------------------------
@@ -147,13 +130,6 @@ Install Colcon.
 
     sudo apt install python3-colcon-common-extensions
 
-That's pretty much it, all base packages are now installed. We do use a certain package to communiucate with the RPLiDAR, that can be installed using the following command:
-
-.. code-block:: bash
-
-    sudo apt install ros-humble-rplidar-ros
-
-This should allow it to directly be installed into the ROS2 directory and build the package.
 
 Configuring ROS2 to Source Everytime a Terminal is Opened
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
