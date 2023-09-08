@@ -16,7 +16,7 @@
 
 # -- Project information -----------------------------------------------------
 
-project = "EML 4832: Autonomous Vehicles"
+project = "EML 4842: Autonomous Vehicles"
 copyright = "2023, Patrick Neal, Aditya Penumarti"
 author = "Patrick Neal, Aditya Penumarti"
 
