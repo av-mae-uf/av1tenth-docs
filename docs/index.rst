@@ -40,6 +40,7 @@ understand what it is doing.
    :caption: Assistance
    :maxdepth: 1
    
+   Lecture Videos <assistance/videos>
    Tutorial Resources <assistance/tutresources>
    Cheat Sheet <assistance/cheatsheet>
    Troubleshooting <assistance/troubleshoot>
