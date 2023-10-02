@@ -13,7 +13,7 @@ If you are a student in the class, start at the top with `tutorial resources <as
 Don't be discouraged if you are confused, we will assist you through completing this class. ROS 2 is confusing. It takes sometime to fully 
 understand what it is doing.
 
-.. tip:: If you want to build the car yourself for personal or other educational use, look at the vehicle information section. The `parts <vehicle_information/parts.html>`_ section outlines every piece of hardware required.
+.. .. tip:: If you want to build the car yourself for personal or other educational use, look at the vehicle information section. The `parts <vehicle_information/parts.html>`_ section outlines every piece of hardware required.
 
 .. toctree::
    :caption: Getting Started
@@ -52,7 +52,6 @@ understand what it is doing.
 
    Software <vehicle_information/vehicle_software>
    Sensors <vehicle_information/sensor>
-   Parts List <vehicle_information/parts>
    Charging the Battery <vehicle_information/battery>
 
 

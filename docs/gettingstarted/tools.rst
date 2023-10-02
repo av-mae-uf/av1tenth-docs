@@ -1,7 +1,6 @@
 Software Tools
 ==============
 
-
 Git Installation and Configuration
 -----------------------------------
 
@@ -48,9 +47,17 @@ If this does not work, go to the `Visual Studio Code website <https://code.visua
 
 This should be all you need to run everything that we have provided.
 
+Recommended Extensions
+^^^^^^^^^^^^^^^^^^^^^^
+Extensions can be installed within the application by using the "Extensions" side bar. Just search the names and click install.
+
+#. Python by Microsoft
+#. ROS by Microsoft
+#. YAML by Redhat
+
 Byobu
 -----
-`Bybobu <https://www.byobu.org/>`_ is a useful tool when working with multiple terminals. It is recommened to get familiar with it or any other terminal mutliplexer.
+`Byobu <https://www.byobu.org/>`_ is a useful tool when working with multiple terminals. It is recommened to get familiar with it or any other terminal mutliplexer.
 
 .. code-block:: bash
 
