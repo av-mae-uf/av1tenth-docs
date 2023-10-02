@@ -55,6 +55,7 @@ Install PySerial, this is the package that allows us to communicate serially wit
 UTM Converter
 ^^^^^^^^^^^^^
 We use a python installed UTM converter to convert from the Latitude and Longitude coordinates we get from the GPS to UTM Easting and Northing coordinates.
+
 .. code-block:: bash
 
     pip3 install utm

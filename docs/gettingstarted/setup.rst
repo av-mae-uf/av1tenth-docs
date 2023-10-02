@@ -1,5 +1,5 @@
-Installation
-============
+Setup
+=====
 
 Ubuntu Operating System
 --------------------------------------
@@ -119,6 +119,12 @@ Install Colcon.
 .. code-block:: bash
 
     sudo apt install python3-colcon-common-extensions
+
+Install Ackermann messages:
+
+.. code-block:: bash
+
+    sudo apt install ros-humble-ackermann-msgs
 
 Configuring the terminal (Recommended)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

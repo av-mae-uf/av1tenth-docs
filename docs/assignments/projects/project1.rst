@@ -6,9 +6,7 @@ mapping keys, joysticks and triggers on your Xbox controller to a throttle effor
 
 This assignment or milestone will be to map your controller to motion on your car. This will be a group project, though you have been put into groups. This milestone has the following pertinent information.
 
-* **Due Date:** February 17th, 2023
-* **Pseudo Code Due Date:** February 13th, 2023
-* **Code Review Due Date:** February 15th, 2023
+
 * **Total Points:** 100
 * ROS 2 Topics: ``joy`` (sub), and ``vehicle_command_ackermann`` (pub)
 * `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``Joy`` (in ``sensor_msgs``), ``AckermannDriveStamped`` (in ``ackermann_msgs.msg``)
@@ -19,24 +17,7 @@ To launch the car the following command can be entered on **on the car**.
 .. code-block:: bash
 
     ros2 launch vehicle_launch vehicle.launch.py
- 
-Grading Rubric
-^^^^^^^^^^^^^^
-Grading for this assignment will be based on the following rubric
 
-+--------------------------------------------------------+---------+
-| Criteria                                               | Points  |
-+========================================================+=========+
-| Pseudo Code/Flow Chart/Block Diagram                   | 25 Pts  |
-+--------------------------------------------------------+---------+
-| Code Review                                            | 25 Pts  |
-+--------------------------------------------------------+---------+
-| Node Performance and Code Efficacy                     | 50 Pts  |
-+--------------------------------------------------------+---------+
-| **Total**                                              | 100 Pts |
-+--------------------------------------------------------+---------+
-
-.. note:: If after the code review, changes that were suggested are not implemented, the latter 50% of the grade will be affected.
 
 Deliverables
 ^^^^^^^^^^^^
@@ -75,11 +56,11 @@ Converting Joy Data to Message
 Start by connecting the joy stick to your computer, running ``joy_node`` and then echo the ``joy`` topic. See how the controller is being converted into data messages. Based on that selected the appropriate axes or buttons that you want.
 
 The ``AckermannDriveStamped`` message has an ``AckermannDrive`` message that requires to be published. In the ``AckermannDrive`` message there is a ``steering_angle``and ``speed`` fields, which is what we are concerned with. 
-You will need to send a message between -45 and 45, with -45 being steer to the right, and 45 being to the left. The speed value will need to be between -6.35 and 6.35. The rest are not necessary.
+You will need to send a message whose steering angle is between -45 and 45 degrees, with -45 being steer to the right, and 45 being to the left. **The actual angle values need to be in radians.** The speed value will need to be between -2.0 and 2.0. The rest are not necessary.
 
 .. note:: If you want to use the triggers for the throttle, note that they do not behave like the joysticks on the controller the start points and neutral points are slightly different. 
 
-Later on you may be using a twist for consistency, the function of that can be found on the  page on `Bicycle Kinematics <../../information/theoryinfo/cyckinem.html>`_.
+.. Later on you may be using a twist for consistency, the function of that can be found on the  page on `Bicycle Kinematics <../../information/theoryinfo/cyckinem.html>`_.
 
 Parameters 
 ^^^^^^^^^^
@@ -116,13 +97,13 @@ Then from a terminal type the following
 
 It will prompt you for a security verification, you should type ``yes`` and hit return. Then enter the password.
 
-.. hint:: Both the user and password have been placed on the cars computer. Type them exactly as they appear.
+.. hint:: Both the user and password (kinda) have been placed on the cars computer. Type them exactly as they appear.
 
-Sometimes the cars may not have the appropriate ackermann_msgs package installed. You can install them using:
+You might be missing the appropriate ackermann_msgs package. You can install it using:
 
 .. code-block:: bash
 
-    sudo apt install ros-foxy-ackermann-msgs
+    sudo apt install ros-humble-ackermann-msgs
 
 Then you can launch the vehicle using:
 
@@ -130,7 +111,4 @@ Then you can launch the vehicle using:
 
     ros2 launch vehicle_launch vehicle.launch.py
 
-.. note:: If something isn't running correctly check the USB ports, you may have pulled out the wrong one. The green lights on the car should be on when the correct port is plugged in.
-
-.. warning:: Whenever there is changes to the main ``av1tenth`` git repository, the car automatically pulls the repo every time you open a terminal. Though it does not ``colcon build``. So sometimes the TA's might tell you to colcon build in the ``class_ws`` directory
-
+.. note:: If something isn't running correctly check the USB ports, you may have pulled out the wrong one. The yellow lights on the car should be on when the correct port is plugged in and the ROS 2 driver is running.

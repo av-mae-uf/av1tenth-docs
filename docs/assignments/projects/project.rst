@@ -8,3 +8,5 @@ Here you can find the projects that are required to be completed. The projects w
 .. toctree:: 
    :maxdepth: 1
    :caption: List of Projects
+
+   Project 1 <project1>
