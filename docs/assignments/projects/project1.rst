@@ -1,15 +1,12 @@
 Project 1: Open-Loop Control (Xbox Controller Mapping)
 ======================================================
-
 This next node is important to understand how the car operates and what the main operation node of the car is. Here you will be taken through the process of 
 mapping keys, joysticks and triggers on your Xbox controller to a throttle effort and a steering angle. 
 
 This assignment or milestone will be to map your controller to motion on your car. This will be a group project, though you have been put into groups. This milestone has the following pertinent information.
 
-
-* **Total Points:** 100
 * ROS 2 Topics: ``joy`` (sub), and ``vehicle_command_ackermann`` (pub)
-* `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``Joy`` (in ``sensor_msgs``), ``AckermannDriveStamped`` (in ``ackermann_msgs.msg``)
+* `ROS 2 Messages <../../information/ros2_common_msgs.html>`_ : ``Joy`` (in ``sensor_msgs.msg``), ``AckermannDriveStamped`` (in ``ackermann_msgs.msg``)
 * A launch file to launch the car sensor and drivers stack has been installed in the car.
 
 To launch the car the following command can be entered on **on the car**.
@@ -17,7 +14,6 @@ To launch the car the following command can be entered on **on the car**.
 .. code-block:: bash
 
     ros2 launch vehicle_launch vehicle.launch.py
-
 
 Deliverables
 ^^^^^^^^^^^^
@@ -31,8 +27,6 @@ if it publishes data correctly and you car functions you will get full points. Y
 * A launch file that launches the ``joy_node``  node and the controller node that you have created. This will allow you set parameters
 * Parameters in your launch file
 * This is a qualitative assessment so no submissions are needed. You will need to show us your completed node running on your car by the due date.
-  
-.. warning:: The names of topics are important, writing the wrong name will result in a **25% point** deduction.
 
 Joystick Mapping
 ^^^^^^^^^^^^^^^^
@@ -47,7 +41,7 @@ To map the buttons etc. you would have to map them as such
 
 .. code-block:: python
 
-    Joy.buttons[#] = #something.
+    Joy.buttons[n] = something. # where n is an integer.
 
 This will allow you take the data coming in from the ``joy`` topic and publish an ``AckermannDriveStamped`` message.
 
@@ -69,7 +63,6 @@ When we ask you need to be able to easily change the button say from a ``X`` to 
 
 Launch File
 ^^^^^^^^^^^
-
 To manage parameters and easily launch nodes, a launch file can be used. A launch file can essentially allow you run multiple nodes at the same time through one terminal window,
 and also allow you to change parameters in certain nodes. One parameter you might need to change is the neutral point of the car, in the case it does not drive straight. An example launch file with the motor_controller
 parameters has been attached below.
@@ -78,14 +71,12 @@ parameters has been attached below.
 
 .. note:: Your launch file should be a launch folder inside your package, something like ``package_name/launch/example_launch.py`` . Otherwise when you build the package it will fail.
 
-
 There are certain things that need to be added to your ``setup.py`` file for your xbox controller mapping node which also has been given below.
 
 :download:`Setup File <project_files/setup.py>`
 
 SSH into Car
 ^^^^^^^^^^^^
-
 To ``ssh`` into the cars, first Eduroam needs to be put on to the cars, this will be done through monitors and keyboards connected to the cars. Next you can ssh into the cars network
 by first connecting to the cars network. The SSID and password are given on the cars router (Blue TP-Link router).
 

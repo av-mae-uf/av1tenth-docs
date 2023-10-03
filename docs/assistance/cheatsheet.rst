@@ -1,12 +1,11 @@
 Cheat Sheet
 ===========
-
 This page will serve as an area to easily access commands, snippets of codes for Git, ROS2 and Bash command line. These will be commands that we find useful or use often. If there is something
 that you think will be useful to you or your classmates, let us know and we will add it in.
 
+
 Command Line
 -------------
-
 There is a lot you can do with the terminal in linux, we will just cover the basics to keep it brief.
 
 Listing and Changing Directories 
@@ -16,7 +15,6 @@ To find which directory you are in you can run the command
 .. code-block:: bash
 
     pwd
-
 
 You can do is list all files and directories in your current directory.
 
@@ -56,7 +54,6 @@ To change to a directory in another directory, you can write the following:
 
 Creating and Removing Directories and Files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 To make a directory, command the following:
 
 .. code-block:: bash
@@ -109,7 +106,6 @@ To exit out of this file, command ``Ctrl+X``.
 
 SSH Into Another Computer
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 You can ``ssh`` into computer, which is basically connecting to them remotely over a local network (Remote networks can be achieved as well through a VPN). You will need to enable ssh on the computer being connected to before you can do this.
 To ssh into a computer you will need to run the following command.
 
@@ -129,7 +125,6 @@ It will then prompt you to enter a password, which will be the same as your logi
 
 Installing Packages
 ^^^^^^^^^^^^^^^^^^^
-
 There are two package managers in bash that are installed by default, they are ``apt`` and ``snap``.
 
 To install a package with ``apt``, run the following:
@@ -159,23 +154,22 @@ To upgrade packages that were updated, run the following:
     sudo apt upgrade
 
 Sometimes you will need to add ``GPG`` keys to your apt sources to install certain packages, usually whatever package you are trying to install will tell you how to do it.
-    
-ROS2
-----
 
-To run a package and executable in ROS, run the following.
+ 
+ROS 2
+-----
+To run a package and executable in ROS 2, run the following.
 
 .. code-block:: bash
 
     ros2 run <package-name> <executable-name>
 
-ROS2 Packages
-^^^^^^^^^^^^^
+ROS 2 Packages
+^^^^^^^^^^^^^^
+ROS 2 places its programs in directories called packages. Packages can be created using the following command.
 
 .. note:: Whenever something like ``<package-name>`` or ``<node-name>`` is written, you will replace this with the specific node or package name that you are 
     interested in.
-
-ROS2 places its programs in directories called packages. Packages can be created using the following command.
 
 .. code-block:: bash
 
@@ -188,10 +182,9 @@ to the ``setup.py``. You can list all the executables inside a package using the
 
     ros2 pkg executables <package-name>
 
-ROS2 Nodes
-^^^^^^^^^^
-
-ROS2 runs its programs as something called nodes. To see a full list of nodes, the following command can be run.
+ROS 2 Nodes
+^^^^^^^^^^^
+ROS programs are called nodes. To see a full list of nodes, the following command can be run.
 
 .. code-block:: bash
 
@@ -203,9 +196,8 @@ To find out more info about a particular node you can run,
 
     ros2 node info <node-name>
 
-ROS2 Topics
-^^^^^^^^^^^
-
+ROS 2 Topics
+^^^^^^^^^^^^
 A useful debugging tool in ros is ``topic list`` and ``topic echo``. They can be run with the following commands.
 
 .. code-block:: bash
@@ -221,20 +213,16 @@ A useful debugging tool in ros is ``topic list`` and ``topic echo``. They can be
 
 ``topic hz`` will give you the publish speed of the topic.
 
-ROS2 Launch
-^^^^^^^^^^^
-
+ROS 2 Launch
+^^^^^^^^^^^^
 A launch file is something that will launch multiple nodes in ROS, to use a launch file run the following command:
 
 .. code-block:: bash
 
     ros2 launch <package-name> <launch-file>.py
 
-Launch files will be covered in class.
-
-ROS2 Setting Parameters
-^^^^^^^^^^^^^^^^^^^^^^^
-
+ROS 2 Setting Parameters
+^^^^^^^^^^^^^^^^^^^^^^^^
 Sometimes a Node will have parameters associated with it. Consider parameters as variables that you can set for your when starting them up or during the process of running the node.
 This removes the requirement of building the workspace again. parameters can be set as follows:
 
@@ -256,7 +244,6 @@ You can get the current value of a parameter using,
 
 Building a Workspace
 ^^^^^^^^^^^^^^^^^^^^
-
 To run a custom package that is written you will have to first build the workspace. To do this execute the following:
 
 .. code-block:: bash
@@ -284,7 +271,6 @@ or
 
 Git
 ---
-
 First you must ensure you have Git installed on your computer. If you haven't, installation instructions are available at the `Installation <installation.html>`_ page.
 
 Clone a Repo
@@ -305,7 +291,6 @@ The clone command will clone the repo into a directory with the repo name. To cl
 
 Changing to a Different Branch
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 To change to a different branch in your local repo you can do the following:
 
 .. code-block:: bash
@@ -320,7 +305,6 @@ this will change your active branch. To check which branch you are on you can ru
 
 Adding to your Remote Repo After Cloning 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 To add or stage changes that you have made inside your local repo, run the following command.
 
 .. code-block:: bash
@@ -363,7 +347,6 @@ This is will help with collaboration there are a lot of resources for git online
 
 Collaboration
 ^^^^^^^^^^^^^
-
 To collaborate on a project, create branches once you have edited a local repo. Try not to push to the main. Edit, test, review and then merge to main. To change and create a new branch simultaneously run the following command:
 
 .. code-block:: bash
