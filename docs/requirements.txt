@@ -1,4 +1,5 @@
 sphinx == 5.0.1
 sphinx_copybutton == 0.5.0
 sphinx_design
+sphinx_rtd_theme
 recommonmark
