@@ -1,7 +1,8 @@
 Cheat Sheet
 ===========
-This page will serve as an area to easily access commands, snippets of codes for Git, ROS2 and Bash command line. These will be commands that we find useful or use often. If there is something
-that you think will be useful to you or your classmates, let us know and we will add it in.
+This page will serve as an area to easily access commands, snippets of codes for Git, ROS 2 and Bash command line. 
+These will be commands that we find useful or use often. If there is something that you think will be useful to you or your classmates, 
+let us know and we will add it in.
 
 
 Command Line
@@ -139,7 +140,7 @@ To install packages with ``snap``:
 
     sudo snap install <package-name>
 
-We will be using mainly apt package manager.
+We will be using mainly the apt package manager.
 
 To update the package lists, command the following:
 
@@ -152,8 +153,6 @@ To upgrade packages that were updated, run the following:
 .. code-block:: bash
 
     sudo apt upgrade
-
-Sometimes you will need to add ``GPG`` keys to your apt sources to install certain packages, usually whatever package you are trying to install will tell you how to do it.
 
  
 ROS 2
@@ -198,7 +197,7 @@ To find out more info about a particular node you can run,
 
 ROS 2 Topics
 ^^^^^^^^^^^^
-A useful debugging tool in ros is ``topic list`` and ``topic echo``. They can be run with the following commands.
+A useful debugging tool in ROS is ``topic list`` and ``topic echo``. They can be run with the following commands.
 
 .. code-block:: bash
 
@@ -271,7 +270,7 @@ or
 
 Git
 ---
-First you must ensure you have Git installed on your computer. If you haven't, installation instructions are available at the `Installation <installation.html>`_ page.
+First you must ensure you have Git installed on your computer. If you haven't, installation instructions are available at the `Setup <setup.html>`_ page.
 
 Clone a Repo
 ^^^^^^^^^^^^
@@ -347,7 +346,8 @@ This is will help with collaboration there are a lot of resources for git online
 
 Collaboration
 ^^^^^^^^^^^^^
-To collaborate on a project, create branches once you have edited a local repo. Try not to push to the main. Edit, test, review and then merge to main. To change and create a new branch simultaneously run the following command:
+To collaborate on a project, create branches once you have edited a local repo. Try not to push to the main. Edit, test, review and then merge to main. 
+To change and create a new branch simultaneously run the following command:
 
 .. code-block:: bash
 
