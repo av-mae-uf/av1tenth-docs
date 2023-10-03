@@ -270,7 +270,7 @@ or
 
 Git
 ---
-First you must ensure you have Git installed on your computer. If you haven't, installation instructions are available at the `Setup <setup.html>`_ page.
+First you must ensure you have Git installed on your computer. If you haven't, installation instructions are available at the `Software Tool <../gettingstarted/tools.html>`_ page.
 
 Clone a Repo
 ^^^^^^^^^^^^
