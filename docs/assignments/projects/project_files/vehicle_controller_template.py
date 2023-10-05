@@ -4,7 +4,6 @@ from rclpy.node import Node
 import math
 import numpy as np
 
-
 from geometry_msgs.msg import PoseStamped
 from gps_nav_interfaces.msg import CurrentGoalPose
 from ackermann_msgs.msg import AckermannDriveStamped
