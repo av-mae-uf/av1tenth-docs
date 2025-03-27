@@ -23,11 +23,18 @@ understand what it is doing.
    Software Tools <gettingstarted/tools>
 
 .. toctree:: 
-   :caption: Assignments
+   :caption: SP2023-FA2023 Assignments
    :maxdepth: 1
    
    In Class <assignments/inclass/inclasses>
    Projects <assignments/projects/project>
+   Milestones <assignments/milestones/milestone>
+
+.. toctree:: 
+   :caption: SP2025-Present Homework
+   :maxdepth: 1
+   
+   Homework <assignments/homeworks/homework>
 
 .. toctree::
    :caption: Information
