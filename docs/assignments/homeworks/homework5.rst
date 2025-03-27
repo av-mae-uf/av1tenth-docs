@@ -60,18 +60,15 @@ To launch the lidar on the car you can run the following command:
 Visualizing the ``LaserScan``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO
+TODO: Double check these instructions, they were taken from the LiDAR PID powerpoint.
 
-To visualize both the LaserScan and the PointCloud, you should be able to launch a file from your workspace that does this. You can download the launch package :download:`here <homework_files/lidar_launch.zip>`. The following command will launch Rviz2
+To visualize the LaserScan, you can view it using RViz. To run it do the following:
 
-.. code-block:: bash
-
-    ros2 launch lidar_launch lidar_rviz_launch.py
-
-
-That's pretty much all you need to be successful in completing this milestone. If you have any problems `contact the TA's or Instructor <../../assistance/contact.html>`_.
-
-
+* Launch the LiDAR topic.
+* In a new terminal, run ``rviz2``.
+* Change ``Fixed Frame`` to ``lidar``.
+* ``add`` by topic ``scane``.
+* Change view too TopDownOrtho and zoom in.
 
 Finding The Perpendicular Distance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
