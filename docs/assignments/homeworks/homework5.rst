@@ -4,7 +4,7 @@ Homework 5: LiDAR PID Wall Following
 Deliverables
 ^^^^^^^^^^^^
 This assignment introduces a wall following algorithm to stay a set distance away from the wall. The controller used here is a PID controller, think 
-cruise control on your car. Additionally, you will need the node, check to see if the start or stop button was pressed from a joystick.
+cruise control on your car. Additionally, you will need to check to see if the start or stop button was pressed from a joystick.
 
 Expected Behavior:
 ~~~~~~~~~~~~~~~~~~
@@ -78,7 +78,12 @@ Finding The Perpendicular Distance
 
 Dr. Crane's method
 ~~~~~~~~~~~~~~~~~~
-TODO
+.. figure:: homework_files/Crane-Math-1.png
+    :alt: Geometry for Perpendicular Distance
+    :width: 75%
+    
+
+    Figure 2: Calculating the distance between two points
 
 First, you need to get :math:`d_{1}` which is the LiDAR value along :math:`-y` axis.
 
@@ -90,6 +95,13 @@ Now, you can calculate :math:`d_{3}` with the following equation:
 
     d_3 = d_1^2 + d_2^2 - 2 d_1 d_2 \cos \theta
 
+.. figure:: homework_files/Crane-Math-2.png
+    :alt: Geometry for Perpendicular Distance
+    :width: 75%
+    
+
+    Figure 3: Calculating the distance from the wall
+
 Now we have to the unit direction vector that is pointing from :math:`P_{1}` to :math:`P_{2}`:
 
 .. math::
@@ -98,19 +110,17 @@ Now we have to the unit direction vector that is pointing from :math:`P_{1}` to 
 
 .. note:: :math:`(x_{1}, y_{1})` and :math:`(x_{2}, y_{2})` are the x and y values from :math:`d_{1}` and :math:`d_{2}`, respectively.
 
-Afterwards, we can :math:`\alpha` using the following equations:
+Afterwards, we can :math:`\phi` using the following equations:
 
 .. math::
 
-    \cos \alpha = \frac{x_2 - x_1}{d3}
+    \cos \phi = \frac{x_2 - x_1}{d3}
 
-    \sin \alpha = (v' x_{sensor}) \times \hat{h}
-
-With alpha, you can find the distance from the wall using the following equation:
+With :math:`\phi`, you can find the distance from the wall using the following equation:
 
 .. math::
 
-    d_{wall} = d_1 * \cos \alpha
+    d_{wall} = d_1 * \cos \phi
 
 You can find the error, which is the desired set distance from the wall minus the distance you calculated.
 
@@ -128,7 +138,7 @@ To find the perpendicular distance, first the angle alpha as shown in the figure
     :width: 75%
     
 
-    Figure 2: Geometry for Perpendicular Distance
+    Figure 4: Geometry for Perpendicular Distance
 
 
 :math:`\alpha` can be found using the following:
