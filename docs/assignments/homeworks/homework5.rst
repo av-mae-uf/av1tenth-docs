@@ -3,11 +3,32 @@ Homework 5: LiDAR PID Wall Following
 
 Deliverables
 ^^^^^^^^^^^^
-TODO:
+This assignment introduces a wall following algorithm to stay a set distance away from the wall. The controller used here is a PID controller, think 
+cruise control on your car. Additionally, you will need the node, check to see if the start or stop button was pressed from a joystick.
 
+Expected Behavior:
+~~~~~~~~~~~~~~~~~~
+* Subscriber 1: The node will monitor Joy to check if the joystick's 'start' and 'stop' button was pressed.
+* Subscriber 2: Everytime a scan topic arrives:
+    * Calculate current distance from wall
+    * Calculate error at time ``t``
+    * Calculate change in sterring angle
+    * publish ``ackermann_msgs`` with new sterring angle
+
+You should have two subscriber topics: ``scan`` for the Lidar and ``joy`` for the joystick and one publisher topic ``vechile_command_ackermann``.
+
+General Overview
+~~~~~~~~~~~~~~~~
+* **Due Date:** March 28th, 2025
+* **Points:** 20
+* ROS 2 Topics: ``scan`` and ``joy`` (sub) and ``vehicle_command_ackermann`` (pub)
+* ROS 2 Messages: ``LaserScan`` and ``Joy`` in ``sensor_msgs`` (sub) and ``AckermannDriveStamped`` in ``ackermann_msgs`` (pub) 
+
+LiDAR and You
+^^^^^^^^^^^^^
 
 LiDAR Data
-^^^^^^^^^^
+~~~~~~~~~~
 
 First you must understand how the LiDAR data is being published. The LiDAR data is published in the ROS2 topic ``scan`` with the message `LaserScan <http://docs.ros.org/en/noetic/api/sensor_msgs/html/msg/LaserScan.html>`_. You realistically only need the ``ranges`` part of the message and maybe the header for consistencies sake.
 
@@ -27,7 +48,7 @@ look for the data point :math:`[180]`.
 
 
 Running The LiDAR
-^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~
 
 To launch the lidar on the car you can run the following command:
 
@@ -37,7 +58,7 @@ To launch the lidar on the car you can run the following command:
 
 
 Visualizing the ``LaserScan``
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TODO
 
@@ -51,8 +72,54 @@ To visualize both the LaserScan and the PointCloud, you should be able to launch
 That's pretty much all you need to be successful in completing this milestone. If you have any problems `contact the TA's or Instructor <../../assistance/contact.html>`_.
 
 
+
 Finding The Perpendicular Distance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Dr. Crane's method
+~~~~~~~~~~~~~~~~~~
+TODO
+
+First, you need to get :math:`d_{1}` which is the LiDAR value along :math:`-y` axis.
+
+Second, you need to get :math:`d_{2}` which is the LiDAR value at angle :math:`\theta`, the offset angle you chose from the :math:`-y` axis.
+
+Now, you can calculate :math:`d_{3}` with the following equation:
+
+.. math::
+
+    d_3 = d_1^2 + d_2^2 - 2 d_1 d_2 \cos \theta
+
+Now we have to the unit direction vector that is pointing from :math:`P_{1}` to :math:`P_{2}`:
+
+.. math::
+
+    v = \frac{(x_2 - x_1) \hat{i} + (y_2 + y_1) \hat{j}}{d_3}
+
+.. note:: :math:`(x_{1}, y_{1})` and :math:`(x_{2}, y_{2})` are the x and y values from :math:`d_{1}` and :math:`d_{2}`, respectively.
+
+Afterwards, we can :math:`\alpha` using the following equations:
+
+.. math::
+
+    \cos \alpha = \frac{x_2 - x_1}{d3}
+
+    \sin \alpha = (v' x_{sensor}) \times \hat{h}
+
+With alpha, you can find the distance from the wall using the following equation:
+
+.. math::
+
+    d_{wall} = d_1 * \cos \alpha
+
+You can find the error, which is the desired set distance from the wall minus the distance you calculated.
+
+.. math:: 
+
+    e = d_{setpoint} - d_{wall}
+
+Aditya and Patrick's Method
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 To find the perpendicular distance, first the angle alpha as shown in the figure below has to be found.
 
@@ -95,6 +162,41 @@ Now with the look ahead distance, you can find the error, which is the desired s
 
     e = d_{setpoint} - D_{perp+L}
 
+Optional Test: Bang-Bang Controller
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Originally, we would do a Bang-Bang Controller before moving onto PID. **So this part is optional, and can be skipped.**
+
+**However,** you are still welcome to use this controller to test if your perpendicular distance program works as intended.
+
+A Bang-Bang controller is a 2 state controller that abruptly changes from a state to another, in our case from steering left to right. To determine which state
+you are in, providing feedback to your controller, you will find the perpendicular distance from the wall to your car (covered in the next section). If it is too far away from the wall,
+steer in the opposite direction that you are currently and vice versa. 
+
+For our problem here, we will be following the right wall. If it is too far from the right wall you want to max turn right, and if it is too close, max turn left.
+You can model this by using two states of -1 and 1. If an error you take from a set distance and the true distance, depending on how you structure the math, each sign will 
+correspond to a turning right or left. The error can be calculated as such
+
+.. math:: 
+
+    e = d_{setpoint} - D_{perp}
+
+Which then can give you the equation for a Bang-Bang as 
+
+.. math::
+
+    \phi =    \begin{matrix}
+              -\beta & \text{if } e > 0\\
+              \beta & \text{if } e < 0\\
+              \end{matrix}
+
+where :math:`\phi` is the steering angle, and :math:`\beta` is a set steering angle that your controller will oscillate between. 
+
+.. warning:: Remember that the car has actuation limits on the steering to be between -45 and 45.
+
+.. note:: You can change the order as needed to get a certain positive or negative value.
+
+.. hint:: Try to get the right turn to be positive and the left turn as negative. Using the ``numpy.sign()`` function should make this trivial. Just ensure you filter out ``NaN`` values with ``np.isnan()``.
 
 
 PID Controller
