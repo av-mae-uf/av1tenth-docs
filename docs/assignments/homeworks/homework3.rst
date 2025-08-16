@@ -72,13 +72,13 @@ Launch File
 ^^^^^^^^^^^
 You can run multiple nodes and manage their parameters by using a launch file. There is an example launch file given below:
 
-:download:`Launch File <project_files/example.launch.py>`
+:download:`Launch File <../projects/project_files/example.launch.py>`
 
 .. note:: Your launch file should be in a launch folder inside your package, something like ``package_name/launch/example.launch.py`` .
 
 You will need to modify your ``setup.py`` file so that when ``colcon build`` runs it will include the launch file. An example is given below:
 
-:download:`Setup File <project_files/setup.py>`
+:download:`Setup File <../projects/project_files/setup.py>`
 
 SSH into Vehicle
 ^^^^^^^^^^^^^^^^
