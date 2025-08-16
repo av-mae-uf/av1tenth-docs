@@ -8,6 +8,7 @@ cruise control on your car. Additionally, you will need to check to see if the s
 
 Expected Behavior:
 ~~~~~~~~~~~~~~~~~~
+
 * Subscriber 1: The node will monitor Joy to check if the joystick's 'start' and 'stop' button was pressed.
 * Subscriber 2: Everytime a scan topic arrives:
     * Calculate current distance from wall
@@ -19,8 +20,8 @@ You should have two subscriber topics: ``scan`` for the Lidar and ``joy`` for th
 
 General Overview
 ~~~~~~~~~~~~~~~~
-* **Due Date:** March 28th, 2025
-* **Points:** 20
+* **Due Date:** TBH
+* **Points:** 40
 * ROS 2 Topics: ``scan`` and ``joy`` (sub) and ``vehicle_command_ackermann`` (pub)
 * ROS 2 Messages: ``LaserScan`` and ``Joy`` in ``sensor_msgs`` (sub) and ``AckermannDriveStamped`` in ``ackermann_msgs`` (pub) 
 
@@ -60,7 +61,6 @@ To launch the lidar on the car you can run the following command:
 Visualizing the ``LaserScan``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TODO: Double check these instructions, they were taken from the LiDAR PID powerpoint.
 
 To visualize the LaserScan, you can view it using RViz. To run it do the following:
 
@@ -75,6 +75,9 @@ Finding The Perpendicular Distance
 
 Dr. Crane's method
 ~~~~~~~~~~~~~~~~~~
+
+.. warning:: Double check this section, they were taken from the LiDAR PID powerpoint. If there is a mistake, please let the TA know.
+
 .. figure:: homework_files/Crane-Math-1.png
     :alt: Geometry for Perpendicular Distance
     :width: 75%
@@ -276,7 +279,9 @@ You do not need to use the full PID controller you can use PI or PD controllers 
 
 You will need to assign a :code:`self.var` to store your old values of integral addition errors time and error. You will then use the :math:`u` message as the ``vehicle_command_angle`` value.
 
-.. warning:: Remember that the car has actuation limits on the steering to be between -45 and 45.
+.. note:: The steering angle must be sent in radians, not degrees. The :math:`u` message should already be in radians. You do not need to convert to degrees.
+
+.. warning:: Remember that the car has actuation limits on the steering to be between -45 and 45 degrees.
 
 .. note:: You can change the order as needed to get a certain positive or negative value.
 
