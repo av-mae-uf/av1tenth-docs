@@ -35,6 +35,7 @@ Task 2: Plot latitude and longitude on Google Earth
     
     * Each time a ``gps`` topic is read, write the latitude and longitude to a text file named ``lat_lon_data.txt``.  Put a comma between the latitude and longitude values. Also, write the UTM position coordinates to a file named ``utm_data.txt``.  Put a comma between the values.
     * Each time an ``odometry`` topic is read, write the ``pose.pose.orientation x,y,z,w`` values and the calculated orientation angle to a text file named ``angle_data.txt``.  Recall that for our vehicle operating in the ``x,y`` plane, 
+    
     .. math::
         \theta = 2*atan2(z,w)
 
@@ -51,13 +52,14 @@ There should be a given python script on the Canvas assignment page that you can
     Make sure to read how ``PoseStamped``, ``Odometry``, and ``NavSatFix`` work!
 
 Task 3: Write a node named ``pose_estimator``
-"""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""
 
 Write a node named ``pose_estimator`` that you will run when you play back your bag data. 
 
 * This node will subscribe to the ``gps`` topic and the ``odometry`` topic.
 * Each time a ``gps`` topic is read, get the current x and y from the latitude and longitude from the message. 
 * Each time an ``odometry`` topic is read, calculate the orientation angle and store the angle, speed, z/w orientations and x/y positions. Recall that for our vehicle operating in the ``x,y`` plane, 
+
 .. math::
     \theta = 2*atan2(z,w)
 .. math::

@@ -3,8 +3,6 @@ Homeworks
 
 Homework information for EML4930 AV Class are available here. 
 
-.. information:: This section is currently in progress
-
 .. toctree::
     :maxdepth: 1
     :caption: List of Homework (Spring 2024 - Present) 
