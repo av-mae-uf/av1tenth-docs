@@ -39,8 +39,51 @@ Upload a zip file of your package directory.
 Grading Rubric
 ^^^^^^^^^^^^^^
 
-* Colcon build succeeds in compiling the package, 4 pts
-* The publish/subscribe is accomplished successfully, 4 pts
-* The launch file runs both nodes successfully, 4 pts
-* The logic of your code makes sense and can be followed, 4 pts
-* All code and config files are working and are well commented, 4 pts
+Grading for this assignment will be based on the following rubric
+
++--------------------------------------------------------+---------+
+| Criteria                                               | Points  |
++========================================================+=========+
+| Colcon Build succeeds in compiling the package         | 4 Pts   |
++--------------------------------------------------------+---------+
+| The subscribe is accomplished successfully             | 4 Pts   |
++--------------------------------------------------------+---------+
+| The logic of your code makes sense and can be followed | 4 Pts   |
++--------------------------------------------------------+---------+
+|The publish is accomplished successfully                | 4 Pts   |
++--------------------------------------------------------+---------+
+|All code and config files are working and well commented| 4 Pts   |
++--------------------------------------------------------+---------+
+| **Total**                                              | 20 Pts  |
++--------------------------------------------------------+---------+
+
+Quotient, Divisor, Dividend and Remainder
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Hopefully this information is redundant, but it is here any way. The equation to be used is as follows
+
+.. math::
+    \dfrac{x}{y} = z
+
+Where x is the dividend, y is the divisor and z is the quotient. That's pretty much all the info you need.
+
+Logic
+^^^^^
+You will need to check whenever data comes in that the data is divisible by 5 and the remainder is 0, a useful python operator is the modulo
+
+.. code-block:: python
+
+    x%y
+
+Which would return the remainder. Then you would need to use an ``if`` statement or ternary operator to check if it is 0.
+
+Launch File
+^^^^^^^^^^^
+You can run multiple nodes and manage their parameters by using a launch file. There is an example launch file given below:
+
+:download:`Launch File <../projects/project_files/example.launch.py>`
+
+.. note:: Your launch file should be in a launch folder inside your package, something like ``package_name/launch/example.launch.py`` .
+
+You will need to modify your ``setup.py`` file so that when ``colcon build`` runs it will include the launch file. An example is given below:
+
+:download:`Setup File <../projects/project_files/setup.py>`

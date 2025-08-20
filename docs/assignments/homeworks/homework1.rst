@@ -119,7 +119,3 @@ This should output:
     * https://numpy.org/
     * https://pypi.org/project/numpy/
 
-
-Hints and Tips
-^^^^^^^^^^^^^^
-**TODO**
