@@ -20,4 +20,4 @@ Deliverables
 Task
 ^^^^
 
-Your task is to have your vehicle autonomously navigate along a path through the points (latitude/longitude) that were given in class.
+Your task is to have your vehicle autonomously navigate along a path through the points (latitude/longitude) that were given in class using the Stanley Controller. It is finally time to put everything you have learned together. Good luck!

@@ -18,9 +18,7 @@ Deliverables
 Task
 ^^^^
 
-The gps_nav package provides an implementation of the circular arc.
-
-Modify the vehicle controller node in the gps_nav package to implement the following controllers:
+The gps_nav package provides an implementation of the circular arc. Modify the vehicle controller node in the gps_nav package to implement the following controllers:
 
 * point at carrot
 * 3rd order curve controller

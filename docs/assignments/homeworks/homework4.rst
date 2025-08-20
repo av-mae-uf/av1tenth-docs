@@ -30,3 +30,10 @@ Deliverables
 ^^^^^^^^^^^^
 
 Determine the coordinates of point 1 in the fixed world coordinate system. Show your work either handwritten or through a Python script.
+
+Coordinate Transformations
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+A brief powerpoint on the subject, can be found `on the class website <http://www.ccrane3.com/eml4842/PowerPoints/transformations/EML4842_transformations.pptx>`_.
+
+**TODO** briefly explain the math
