@@ -1,7 +1,7 @@
 Milestone 5: Stanley Controller Path Following Simulation
 =========================================================
 
-This milestone will cover how to write a stanley controller on your car to follow a path through a set of gps points. A brief powerpoint presentation on this can be found :download:`here <project_files/1_gps_nav_problem.pptx>` . All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo.
+This milestone will cover how to write a stanley controller on your car to follow a path through a set of gps points. A brief powerpoint presentation on this can be found :download:`here <../projects/project_files/1_gps_nav_problem.pptx>` . All the poses and the other info have been given to your in the ``eml4930_gps_nav`` repo.
 
 * **Due Date:** TBD
 * **Points:** 20
@@ -56,7 +56,7 @@ Outputs:
 The objective is to determine the steering angle to drive the vehicle to the path based on the current vehicle position and orientation. It will be minimizing the difference in heading and the 
 the cross track error :math:`e_{cte}`.
 
-.. figure:: images/stanley.png
+.. figure:: ../projects/images/stanley.png
     :alt: Stanley Controller Diagram
     :width: 75%
     

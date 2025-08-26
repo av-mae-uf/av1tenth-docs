@@ -11,9 +11,11 @@ before doing this.
 
 If you're looking for a used computer, check out the `UF Surplus website <https://surplus.ufl.edu/buy-now/>`_.
 
+For a more detailed instructions on installation, go to the :doc:`Installing Ubuntu page <./installingubuntu>`.
+
 Common Issues
 ^^^^^^^^^^^^^
-* Disable RST - Many manufacturers now put your storage into RAID mode instead of the standard AHCI mode. You can switch this in your BIOS, but there is a risk of bricking your windoes installation. We can install Ubuntu on a usb drive for you, you will need to have a minimum of a 128 GB drive.
+* Disable RST - Many manufacturers now put your storage into RAID mode instead of the standard AHCI mode. You can switch this in your BIOS, but there is a risk of bricking your Windows installation. We can install Ubuntu on a usb drive for you, you will need to have a minimum of a 128 GB drive.
 * Disable Secure Boot - You can disable secure boot from your computers bios, should be under security or boot settings.
 * Can't Boot into Bootable Drive - You've likely not created your bootable disk properly, if this problem persists, see the TA's, they have bootable drives available for use.
 
