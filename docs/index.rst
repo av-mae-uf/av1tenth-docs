@@ -20,6 +20,7 @@ understand what it is doing.
    :maxdepth: 1
    
    Setup <gettingstarted/setup>
+   Installing Ubuntu <gettingstarted/installingubuntu>
    Software Tools <gettingstarted/tools>
 
 .. toctree:: 
