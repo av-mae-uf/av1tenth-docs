@@ -24,14 +24,6 @@ understand what it is doing.
    Software Tools <gettingstarted/tools>
 
 .. toctree:: 
-   :caption: SP2023-FA2023 Assignments
-   :maxdepth: 1
-   
-   In Class <assignments/inclass/inclasses>
-   Projects <assignments/projects/project>
-   Milestones <assignments/milestones/milestone>
-
-.. toctree:: 
    :caption: SP2025-Present Homework
    :maxdepth: 1
    
@@ -58,10 +50,21 @@ understand what it is doing.
    :caption: Vehicle Information
    :maxdepth: 1
 
-   Software <vehicle_information/vehicle_software>
-   Sensors <vehicle_information/sensor>
+   Bill of Materials <vehicle_information/parts>
+   Building the AV1tenth Car <vehicle_information/build>
+   Setting up the AV1tenth's Software <vehicle_information/vehicle_software>
+   AV1tenth Sensors <vehicle_information/sensor>
    Charging the Battery <vehicle_information/battery>
+   AV1tenth Nodes and Launch Files <vehicle_information/vehicle_nodes>
+   SSH Troubleshooting <vehicle_information/ssh_troubleshooting>
 
+.. toctree:: 
+   :caption: SP2023-FA2023 Assignments (OUTDATED)
+   :maxdepth: 1
+   
+   In Class <assignments/inclass/inclasses>
+   Projects <assignments/projects/project>
+   Milestones <assignments/milestones/milestone>
 
 ..
    Building the AV1tenth Car <information/build>
